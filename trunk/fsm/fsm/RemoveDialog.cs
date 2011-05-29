@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace fsm {
+		public partial class RemoveDialog : Form {
+				AutomatCreator parent;
+				public RemoveDialog(List<string> lista, string labelTitle, string title, AutomatCreator p) {
+						parent = p;
+						InitializeComponent();
+						listBox1.DataSource = lista;
+				}
+
+				private void button1_Click(object sender, EventArgs e) {
+						foreach (string o in listBox1.SelectedItems)
+								parent.removeList.Add(o);
+						DialogResult = DialogResult.OK;
+						SetVisibleCore(false);
+				}
+		}
+}

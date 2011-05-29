@@ -35,9 +35,11 @@
 						this.RemoveLetterButton = new System.Windows.Forms.Button();
 						this.DoneButton = new System.Windows.Forms.Button();
 						this.MyCancelButton = new System.Windows.Forms.Button();
+						this.changeLetterButton = new System.Windows.Forms.Button();
+						this.ChangeStateNameButton = new System.Windows.Forms.Button();
 						this.AcceptingColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 						this.StateNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-						this.Letter1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+						this.a = new System.Windows.Forms.DataGridViewComboBoxColumn();
 						((System.ComponentModel.ISupportInitialize)(this.fPTable)).BeginInit();
 						this.SuspendLayout();
 						// 
@@ -53,10 +55,11 @@
 						this.fPTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AcceptingColumn,
             this.StateNameColumn,
-            this.Letter1});
-						this.fPTable.Location = new System.Drawing.Point(12, 42);
+            this.a});
+						this.fPTable.Location = new System.Drawing.Point(12, 71);
 						this.fPTable.Name = "fPTable";
-						this.fPTable.Size = new System.Drawing.Size(550, 232);
+						this.fPTable.RowHeadersVisible = false;
+						this.fPTable.Size = new System.Drawing.Size(557, 235);
 						this.fPTable.TabIndex = 0;
 						// 
 						// AddLetterButton
@@ -71,7 +74,7 @@
 						// 
 						// AddStateButton
 						// 
-						this.AddStateButton.Location = new System.Drawing.Point(93, 13);
+						this.AddStateButton.Location = new System.Drawing.Point(12, 42);
 						this.AddStateButton.Name = "AddStateButton";
 						this.AddStateButton.Size = new System.Drawing.Size(75, 23);
 						this.AddStateButton.TabIndex = 2;
@@ -82,7 +85,7 @@
 						// RemoveStateButton
 						// 
 						this.RemoveStateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-						this.RemoveStateButton.Location = new System.Drawing.Point(476, 13);
+						this.RemoveStateButton.Location = new System.Drawing.Point(483, 42);
 						this.RemoveStateButton.Name = "RemoveStateButton";
 						this.RemoveStateButton.Size = new System.Drawing.Size(86, 23);
 						this.RemoveStateButton.TabIndex = 3;
@@ -93,7 +96,7 @@
 						// RemoveLetterButton
 						// 
 						this.RemoveLetterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-						this.RemoveLetterButton.Location = new System.Drawing.Point(384, 13);
+						this.RemoveLetterButton.Location = new System.Drawing.Point(483, 13);
 						this.RemoveLetterButton.Name = "RemoveLetterButton";
 						this.RemoveLetterButton.Size = new System.Drawing.Size(86, 23);
 						this.RemoveLetterButton.TabIndex = 4;
@@ -104,7 +107,7 @@
 						// DoneButton
 						// 
 						this.DoneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-						this.DoneButton.Location = new System.Drawing.Point(476, 280);
+						this.DoneButton.Location = new System.Drawing.Point(484, 312);
 						this.DoneButton.Name = "DoneButton";
 						this.DoneButton.Size = new System.Drawing.Size(86, 23);
 						this.DoneButton.TabIndex = 5;
@@ -115,12 +118,34 @@
 						// 
 						this.MyCancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 						this.MyCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-						this.MyCancelButton.Location = new System.Drawing.Point(395, 280);
+						this.MyCancelButton.Location = new System.Drawing.Point(403, 312);
 						this.MyCancelButton.Name = "MyCancelButton";
 						this.MyCancelButton.Size = new System.Drawing.Size(75, 23);
 						this.MyCancelButton.TabIndex = 6;
 						this.MyCancelButton.Text = "Cancel";
 						this.MyCancelButton.UseVisualStyleBackColor = true;
+						// 
+						// changeLetterButton
+						// 
+						this.changeLetterButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+						this.changeLetterButton.Location = new System.Drawing.Point(234, 13);
+						this.changeLetterButton.Name = "changeLetterButton";
+						this.changeLetterButton.Size = new System.Drawing.Size(108, 23);
+						this.changeLetterButton.TabIndex = 7;
+						this.changeLetterButton.Text = "Change letter";
+						this.changeLetterButton.UseVisualStyleBackColor = true;
+						this.changeLetterButton.Click += new System.EventHandler(this.changeLetterButton_Click);
+						// 
+						// ChangeStateNameButton
+						// 
+						this.ChangeStateNameButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+						this.ChangeStateNameButton.Location = new System.Drawing.Point(234, 42);
+						this.ChangeStateNameButton.Name = "ChangeStateNameButton";
+						this.ChangeStateNameButton.Size = new System.Drawing.Size(108, 23);
+						this.ChangeStateNameButton.TabIndex = 8;
+						this.ChangeStateNameButton.Text = "Change state name";
+						this.ChangeStateNameButton.UseVisualStyleBackColor = true;
+						this.ChangeStateNameButton.Click += new System.EventHandler(this.ChangeStateNameButton_Click);
 						// 
 						// AcceptingColumn
 						// 
@@ -132,20 +157,24 @@
 						// 
 						this.StateNameColumn.HeaderText = "State name";
 						this.StateNameColumn.Name = "StateNameColumn";
+						this.StateNameColumn.ReadOnly = true;
+						this.StateNameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
 						this.StateNameColumn.Width = 95;
 						// 
-						// Letter1
+						// a
 						// 
-						this.Letter1.HeaderText = "a";
-						this.Letter1.Name = "Letter1";
-						this.Letter1.Width = 50;
+						this.a.HeaderText = "a";
+						this.a.Name = "a";
+						this.a.Width = 50;
 						// 
 						// AutomatCreator
 						// 
 						this.AcceptButton = this.DoneButton;
 						this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 						this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-						this.ClientSize = new System.Drawing.Size(574, 315);
+						this.ClientSize = new System.Drawing.Size(581, 347);
+						this.Controls.Add(this.ChangeStateNameButton);
+						this.Controls.Add(this.changeLetterButton);
 						this.Controls.Add(this.MyCancelButton);
 						this.Controls.Add(this.DoneButton);
 						this.Controls.Add(this.RemoveLetterButton);
@@ -153,6 +182,7 @@
 						this.Controls.Add(this.AddStateButton);
 						this.Controls.Add(this.AddLetterButton);
 						this.Controls.Add(this.fPTable);
+						this.MinimumSize = new System.Drawing.Size(350, 200);
 						this.Name = "AutomatCreator";
 						this.Text = "AutomatCreator";
 						((System.ComponentModel.ISupportInitialize)(this.fPTable)).EndInit();
@@ -169,8 +199,10 @@
         private System.Windows.Forms.Button RemoveLetterButton;
 				private System.Windows.Forms.Button DoneButton;
 				private System.Windows.Forms.Button MyCancelButton;
+				private System.Windows.Forms.Button changeLetterButton;
+				private System.Windows.Forms.Button ChangeStateNameButton;
 				private System.Windows.Forms.DataGridViewCheckBoxColumn AcceptingColumn;
 				private System.Windows.Forms.DataGridViewTextBoxColumn StateNameColumn;
-				private System.Windows.Forms.DataGridViewComboBoxColumn Letter1;
+				private System.Windows.Forms.DataGridViewComboBoxColumn a;
     }
 }
