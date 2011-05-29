@@ -3,13 +3,35 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
+public class Stan
+{
+    public Stan(string nazwa, bool koncowy)
+    {
+        this.nazwa = nazwa;
+        this.koncowy = koncowy;
+    }
+    public bool koncowy;
+    public string nazwa;
+    public Dictionary<char, Stan> mapa = new Dictionary<char, Stan>();
+    public Stan Przejscie(char litera)
+    {
+        Stan ret = null;
+        try
+        {
+            ret = mapa[litera];
+        }
+        catch (Exception) { };
+        return ret;
+    }
+}
+
 
 public class FunkcjaPrzejscia
 {
-    string nazwa;
-    string alfabet;
+    public string nazwa;
+    public string alfabet;
     Stan obecny = null;
-    List<Stan> Stany = new List<Stan>();
+    public List<Stan> Stany = new List<Stan>();
 
     public FunkcjaPrzejscia(string nazwa, string alfabet)
     {
@@ -32,28 +54,7 @@ public class FunkcjaPrzejscia
     }
 
 
-    class Stan
-    {
-        public Stan(string nazwa, bool koncowy)
-        {
-            this.nazwa = nazwa;
-            this.koncowy = koncowy;
-        }
-        public bool koncowy;
-        public string nazwa;
-        public Dictionary<char, Stan> mapa = new Dictionary<char, Stan>();
-        public Stan Przejscie(char litera)
-        {
-            Stan ret = null;
-            try
-            {
-                ret = mapa[litera];
-            }
-            catch (Exception e) { };
-            return ret;
-        }
-    }
-
+   
 
 
     public void DodajStan(string nazwa, bool koncowy)
@@ -93,30 +94,27 @@ public class FunkcjaPrzejscia
 
     }
 
+    public void UstawKoncowy(string nazwa, bool koncowy) {
+        foreach (Stan x in Stany) if (x.nazwa == nazwa) x.koncowy = koncowy;
+    }
 
-/*
-    public static void Main()
+
+    public void Test()
     {
-        try
+        
         {
-            FunkcjaPrzejscia f = new FunkcjaPrzejscia("Funkcja1", "abc");
-            f.DodajStan("S1", false);
-            f.DodajStan("S2", false);
-            f.DodajStan("S3", true);
-            Console.WriteLine(f.obecny.nazwa);
-            f.DodajPrzejscie("S1", 'a', "S2");
-
-            f.DodajPrzejscie("S2", 'b', "S1");
-            f.DodajPrzejscie("S1", 'c', "S3");
-            f.Przejscie('a');
-            Console.WriteLine(f.obecny.nazwa);
-            f.Przejscie('b');
-            Console.WriteLine(f.obecny.nazwa);
-            f.Przejscie('c');
-            Console.WriteLine(f.obecny.nazwa);
+            
+            DodajStan("S1", false);
+            DodajStan("S2", false);
+            DodajStan("S3", true);
+            alfabet = "abc";
+            DodajPrzejscie("S1", 'a', "S2");
+            DodajPrzejscie("S3", 'c', "S3");
+            DodajPrzejscie("S2", 'b', "S1");
+            DodajPrzejscie("S1", 'c', "S3");
+      
         }
-        catch (Exception e) { Console.WriteLine(e.Message); }
-        Console.ReadLine();
-    }*/
+      
+    }
 }
 
