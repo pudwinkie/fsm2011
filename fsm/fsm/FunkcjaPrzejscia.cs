@@ -30,7 +30,7 @@ public class FunkcjaPrzejscia
 {
     public string nazwa;
     public string alfabet;
-    Stan obecny = null;
+    public Stan obecny = null;
     public List<Stan> Stany = new List<Stan>();
 
     public FunkcjaPrzejscia(string nazwa, string alfabet)
@@ -54,7 +54,6 @@ public class FunkcjaPrzejscia
     }
 
 
-   
 
 
     public void DodajStan(string nazwa, bool koncowy)

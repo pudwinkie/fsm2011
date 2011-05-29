@@ -11,9 +11,21 @@ namespace fsm
 {
     public partial class Form1 : Form
     {
+        public List<Control> Elementy = new List<Control>();
+
+        void Inicjalizacja()
+        {
+            Elementy.Add(button1);
+            
+            Elementy.Add(textBox2);
+            Elementy.Add(button2);
+        }
+
         public Form1()
         {
             InitializeComponent();
+            Inicjalizacja();
+            Wizualizacja.Test();
             Wizualizacja.Okno = this;
              
         }
@@ -26,6 +38,16 @@ namespace fsm
         private void button1_Click(object sender, EventArgs e)
         {
             Wizualizacja.RysujF();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Wizualizacja.Krok();
         }
     }
 }
