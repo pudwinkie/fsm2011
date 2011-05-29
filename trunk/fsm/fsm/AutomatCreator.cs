@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace fsm
 {
-    public partial class Form1 : Form
+    public partial class AutomatCreator : Form
     {
-        public Form1()
+        public AutomatCreator()
         {
             InitializeComponent();
-        }
-
-        private void createMachineToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new AutomatCreator().ShowDialog();
         }
     }
 }
