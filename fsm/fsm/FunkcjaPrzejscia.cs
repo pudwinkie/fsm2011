@@ -15,6 +15,18 @@ public class FunkcjaPrzejscia
         this.alfabet = alfabet;
     }
 
+    public FunkcjaPrzejscia(string nazwa, string alfabet)
+    {
+        this.nazwa = nazwa;
+        this.alfabet = alfabet;
+    }
+
+    public void ZmainaNazwy(string nowaNazw)
+    {
+        nazwa = nowaNazwa;
+    }
+
+
     class Stan
     {
         public Stan(string nazwa, bool koncowy)
