@@ -97,6 +97,13 @@ public class FunkcjaPrzejscia
         foreach (Stan x in Stany) if (x.nazwa == nazwa) x.koncowy = koncowy;
     }
 
+    public int AlfabetIndex(char c) {
+        int i = 0;
+        while (i < alfabet.Length && c != alfabet[i]) i++;
+        if (i == alfabet.Length) return -1;
+        return i;
+    }
+
 
     public void Test()
     {
@@ -104,6 +111,7 @@ public class FunkcjaPrzejscia
         {
             
             DodajStan("S1", false);
+            DodajStan("Ssssssssssssssssssssssssssssssss1", false);
             DodajStan("S2", false);
             DodajStan("S3", true);
             alfabet = "abc";
