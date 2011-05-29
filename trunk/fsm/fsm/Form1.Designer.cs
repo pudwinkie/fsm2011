@@ -65,7 +65,7 @@
             // createMachineToolStripMenuItem
             // 
             this.createMachineToolStripMenuItem.Name = "createMachineToolStripMenuItem";
-            this.createMachineToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.createMachineToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.createMachineToolStripMenuItem.Text = "Create Machine";
             this.createMachineToolStripMenuItem.Click += new System.EventHandler(this.createMachineToolStripMenuItem_Click);
             // 
@@ -89,7 +89,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CausesValidation = false;
@@ -199,6 +199,7 @@
             this.MinimumSize = new System.Drawing.Size(670, 380);
             this.Name = "Form1";
             this.Text = "Finite State Machine Symulator";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -214,13 +215,13 @@
         public System.Windows.Forms.ToolStripMenuItem createMachineToolStripMenuItem;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.Button button2;
     }
 }
 
