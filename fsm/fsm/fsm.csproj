@@ -54,6 +54,7 @@
     <Compile Include="AutomatCreator.Designer.cs">
       <DependentUpon>AutomatCreator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="EnterNameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +100,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Wizualizacja.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

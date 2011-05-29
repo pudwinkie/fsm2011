@@ -14,11 +14,18 @@ namespace fsm
         public Form1()
         {
             InitializeComponent();
+            Wizualizacja.Okno = this;
+             
         }
 
         private void createMachineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AutomatCreator().ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Wizualizacja.RysujF();
         }
     }
 }
