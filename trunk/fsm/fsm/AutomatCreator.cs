@@ -7,29 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace fsm{
+namespace fsm {
+		//Tomasz Binczycki
     public partial class AutomatCreator : Form{
-				public string name;
+				internal string name;
+				internal FunkcjaPrzejscia funkcjaPrzejscia = new FunkcjaPrzejscia("TempName", "a");
         public AutomatCreator(){
             InitializeComponent();
-						FunkcjaPrzejsciaTable.RowCount++;
-						FunkcjaPrzejsciaTable.Rows[0].Tag = "Start";
+						fPTable.RowCount++;
+						fPTable.Rows[0].Cells[1].Value = "Start";
+
         }
 
 				private void AddLetterButton_Click(object sender, EventArgs e) {
-						var eNF = new EnterNameForm("Letter: ", this);
+						var eNF = new EnterNameForm("Letter: ", this, 1);
 						eNF.ShowDialog();
 						if (eNF.DialogResult != DialogResult.OK) return;
-						Console.WriteLine(name.Length +" "+ name);
-						
-						FunkcjaPrzejsciaTable.Columns[FunkcjaPrzejsciaTable.ColumnCount - 2].HeaderText = (name.Length +" "+ name);
 						if (name.Length != 1) return;
-						//FunkcjaPrzejsciaTable.Columns[FunkcjaPrzejsciaTable.ColumnCount - 1].HeaderText = name;
-						FunkcjaPrzejsciaTable.ColumnCount++;
+						fPTable.Columns.Add( new DataGridViewComboBoxColumn());
+						fPTable.Columns[fPTable.ColumnCount - 1].Name = name;
+						fPTable.Columns[fPTable.ColumnCount - 1].Width = 50;
 				}
 
 				private void AddStateButton_Click(object sender, EventArgs e) {
-						FunkcjaPrzejsciaTable.RowCount++;
+						fPTable.RowCount++;
 				}
 
 				private void RemoveLetterButton_Click(object sender, EventArgs e) {
