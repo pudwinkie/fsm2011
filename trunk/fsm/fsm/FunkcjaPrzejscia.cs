@@ -1,5 +1,7 @@
 ﻿using System;
-
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
 
 
 public class FunkcjaPrzejscia
@@ -15,15 +17,18 @@ public class FunkcjaPrzejscia
         this.alfabet = alfabet;
     }
 
-    public FunkcjaPrzejscia(string nazwa, string alfabet)
-    {
-        this.nazwa = nazwa;
-        this.alfabet = alfabet;
-    }
 
-    public void ZmainaNazwy(string nowaNazw)
+    public void ZmainaNazwy(string nowaNazwa)
     {
         nazwa = nowaNazwa;
+    }
+
+    public void DodajLitere(char litera) {
+        
+        bool lit = false;
+        foreach (char i in alfabet) if (i == litera) lit = true;
+        if (lit) throw new Exception("Ta litera jest już w alfabecie");
+        alfabet += litera;
     }
 
 
