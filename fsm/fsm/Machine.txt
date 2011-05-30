@@ -1,4 +1,4 @@
-﻿FSM2011
+﻿MM_TB_TCS
 NazwaMaszyny
 
 5 LiczbaStanow
