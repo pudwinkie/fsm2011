@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace fsm {
 		public partial class Form1 : Form {
@@ -81,18 +82,12 @@ namespace fsm {
 				private void loadFSMToolStripMenuItem_Click(object sender, EventArgs e) {
 						if (openFileDialog.ShowDialog() == DialogResult.OK) {
 								try {
-										/*TextReader mR;
-										if ((mR = new StreamReader(openFileDialog.OpenFile())) != null) {
-												using (mR) {
-														string s;
-														StringBuilder sB = new StringBuilder();
-														while ((s = mR.ReadLine()) != null)
-																sB.AppendLine(s);
-														textArea.Text = sB.ToString();
-												}
-										}*/
-								} catch (Exception) {
-										MessageBox.Show("Cos z tym plikiem źle");
+										FunkcjaPrzejscia fp;
+										TextReader mR;
+										if ((mR = new StreamReader(openFileDialog.OpenFile())) != null)
+												fp = IOMachine.LoadMachine(mR);
+								} catch (Exception ex) {
+										MessageBox.Show(ex.Message);
 								}
 
 						}

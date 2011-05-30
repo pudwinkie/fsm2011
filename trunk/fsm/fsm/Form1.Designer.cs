@@ -248,7 +248,9 @@
 						// 
 						// openFileDialog
 						// 
-						this.openFileDialog.FileName = "openFileDialog";
+						this.openFileDialog.DefaultExt = "fsm";
+						this.openFileDialog.FileName = "Machine.fsm";
+						this.openFileDialog.Title = "Open Finite State Machine";
 						// 
 						// Form1
 						// 

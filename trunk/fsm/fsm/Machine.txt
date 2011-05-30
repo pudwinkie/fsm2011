@@ -1,0 +1,19 @@
+﻿FSM2011
+NazwaMaszyny
+
+5 LiczbaStanow
+ABCDE  Stany
+ABC StanyKoncowe
+
+3 LiczbaLiterwAlfabecie
+abc LiteryAlfabetu
+
+5 LiczbaProdukcjiFunkcjiPrzejscia
+
+A a -> B  komentarz
+A b -> C
+B c -> A
+C b -> D
+D a -> E
+
+wszystko niżej jest opisem maszyny
