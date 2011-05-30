@@ -79,6 +79,7 @@
     <Compile Include="InfoBox.Designer.cs">
       <DependentUpon>InfoBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="IOMachine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AutomatCreator.resx">
@@ -130,6 +131,9 @@
       <DependentUpon>RemoveDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Wizualizacja.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Machine.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
