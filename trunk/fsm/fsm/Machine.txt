@@ -2,8 +2,9 @@
 NazwaMaszyny
 
 5 LiczbaStanow
-ABCDE  Stany
-ABC StanyKoncowe
+A B C D E  Stany
+3 LiczbaStanowKoncowych
+A B C StanyKoncowe
 
 3 LiczbaLiterwAlfabecie
 abc LiteryAlfabetu
