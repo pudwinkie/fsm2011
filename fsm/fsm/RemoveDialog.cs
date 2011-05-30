@@ -12,7 +12,9 @@ namespace fsm {
 				AutomatCreator parent;
 				public RemoveDialog(List<string> lista, string labelTitle, string title, AutomatCreator p) {
 						parent = p;
+						Text = title;
 						InitializeComponent();
+						label1.Text = labelTitle;
 						listBox1.DataSource = lista;
 				}
 

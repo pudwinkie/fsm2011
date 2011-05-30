@@ -30,8 +30,8 @@ namespace fsm {
 						var eNF = new EnterNameForm("Letter: ", this, 1);
 						eNF.ShowDialog();
 						if (eNF.DialogResult != DialogResult.OK) return;
-						if (name.Length != 1) return;
 						try {
+								if (name.Length == 0) throw new Exception("Nie podałeś litery");
 								funkcjaPrzejscia.DodajLitere(name[0]);
 								alfabet.Add(name[0]+"");
 						} catch (Exception ex) {
@@ -51,6 +51,7 @@ namespace fsm {
 						eNF.ShowDialog();
 						if (eNF.DialogResult != DialogResult.OK) return;
 						try {
+								if (name.Length == 0) throw new Exception("Stan nie może mieć pustej nazwy");
 								funkcjaPrzejscia.DodajStan(name, false);
 						} catch (Exception ex) {
 								var t = new InfoBox("Warning", ex.Message);
@@ -75,7 +76,11 @@ namespace fsm {
 				}
 
 				private void RemoveStateButton_Click(object sender, EventArgs e) {
+						stany.Remove("");
+						stany.Remove((string)fPTable.Rows[0].Cells["StateNameColumn"].Value);
 						var rl = new RemoveDialog(stany, "Choose states names to remove:", "Remove states", this);
+						stany.Insert(0,(string)fPTable.Rows[0].Cells["StateNameColumn"].Value);
+						stany.Insert(0,""); 
 						rl.ShowDialog();
 						if (rl.DialogResult != DialogResult.OK) return;
 						var cell = fPTable.Columns["StateNameColumn"].Index;
@@ -85,6 +90,11 @@ namespace fsm {
 								if (!removeList.Contains(rowName)) continue;
 								fPTable.Rows.Remove(row);
 								stany.Remove(rowName);
+						}
+						foreach (DataGridViewRow row in fPTable.Rows) {
+								foreach (DataGridViewCell col in row.Cells) {
+										if (col is DataGridViewComboBoxCell && removeList.Contains((string)col.Value)) col.Value = "";
+								}
 						}
 						removeList.Clear();
 						fPTable.Update();
