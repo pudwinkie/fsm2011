@@ -78,6 +78,7 @@
 						this.Controls.Add(this.nameTextBox);
 						this.Controls.Add(this.EnterNameLabel);
 						this.Name = "EnterNameForm";
+						this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 						this.Text = "EnterNameForm";
 						this.ResumeLayout(false);
 						this.PerformLayout();

@@ -80,6 +80,7 @@
 						this.Controls.Add(this.label1);
 						this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 						this.Name = "RemoveDialog";
+						this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 						this.ResumeLayout(false);
 						this.PerformLayout();
 
