@@ -14,7 +14,7 @@ namespace fsm {
             InitializeComponent();
 						fPTable.RowCount++;
 						fPTable.Rows[0].Cells[1].Value = "Start";
-						funkcjaPrzejscia.DodajStan("Start");
+						funkcjaPrzejscia.DodajStan("Start", false);
 						stany.Add("");
 						stany.Add("Start");
 						alfabet.Add("a");
