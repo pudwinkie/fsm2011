@@ -15,9 +15,12 @@ namespace fsm
     {
         public static Form1 Okno;
         public static FunkcjaPrzejscia f;
-        public static int rozalf;
+        public static bool ok=false;
+        static int rozalf;
+        public static int zly = 0;
+        public static List<int> historia = new List<int>(); 
         //====================================
-        static int czasCzekania = 250;
+        static int czasCzekania = 100;
         static int ileMrugniec = 4;
         static Color PodBack = Color.Blue;
         static Color PodText = Color.Red;
@@ -130,27 +133,30 @@ namespace fsm
         static int stareid, noweid, x;
         public static void Krok()
         {
-
+            
             // sprawdzenie czy tekst istnieje
             string s = null;
+            stareid = noweid;
             s = Okno.textBox1.Text;
-            if (s == null || s == "") { Error(1); return; } //co zrobić gdy nie ma tekstu
+            if (s == null || s == "") { Dialog.Error(1); return; } //co zrobić gdy nie ma tekstu
             //podświetlanie aktualnej literki
             char literka = s[0];
             MrugajLit();
+            if (zly > 0) { goto aaa; } //jestesmy w nieistniejącym stanie
             x = f.AlfabetIndex(literka);
-            if (x == -1) { goto aaa; } /////////==============nie ma takiej literki w alfabecie
+            if (x == -1) {zly++; goto aaa; } /////////==============nie ma takiej literki w alfabecie
             //podświetla tabelke
             PodKol(x + 1, 1);
             Okno.dataGridView1.Update();
             Mrugaj(f.Stany.IndexOf(f.obecny), x + 1, 1);
-
+            historia.Add(f.Stany.IndexOf(f.obecny));
             stareid = f.Stany.IndexOf(f.obecny);
+            noweid = f.Stany.IndexOf(f.obecny);
             try { f.Przejscie(literka); }
-            catch (Exception) { goto aaa; } //////======== niezaakceptowany stan
+            catch (Exception) {zly++; goto aaa; } //////======== niezaakceptowany stan
             Mrugaj(f.Stany.IndexOf(f.obecny), 0);
             noweid = f.Stany.IndexOf(f.obecny);
-
+           
             //powrót do normalnego wyglądu
         aaa:
             PodKol(x + 1, 0);
@@ -162,26 +168,45 @@ namespace fsm
             Okno.textBox2.Text += Okno.textBox1.Text[0];
             Okno.textBox1.Text = s2;
             Okno.textBox1.Update();
-
-
         }
+
+        public static void Cofnij() {
+            if (historia.ToArray().Length == 0 && zly==0) return;
+            string s="";
+            string h=Okno.textBox2.Text;
+            int roz=h.Length;
+            for (int i = 0; i < roz-1; i++) 
+                s += h[i];
+            Okno.textBox1.Text = h[roz - 1] + Okno.textBox1.Text;
+            Okno.textBox2.Text = s;
+            if (zly > 0) { zly--; return; }
+            int c = historia.ToArray()[historia.ToArray().Length-1];
+            new InfoBox("", c.ToString()).ShowDialog();
+            historia.Remove(c);
+            PodWers(f.Stany.IndexOf(f.obecny),0);
+            PodWers(c, 1);
+            f.obecny = f.Stany[c];
+        }
+
+      
 
         static public void Reset()
         {
+            Dialog.Nowa();
             for (int i = 0; i < f.Stany.ToArray().Length; i++)
                 PodWers(i, 0);
-            f.obecny = f.Stany[0];
             PodWers(0, 1);
-            Okno.textBox1.Text = "";
-            Okno.textBox2.Text = "";
             f.Reset();
         }
 
         public static void RysujF()
         {
             ObudzElementy();
-            rozalf = f.alfabet.Length;
+            f.Reset();
+            while (Okno.dataGridView1.Columns.Count > 0) Okno.dataGridView1.Columns.Remove(Okno.dataGridView1.Columns[0]);
+            Okno.dataGridView1.Update();
 
+            rozalf = f.alfabet.Length;
             for (int i = 0; i <= rozalf; i++)
                 Okno.dataGridView1.Columns.Add(new DataGridViewColumn(new DataGridViewTextBoxCell()));
             Okno.dataGridView1.Columns[0].HeaderText = "Nazwa Stanu";
@@ -207,13 +232,10 @@ namespace fsm
                 Okno.dataGridView1.Rows.Add(cell);
 
             }
-
-
             Okno.dataGridView1.Rows[0].Cells[0].Selected = false;
 
             for (int i = 0; i < f.Stany.ToArray().Length; i++)
                 if (f.Stany[i].koncowy) Okno.dataGridView1.Rows[i].Cells[0].Style.Font = new Font("Times New Roman", 9, FontStyle.Bold);
-            // Okno.dataGridView1.Rows[f.Stany.IndexOf(f.obecny)].Cells[0].Value = "-> " + f.obecny.nazwa + " <-";
             PodWers(f.Stany.IndexOf(f.obecny), 1);
             Okno.dataGridView1.Invalidate();
         }
@@ -224,30 +246,20 @@ namespace fsm
             f.Test();
         }
 
-
-
-
-        public static bool CzyFIstnieje()
-        {
-            if (f == null)
+        public static void Wynik() {
+            if (f.obecny.koncowy && zly == 0)
             {
-                Error(0);
-                return false;
+                Okno.label5.ForeColor = Color.Green;
+                Okno.label5.Text = "SŁOWO ZAAKCEPTOWANE";
+                ok = true;
             }
-            return true;
-        }
-
-        public static void Error(int i)
-        {
-            switch (i)
-            {
-                case 0: new InfoBox("Błąd", "Brak załadowanej Funkcji Przejścia").ShowDialog(); break;
-                case 1: new InfoBox("Błąd", "Brak danych wejściowych").ShowDialog(); break;
+            else {
+                Okno.label5.ForeColor = Color.Red;
+                Okno.label5.Text = "SŁOWO ODRZUCONE";
             }
         }
 
-        public static void Raport() { 
-        
-        }
+
+
     }
 }
