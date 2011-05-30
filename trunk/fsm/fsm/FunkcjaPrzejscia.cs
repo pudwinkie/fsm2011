@@ -116,6 +116,9 @@ public class FunkcjaPrzejscia
         return i;
     }
 
+    public void Reset() { 
+    }
+
 
     public void Test()
     {
