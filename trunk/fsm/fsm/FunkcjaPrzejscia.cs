@@ -28,6 +28,7 @@ public class Stan
 
 public class FunkcjaPrzejscia
 {
+		public const int MAX_DLUGOSC_NAZWY_STANU = 20;
     public string nazwa;
     public string alfabet;
     public Stan obecny = null;
