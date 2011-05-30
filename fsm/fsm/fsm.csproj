@@ -57,7 +57,7 @@
     <Compile Include="ChangeNameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeNameForm.Designer.cs">
+    <Compile Include="ChangeNameForm.designer.cs">
       <DependentUpon>ChangeNameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EnterNameForm.cs">

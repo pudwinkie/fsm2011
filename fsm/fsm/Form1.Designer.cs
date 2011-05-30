@@ -44,6 +44,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.numerator = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerator)).BeginInit();
@@ -226,11 +227,21 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Ilość Kroków";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(573, 84);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(77, 24);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Roport";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 353);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numerator);
             this.Controls.Add(this.button4);
@@ -277,6 +288,7 @@
         public System.Windows.Forms.Button button4;
         public System.Windows.Forms.NumericUpDown numerator;
         public System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
