@@ -32,7 +32,7 @@
 						// label1
 						// 
 						this.label1.AutoSize = true;
-						this.label1.Location = new System.Drawing.Point(84, 9);
+						this.label1.Location = new System.Drawing.Point(54, 9);
 						this.label1.Name = "label1";
 						this.label1.Size = new System.Drawing.Size(108, 13);
 						this.label1.TabIndex = 0;
@@ -80,7 +80,6 @@
 						this.Controls.Add(this.label1);
 						this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 						this.Name = "RemoveDialog";
-						this.Text = "RemoveDialog";
 						this.ResumeLayout(false);
 						this.PerformLayout();
 
