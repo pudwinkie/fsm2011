@@ -19,6 +19,7 @@ namespace fsm
             Elementy.Add(button2);
             Elementy.Add(button3);
             Elementy.Add(button4);
+            button5.Enabled = false;
             textBox3.Font = new Font("Times New Roman", 30, FontStyle.Bold);
             Wizualizacja.Test(); // tworzy nową funkcje przejścia
             Wizualizacja.Okno = this;
