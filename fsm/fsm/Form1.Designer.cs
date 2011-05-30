@@ -40,8 +40,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.numerator = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerator)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -65,7 +70,7 @@
             // createMachineToolStripMenuItem
             // 
             this.createMachineToolStripMenuItem.Name = "createMachineToolStripMenuItem";
-            this.createMachineToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.createMachineToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.createMachineToolStripMenuItem.Text = "Create Machine";
             this.createMachineToolStripMenuItem.Click += new System.EventHandler(this.createMachineToolStripMenuItem_Click);
             // 
@@ -116,6 +121,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(223, 55);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -171,19 +177,64 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(573, 54);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(572, 188);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(77, 42);
+            this.button2.Size = new System.Drawing.Size(78, 42);
             this.button2.TabIndex = 9;
-            this.button2.Text = "Wykonaj Krok";
+            this.button2.Text = "Wykonaj";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(573, 286);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(77, 42);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Wykonaj Całość";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Location = new System.Drawing.Point(572, 54);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(77, 24);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Reset";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // numerator
+            // 
+            this.numerator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numerator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numerator.Location = new System.Drawing.Point(572, 162);
+            this.numerator.Name = "numerator";
+            this.numerator.Size = new System.Drawing.Size(78, 26);
+            this.numerator.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Location = new System.Drawing.Point(570, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Ilość Kroków";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 353);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.numerator);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
@@ -195,7 +246,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(670, 380);
             this.Name = "Form1";
             this.Text = "Finite State Machine Symulator";
@@ -203,6 +253,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerator)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,6 +273,10 @@
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.NumericUpDown numerator;
+        public System.Windows.Forms.Label label4;
     }
 }
 
