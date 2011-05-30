@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace fsm {
+		//Tomasz Binczycki
 		public partial class RemoveDialog : Form {
 				AutomatCreator parent;
 				public RemoveDialog(List<string> lista, string labelTitle, string title, AutomatCreator p) {

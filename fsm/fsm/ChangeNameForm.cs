@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace fsm {
+		//Tomasz Binczycki
 		public partial class ChangeNameForm : Form {
 				AutomatCreator parent;
 				public ChangeNameForm(List<string> lista, string title, string labelTitle, int length, AutomatCreator p) {
