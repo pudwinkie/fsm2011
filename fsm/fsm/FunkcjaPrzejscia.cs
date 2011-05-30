@@ -53,8 +53,19 @@ public class FunkcjaPrzejscia
         alfabet += litera;
     }
 
+    internal void UsunStan(string nazwa){
+        int i = 0;
+        foreach (Stan s in Stany) { if (s.nazwa == nazwa) break; i++;}
+        Stany.Remove(Stany[i]);
+        }
 
+    public void UsunLitere(char c){
+        string t="";
+        foreach (char a in alfabet) if (a != c) t += a;
+        alfabet=t;
+    }
 
+    
 
     public void DodajStan(string nazwa, bool koncowy)
     {
@@ -111,7 +122,6 @@ public class FunkcjaPrzejscia
         {
             
             DodajStan("S1", false);
-            DodajStan("Ssssssssssssssssssssssssssssssss1", false);
             DodajStan("S2", false);
             DodajStan("S3", true);
             alfabet = "abc";
