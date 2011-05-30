@@ -137,7 +137,6 @@ namespace fsm {
 										if (rowName!=oldName) continue;
 										row.Cells[cell].Value = name;
 								}
-								//fPTable.Columns[oldName].HeaderText = name;
 								fPTable.Update();
 						} catch (Exception ex) {
 								var t = new InfoBox("Warning", ex.Message);
@@ -165,16 +164,28 @@ namespace fsm {
 						foreach (DataGridViewRow row in fPTable.Rows) {
 								rowName = (string)row.Cells["StateNameColumn"].Value;
 								foreach (string s in alfabet) {
-										if ((string)row.Cells[s].Value != "") {
+										string stanDocelowy = (string)row.Cells[s].Value;
+										if (stanDocelowy != "") {
 												try {
-														funkcjaPrzejscia.DodajPrzejscie(rowName, s[0], (string)row.Cells[s].Value);
-														row.Cells[s].Value = rowName + " " + s + " -> " + (string)row.Cells[s].Value;
+														funkcjaPrzejscia.DodajPrzejscie(rowName, s[0], stanDocelowy);
+														row.Cells[s] = new DataGridViewTextBoxCell();
+														row.Cells[s].Value = rowName + " " + s + " -> " + stanDocelowy;
 												} catch (Exception ex) {
 														var ib = new InfoBox("Warning", ex.Message);
 														ib.ShowDialog();
 														return;
 												}
 										}
+								}
+						}
+				}
+
+				private void randomButton_Click(object sender, EventArgs e) {
+						Random r = new Random();
+						foreach (DataGridViewRow row in fPTable.Rows) {
+								row.Cells["Accepting"].Value = r.Next(2)==0?false:true;
+								foreach (string s in alfabet) {
+										row.Cells[s].Value = stany[r.Next(stany.Count)];
 								}
 						}
 				}

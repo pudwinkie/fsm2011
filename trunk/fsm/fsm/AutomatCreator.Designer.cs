@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
 						this.fPTable = new System.Windows.Forms.DataGridView();
+						this.Accepting = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+						this.StateNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+						this.a = new System.Windows.Forms.DataGridViewComboBoxColumn();
 						this.AddLetterButton = new System.Windows.Forms.Button();
 						this.AddStateButton = new System.Windows.Forms.Button();
 						this.RemoveStateButton = new System.Windows.Forms.Button();
@@ -37,9 +40,7 @@
 						this.MyCancelButton = new System.Windows.Forms.Button();
 						this.changeLetterButton = new System.Windows.Forms.Button();
 						this.ChangeStateNameButton = new System.Windows.Forms.Button();
-						this.Accepting = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-						this.StateNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-						this.a = new System.Windows.Forms.DataGridViewComboBoxColumn();
+						this.randomButton = new System.Windows.Forms.Button();
 						((System.ComponentModel.ISupportInitialize)(this.fPTable)).BeginInit();
 						this.SuspendLayout();
 						// 
@@ -61,6 +62,26 @@
 						this.fPTable.RowHeadersVisible = false;
 						this.fPTable.Size = new System.Drawing.Size(557, 235);
 						this.fPTable.TabIndex = 0;
+						// 
+						// Accepting
+						// 
+						this.Accepting.HeaderText = "Accepting";
+						this.Accepting.Name = "Accepting";
+						this.Accepting.Width = 60;
+						// 
+						// StateNameColumn
+						// 
+						this.StateNameColumn.HeaderText = "State name";
+						this.StateNameColumn.Name = "StateNameColumn";
+						this.StateNameColumn.ReadOnly = true;
+						this.StateNameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+						this.StateNameColumn.Width = 95;
+						// 
+						// a
+						// 
+						this.a.HeaderText = "a";
+						this.a.Name = "a";
+						this.a.Width = 50;
 						// 
 						// AddLetterButton
 						// 
@@ -148,25 +169,15 @@
 						this.ChangeStateNameButton.UseVisualStyleBackColor = true;
 						this.ChangeStateNameButton.Click += new System.EventHandler(this.ChangeStateNameButton_Click);
 						// 
-						// Accepting
+						// randomButton
 						// 
-						this.Accepting.HeaderText = "Accepting";
-						this.Accepting.Name = "Accepting";
-						this.Accepting.Width = 60;
-						// 
-						// StateNameColumn
-						// 
-						this.StateNameColumn.HeaderText = "State name";
-						this.StateNameColumn.Name = "StateNameColumn";
-						this.StateNameColumn.ReadOnly = true;
-						this.StateNameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-						this.StateNameColumn.Width = 95;
-						// 
-						// a
-						// 
-						this.a.HeaderText = "a";
-						this.a.Name = "a";
-						this.a.Width = 50;
+						this.randomButton.Location = new System.Drawing.Point(12, 312);
+						this.randomButton.Name = "randomButton";
+						this.randomButton.Size = new System.Drawing.Size(75, 23);
+						this.randomButton.TabIndex = 9;
+						this.randomButton.Text = "Random";
+						this.randomButton.UseVisualStyleBackColor = true;
+						this.randomButton.Click += new System.EventHandler(this.randomButton_Click);
 						// 
 						// AutomatCreator
 						// 
@@ -174,6 +185,7 @@
 						this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 						this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 						this.ClientSize = new System.Drawing.Size(581, 347);
+						this.Controls.Add(this.randomButton);
 						this.Controls.Add(this.ChangeStateNameButton);
 						this.Controls.Add(this.changeLetterButton);
 						this.Controls.Add(this.MyCancelButton);
@@ -206,5 +218,6 @@
 				private System.Windows.Forms.DataGridViewCheckBoxColumn Accepting;
 				private System.Windows.Forms.DataGridViewTextBoxColumn StateNameColumn;
 				private System.Windows.Forms.DataGridViewComboBoxColumn a;
+				private System.Windows.Forms.Button randomButton;
     }
 }
