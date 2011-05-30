@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace fsm
 {
@@ -129,9 +130,19 @@ namespace fsm
             numerator.Value++;
             Wizualizacja.ObudzElementy();
         }
+        private void loadFSMToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                try {
+                    FunkcjaPrzejscia fp;
+                    TextReader mR;
+                    if ((mR = new StreamReader(openFileDialog.OpenFile())) != null)
+                        fp = IOMachine.LoadMachine(mR);
+                } catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
 
+            }
 
-
-       
+        }
     }
 }
