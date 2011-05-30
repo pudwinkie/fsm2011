@@ -83,13 +83,13 @@ public class FunkcjaPrzejscia
     {
         Stan start = null;
         foreach (Stan i in Stany) if (i.nazwa == nazwaStanu) start = i;
-        if (start == null) throw new Exception("Stan początkowy nie istnieje");
+        if (start == null) throw new Exception("Stan początkowy nie istnieje: "+ nazwaStanu);
         Stan koniec = null;
         foreach (Stan i in Stany) if (i.nazwa == stanDocelowy) koniec = i;
-        if (koniec == null) throw new Exception("Stan docelowy nie istnieje");
+        if (koniec == null) throw new Exception("Stan docelowy nie istnieje: "+ stanDocelowy);
         bool lit = true;
         foreach (char i in alfabet) if (i == litera) lit = false;
-        if (lit) throw new Exception("Podana litra nie istnieje w alfabecie");
+        if (lit) throw new Exception("Podana litra nie istnieje w alfabecie: "+litera);
         char[] c = start.mapa.Keys.ToArray();
         lit = false;
         foreach (char i in c) if (i == litera) lit = true;

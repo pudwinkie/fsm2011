@@ -14,6 +14,7 @@ namespace fsm {
             InitializeComponent();
 						fPTable.RowCount++;
 						fPTable.Rows[0].Cells[1].Value = "Start";
+						funkcjaPrzejscia.DodajStan("Start");
 						stany.Add("");
 						stany.Add("Start");
 						alfabet.Add("a");
@@ -142,6 +143,39 @@ namespace fsm {
 								var t = new InfoBox("Warning", ex.Message);
 								t.ShowDialog();
 								return;
+						}
+				}
+
+				private void DoneButton_Click(object sender, EventArgs e) {
+						var accColInd = fPTable.Columns["Accepting"].Index;
+						int koncowych = 0;
+						foreach(DataGridViewRow row in fPTable.Rows){
+								var o = ((DataGridViewCheckBoxCell)row.Cells[accColInd]).Value;
+								if (o!=null && (bool)o) {
+										funkcjaPrzejscia.UstawKoncowy((string)row.Cells["StateNameColumn"].Value, true);
+										++koncowych;
+								}
+						}
+						if (koncowych == 0) {
+								var ib = new InfoBox("Warning", "Brak stanow koncowych");
+								ib.ShowDialog();
+								return;
+						}
+						string rowName;
+						foreach (DataGridViewRow row in fPTable.Rows) {
+								rowName = (string)row.Cells["StateNameColumn"].Value;
+								foreach (string s in alfabet) {
+										if ((string)row.Cells[s].Value != "") {
+												try {
+														funkcjaPrzejscia.DodajPrzejscie(rowName, s[0], (string)row.Cells[s].Value);
+														row.Cells[s].Value = rowName + " " + s + " -> " + (string)row.Cells[s].Value;
+												} catch (Exception ex) {
+														var ib = new InfoBox("Warning", ex.Message);
+														ib.ShowDialog();
+														return;
+												}
+										}
+								}
 						}
 				}
     }
