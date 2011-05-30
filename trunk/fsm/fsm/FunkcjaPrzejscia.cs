@@ -31,6 +31,7 @@ public class FunkcjaPrzejscia
 		public const int MAX_DLUGOSC_NAZWY_STANU = 20;
     public string nazwa;
     public string alfabet;
+    public string info;
     public Stan obecny = null;
     public List<Stan> Stany = new List<Stan>();
 
@@ -116,7 +117,8 @@ public class FunkcjaPrzejscia
         return i;
     }
 
-    public void Reset() { 
+    public void Reset() {
+        obecny = Stany[0];
     }
 
 
@@ -124,7 +126,8 @@ public class FunkcjaPrzejscia
     {
         
         {
-            
+            info = "Funkcja akceptuje wyrazy postaci (((ab)^n)c)";
+            nazwa = "Pierwsza";
             DodajStan("S1", false);
             DodajStan("S2", false);
             DodajStan("S3", true);
