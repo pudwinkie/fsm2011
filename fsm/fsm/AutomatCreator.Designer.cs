@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
 						this.fPTable = new System.Windows.Forms.DataGridView();
-						this.AcceptingColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-						this.StateNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-						this.a = new System.Windows.Forms.DataGridViewComboBoxColumn();
 						this.AddLetterButton = new System.Windows.Forms.Button();
 						this.AddStateButton = new System.Windows.Forms.Button();
 						this.RemoveStateButton = new System.Windows.Forms.Button();
@@ -40,6 +37,9 @@
 						this.MyCancelButton = new System.Windows.Forms.Button();
 						this.changeLetterButton = new System.Windows.Forms.Button();
 						this.ChangeStateNameButton = new System.Windows.Forms.Button();
+						this.Accepting = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+						this.StateNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+						this.a = new System.Windows.Forms.DataGridViewComboBoxColumn();
 						((System.ComponentModel.ISupportInitialize)(this.fPTable)).BeginInit();
 						this.SuspendLayout();
 						// 
@@ -53,7 +53,7 @@
 												| System.Windows.Forms.AnchorStyles.Right)));
 						this.fPTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 						this.fPTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AcceptingColumn,
+            this.Accepting,
             this.StateNameColumn,
             this.a});
 						this.fPTable.Location = new System.Drawing.Point(12, 71);
@@ -61,26 +61,6 @@
 						this.fPTable.RowHeadersVisible = false;
 						this.fPTable.Size = new System.Drawing.Size(557, 235);
 						this.fPTable.TabIndex = 0;
-						// 
-						// AcceptingColumn
-						// 
-						this.AcceptingColumn.HeaderText = "Accepting";
-						this.AcceptingColumn.Name = "AcceptingColumn";
-						this.AcceptingColumn.Width = 60;
-						// 
-						// StateNameColumn
-						// 
-						this.StateNameColumn.HeaderText = "State name";
-						this.StateNameColumn.Name = "StateNameColumn";
-						this.StateNameColumn.ReadOnly = true;
-						this.StateNameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-						this.StateNameColumn.Width = 95;
-						// 
-						// a
-						// 
-						this.a.HeaderText = "a";
-						this.a.Name = "a";
-						this.a.Width = 50;
 						// 
 						// AddLetterButton
 						// 
@@ -133,6 +113,7 @@
 						this.DoneButton.TabIndex = 5;
 						this.DoneButton.Text = "Done";
 						this.DoneButton.UseVisualStyleBackColor = true;
+						this.DoneButton.Click += new System.EventHandler(this.DoneButton_Click);
 						// 
 						// MyCancelButton
 						// 
@@ -166,6 +147,26 @@
 						this.ChangeStateNameButton.Text = "Change state name";
 						this.ChangeStateNameButton.UseVisualStyleBackColor = true;
 						this.ChangeStateNameButton.Click += new System.EventHandler(this.ChangeStateNameButton_Click);
+						// 
+						// Accepting
+						// 
+						this.Accepting.HeaderText = "Accepting";
+						this.Accepting.Name = "Accepting";
+						this.Accepting.Width = 60;
+						// 
+						// StateNameColumn
+						// 
+						this.StateNameColumn.HeaderText = "State name";
+						this.StateNameColumn.Name = "StateNameColumn";
+						this.StateNameColumn.ReadOnly = true;
+						this.StateNameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+						this.StateNameColumn.Width = 95;
+						// 
+						// a
+						// 
+						this.a.HeaderText = "a";
+						this.a.Name = "a";
+						this.a.Width = 50;
 						// 
 						// AutomatCreator
 						// 
@@ -202,7 +203,7 @@
 				private System.Windows.Forms.Button MyCancelButton;
 				private System.Windows.Forms.Button changeLetterButton;
 				private System.Windows.Forms.Button ChangeStateNameButton;
-				private System.Windows.Forms.DataGridViewCheckBoxColumn AcceptingColumn;
+				private System.Windows.Forms.DataGridViewCheckBoxColumn Accepting;
 				private System.Windows.Forms.DataGridViewTextBoxColumn StateNameColumn;
 				private System.Windows.Forms.DataGridViewComboBoxColumn a;
     }
