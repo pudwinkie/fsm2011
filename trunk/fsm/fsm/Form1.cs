@@ -23,7 +23,7 @@ namespace fsm
 						Elementy.Add(button7);
 						Elementy.Add(button8);
 				}
-        void Inicjalizacja(FunkcjaPrzejscia fp)
+        internal void Inicjalizacja(FunkcjaPrzejscia fp)
         {
             button5.Enabled = false;
             textBox3.Font = new Font("Times New Roman", 30, FontStyle.Bold);
@@ -45,7 +45,7 @@ namespace fsm
 
         private void createMachineToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new AutomatCreator().ShowDialog();
+            new AutomatCreator(this).ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)

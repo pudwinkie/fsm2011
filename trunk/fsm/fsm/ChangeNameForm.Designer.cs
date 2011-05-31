@@ -33,7 +33,9 @@
 						// 
 						// listaStarychNazw
 						// 
+						this.listaStarychNazw.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 						this.listaStarychNazw.Location = new System.Drawing.Point(35, 53);
+						this.listaStarychNazw.MaxLength = 1;
 						this.listaStarychNazw.Name = "listaStarychNazw";
 						this.listaStarychNazw.Size = new System.Drawing.Size(121, 21);
 						this.listaStarychNazw.TabIndex = 0;
