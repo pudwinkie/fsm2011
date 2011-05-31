@@ -10,7 +10,6 @@ A B C StanyKoncowe
 abc LiteryAlfabetu
 
 5 LiczbaProdukcjiFunkcjiPrzejscia
-
 A a -> B  komentarz
 A b -> C
 B c -> A
