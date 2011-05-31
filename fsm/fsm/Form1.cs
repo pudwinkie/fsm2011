@@ -13,19 +13,21 @@ namespace fsm
     public partial class Form1 : Form
     {
         public List<Control> Elementy = new List<Control>();
-        void Inicjalizacja()
+				void zbierzElementy() {
+						Elementy.Add(button1);
+						Elementy.Add(textBox2);
+						Elementy.Add(button2);
+						Elementy.Add(button3);
+						Elementy.Add(button4);
+						Elementy.Add(button6);
+						Elementy.Add(button7);
+						Elementy.Add(button8);
+				}
+        void Inicjalizacja(FunkcjaPrzejscia fp)
         {
-            Elementy.Add(button1);
-            Elementy.Add(textBox2);
-            Elementy.Add(button2);
-            Elementy.Add(button3);
-            Elementy.Add(button4);
-            Elementy.Add(button6);
-            Elementy.Add(button7);
-            Elementy.Add(button8);
             button5.Enabled = false;
             textBox3.Font = new Font("Times New Roman", 30, FontStyle.Bold);
-            Wizualizacja.Test(); // tworzy nową funkcje przejścia
+            Wizualizacja.Test(fp); // tworzy nową funkcje przejścia
             Wizualizacja.Okno = this;
             numerator.Value = 1;
             Dialog.Nowa();
@@ -37,9 +39,8 @@ namespace fsm
         public Form1()
         {
             InitializeComponent();
-            Inicjalizacja();
-            
-             
+						zbierzElementy();
+            Inicjalizacja(null);
         }
 
         private void createMachineToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,10 +134,9 @@ namespace fsm
         private void loadFSMToolStripMenuItem_Click(object sender, EventArgs e) {
             if (openFileDialog.ShowDialog() == DialogResult.OK) {
                 try {
-                    FunkcjaPrzejscia fp;
                     TextReader mR;
                     if ((mR = new StreamReader(openFileDialog.OpenFile())) != null)
-                        fp = IOMachine.LoadMachine(mR);
+                        Inicjalizacja(IOMachine.LoadMachine(mR));
                 } catch (Exception ex) {
                     MessageBox.Show(ex.Message);
                 }

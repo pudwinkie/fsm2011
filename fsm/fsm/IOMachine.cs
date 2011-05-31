@@ -7,51 +7,65 @@ using System.IO;
 namespace fsm {
     static class IOMachine {
         static string errorMessage = "Błąd w linii {0}:" + Environment.NewLine + "{1}";
-        internal static string stringToSpace(this string s) {
-            if (s.IndexOf(" ") != -1) return s.Substring(0, s.IndexOf(" "));
-            return s;
-        }
-        internal static string readToSpace(this string s) {
-            try {
-                return s.stringToSpace();
-            } finally {
-                //nie wiem czy dziala
-                s = s.Substring(s.IndexOf(" "), s.Length);
-            }
-        }
+				internal static string stringToSpace(this string s) {
+						if (s.IndexOf(" ") != -1) return s.Substring(0, s.IndexOf(" "));
+						if (s.IndexOf(Environment.NewLine) != -1) return s.Substring(0, s.IndexOf(Environment.NewLine));
+						return s;
+				}
+				internal static string readToSpace(ref string s) {
+						try {
+								return s.stringToSpace();
+						} finally {
+								int l = s.stringToSpace().Length;
+								while (l < s.Length && s[l] == ' ') ++l;
+								s = s.Substring(l, s.Length - l);
+						}
+				}
         public static FunkcjaPrzejscia LoadMachine(TextReader reader) {
             FunkcjaPrzejscia ret = new FunkcjaPrzejscia("tempName", "");
             string s;
             int line = 0;
             using (reader) {
-                s = reader.ReadLine();
-                ++line;
+                s = reader.ReadLine(); ++line;
                 if (s != "MM_TB_TCS") throw new Exception(string.Format(errorMessage, line, "Opis Maszyny musi rozpoczynać się od napisu MM_TB_TCS"));
-                s = reader.ReadLine();
-                ret.nazwa = s.stringToSpace();
-                s = reader.ReadLine();
+								s = reader.ReadLine(); ++line;
+								ret.nazwa = s.stringToSpace();
+								s = reader.ReadLine(); ++line;
                 int liczbaStanow;
-                while (!Int32.TryParse(s.readToSpace(), out liczbaStanow))
-                    s = reader.ReadLine();
-                s = reader.ReadLine();
-                for (int i = 0; i < liczbaStanow; ++i ) ret.DodajStan(s.readToSpace(), false);
+								while (!Int32.TryParse(readToSpace(ref s), out liczbaStanow)) { s = reader.ReadLine(); ++line; }
+//MessageBox.Show(liczbaStanow+"");
+								s = reader.ReadLine(); ++line;
+                for (int i = 0; i < liczbaStanow; ++i ) ret.DodajStan(readToSpace(ref s), false);
                 int liczbaKoncowych;
-                s = reader.ReadLine();
-                while (!Int32.TryParse(s.readToSpace(), out liczbaKoncowych))
-                    s = reader.ReadLine();
-                s = reader.ReadLine();
-                for (int i = 0; i < liczbaKoncowych; ++i) ret.UstawKoncowy(s.readToSpace(),true);
+								s = reader.ReadLine(); ++line;
+								while (!Int32.TryParse(readToSpace(ref s), out liczbaKoncowych)) { s = reader.ReadLine(); ++line; }
+//MessageBox.Show(liczbaKoncowych + "");
+								s = reader.ReadLine(); ++line;
+                for (int i = 0; i < liczbaKoncowych; ++i) ret.UstawKoncowy(readToSpace(ref s),true);
                 int liczbaLiter;
-                s = reader.ReadLine();
-                while (!Int32.TryParse(s.readToSpace(), out liczbaLiter))
-                    s = reader.ReadLine();
-                s = reader.ReadLine();
-                for (int i = 0; i < liczbaLiter; ++i) ret.alfabet=s.readToSpace();
+								s = reader.ReadLine(); ++line;
+								while (!Int32.TryParse(readToSpace(ref s), out liczbaLiter)) { s = reader.ReadLine(); ++line; }
+//MessageBox.Show(liczbaLiter + "");
+								s = reader.ReadLine(); ++line;
+                for (int i = 0; i < liczbaLiter; ++i) ret.DodajLitere(s[i]);
                 //wczytywanie funkcji przejscia
-                
-               
+								int liczbaPrzejsc;
+								s = reader.ReadLine(); ++line;
+								while (!Int32.TryParse(readToSpace(ref s), out liczbaPrzejsc)) { s = reader.ReadLine(); ++line; }
+//MessageBox.Show(liczbaPrzejsc + "");
+								string s1, s2, a;
+								for (int i = 0; i < liczbaPrzejsc; ++i) {
+										s = reader.ReadLine(); ++line;
+										s1 = readToSpace(ref s);
+										a = readToSpace(ref s);
+										if (readToSpace(ref s) != "->") throw new Exception(string.Format(errorMessage, line, "Bledny opis funkjci przejscia"));
+										s2 = readToSpace(ref s);
+//MessageBox.Show(s1+" "+a+ " -> "+s1);
+										ret.DodajPrzejscie(s1, a[0], s2);
+								}
+								ret.info = reader.ReadToEnd();
             }
-            throw new Exception("jeszcze nie dziala. trzeba zaklepac");
+            //throw new Exception("jeszcze nie dziala. trzeba zaklepac");
             return ret;
         }
         public static string SaveMachine(FunkcjaPrzejscia fP) {

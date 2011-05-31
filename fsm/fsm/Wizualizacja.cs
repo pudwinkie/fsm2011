@@ -240,10 +240,11 @@ namespace fsm
             Okno.dataGridView1.Invalidate();
         }
 
-        public static void Test()
+        public static void Test(FunkcjaPrzejscia fp)
         {
-            f = new FunkcjaPrzejscia("name", "");
-            f.Test();
+						f = fp;
+						if(f==null)
+								f = new FunkcjaPrzejscia(true);
         }
 
         public static void Wynik() {

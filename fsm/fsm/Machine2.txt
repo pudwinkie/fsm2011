@@ -1,0 +1,25 @@
+MM_TB_TCS
+Maszyna z Wikipedii
+
+2
+S1 S2
+
+
+1
+S1
+
+
+
+2
+10
+
+
+
+4
+S1 1 -> S1
+S1 0 -> S2
+S2 1 -> S2
+S2 0 -> S1
+
+
+mASZYNA Z WIKIPEDII AKCEPTUJ¥CA S£OWA Z PARZYST¥ LICZB¥ ZER

@@ -121,11 +121,7 @@ public class FunkcjaPrzejscia
         obecny = Stany[0];
     }
 
-
-    public void Test()
-    {
-        
-        {
+		public FunkcjaPrzejscia(bool b ){        
             info = "Funkcja akceptuje wyrazy postaci (((ab)^n)c)";
             nazwa = "Pierwsza";
             DodajStan("S1", false);
@@ -139,6 +135,5 @@ public class FunkcjaPrzejscia
       
         }
       
-    }
 }
 
