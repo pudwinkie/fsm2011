@@ -60,6 +60,7 @@
     <Compile Include="ChangeNameForm.designer.cs">
       <DependentUpon>ChangeNameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog.cs" />
     <Compile Include="EnterNameForm.cs">
       <SubType>Form</SubType>
     </Compile>
