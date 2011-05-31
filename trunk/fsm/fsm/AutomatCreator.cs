@@ -133,7 +133,7 @@ namespace fsm {
 								int index = stany.IndexOf(oldName);
 								if (index < 0) throw new Exception("Nie ma takiego stanu");
 								stany.Insert(index, name);
-								var cell = fPTable.Columns["StateNameColumn"].Index; 
+								var cell = fPTable.Columns["StateNameColumn"].Index;
 								string rowName;
 								foreach (DataGridViewRow row in fPTable.Rows) {
 										rowName = (string)row.Cells[cell].Value;
@@ -141,13 +141,14 @@ namespace fsm {
 										row.Cells[cell].Value = name;
 								}
 								fPTable.Update();
+								MessageBox.Show("2");
 								foreach (DataGridViewRow row in fPTable.Rows) {
 										foreach (DataGridViewCell col in row.Cells) {
-												if (col is DataGridViewComboBoxCell && ((string)col.Value)==oldName) col.Value = name;
+												if (col is DataGridViewComboBoxCell && ((string)col.Value)==oldName) col.Value = name; //tu sie cos psuje
 										}
 								}
 								stany.Remove(oldName);
-								MessageBox.Show("ahsdkjas");
+								MessageBox.Show("1");
 								fPTable.Update();
 						} catch (Exception ex) {
 								var t = new InfoBox("Warning", ex.Message);
