@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
 namespace fsm {
-    static class IOMachine {
-        static string errorMessage = "Błąd w linii {0}:" + Environment.NewLine + "{1}";
+		static class IOMachine {
+				static string errorMessage = "Błąd w linii {0}:" + Environment.NewLine + "{1}";
 				internal static string stringToSpace(this string s) {
 						if (s.IndexOf(" ") != -1) return s.Substring(0, s.IndexOf(" "));
 						if (s.IndexOf(Environment.NewLine) != -1) return s.Substring(0, s.IndexOf(Environment.NewLine));
@@ -21,16 +22,16 @@ namespace fsm {
 								s = s.Substring(l, s.Length - l);
 						}
 				}
-        public static FunkcjaPrzejscia LoadMachine(TextReader reader) {
-            FunkcjaPrzejscia ret = new FunkcjaPrzejscia("tempName", "");
-            string s;
-            int line = 0;
+				public static FunkcjaPrzejscia LoadMachine(TextReader reader) {
+						FunkcjaPrzejscia ret = new FunkcjaPrzejscia("tempName", "");
+						string s;
+						int line = 0;
 						try {
 								using (reader) {
 										s = reader.ReadLine(); ++line;
 										if (s != "MM_TB_TCS") throw new Exception(string.Format(errorMessage, line, "Opis Maszyny musi rozpoczynać się od napisu MM_TB_TCS"));
 										s = reader.ReadLine(); ++line;
-										ret.nazwa = s.stringToSpace();
+										ret.nazwa = s;
 										s = reader.ReadLine(); ++line;
 										int liczbaStanow;
 										while (!Int32.TryParse(readToSpace(ref s), out liczbaStanow)) { s = reader.ReadLine(); ++line; }
@@ -61,7 +62,6 @@ namespace fsm {
 												a = readToSpace(ref s);
 												if (readToSpace(ref s) != "->") throw new Exception(string.Format(errorMessage, line, "Bledny opis funkjci przejscia"));
 												s2 = readToSpace(ref s);
-												//MessageBox.Show(s1+" "+a+ " -> "+s1);
 												ret.DodajPrzejscie(s1, a[0], s2);
 										}
 										ret.info = reader.ReadToEnd();
@@ -69,11 +69,38 @@ namespace fsm {
 						} catch (ExceptionInFunkcjaPrzejscia ex) {
 								throw new ExceptionInFunkcjaPrzejscia(string.Format(errorMessage, line, ex.Message));
 						}
-            return ret;
-        }
-        public static string SaveMachine(FunkcjaPrzejscia fP) {
-            throw new ExceptionInFunkcjaPrzejscia("jeszcze nie dziala. trzeba zaklepac");
-            return null;
-        }
-    }
+						return ret;
+				}
+				public static string SaveMachine(FunkcjaPrzejscia fP) {
+						StringBuilder sb = new StringBuilder();
+						sb.AppendLine("MM_TB_TCS");
+						sb.AppendLine(fP.nazwa + " Nazwa maszyny");
+						sb.AppendLine();
+						sb.AppendLine(fP.Stany.Count + " Liczba stanow");
+						int liczbaKoncowych = 0;
+						int liczbaPrzejsc = 0;
+						fP.Stany.ForEach(o => {
+								if (o.koncowy) ++liczbaKoncowych;
+								liczbaPrzejsc += o.mapa.Count;
+						});
+						fP.Stany.ForEach(o => { sb.Append(o.nazwa + " "); });
+						sb.AppendLine("Nazwy stanow");
+						sb.AppendLine(liczbaKoncowych + " Liczba stanow koncowych");
+						fP.Stany.ForEach(o => { if (o.koncowy)sb.Append(o + " "); });
+						sb.AppendLine(" Stany koncowe");
+						sb.AppendLine();
+						sb.AppendLine(fP.alfabet.Length + " Litery alfabetu");
+						sb.AppendLine();
+						sb.AppendLine(liczbaPrzejsc + " Liczba produkcji");
+						fP.Stany.ForEach(o => {
+								foreach (var x in o.mapa) {
+										sb.AppendLine(o.nazwa + " " + x.Key + " -> " + x.Value.nazwa);
+								}
+						});
+						sb.Append(fP.info);
+						sb.AppendLine();
+						//		throw new ExceptionInFunkcjaPrzejscia("jeszcze nie dziala. trzeba zaklepac");
+						return sb.ToString();
+				}
+		}
 }

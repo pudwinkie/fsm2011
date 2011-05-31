@@ -112,6 +112,10 @@
       <DependentUpon>RemoveDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SaveMachineDialog.resx">
+      <DependentUpon>SaveMachineDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -130,6 +134,12 @@
     </Compile>
     <Compile Include="RemoveDialog.Designer.cs">
       <DependentUpon>RemoveDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaveMachineDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveMachineDialog.Designer.cs">
+      <DependentUpon>SaveMachineDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Wizualizacja.cs" />
   </ItemGroup>

@@ -10,7 +10,9 @@ namespace fsm {
 				private List<string> alfabet = new List<string>();
 				internal List<string> removeList = new List<string>();
 				internal FunkcjaPrzejscia funkcjaPrzejscia = new FunkcjaPrzejscia("TempName", "a");
-        public AutomatCreator(){
+				internal Form1 parent;
+        public AutomatCreator(Form1 p){
+						parent = p;
             InitializeComponent();
 						fPTable.RowCount++;
 						fPTable.Rows[0].Cells[1].Value = "Start";
@@ -107,12 +109,13 @@ namespace fsm {
 								funkcjaPrzejscia.DodajLitere(name[0]);
 								funkcjaPrzejscia.UsunLitere(oldName[0]);
 								int index = alfabet.IndexOf(oldName);
-								alfabet.Remove(oldName);
+								if(index<0) throw new Exception("Nie ma takiej litery w alfabecie");
 								alfabet.Insert(index, name);
+								alfabet.Remove(oldName);
 								fPTable.Columns[oldName].HeaderText = name;
 								fPTable.Columns[oldName].Name = name;
 								fPTable.Update();
-						} catch (ExceptionInFunkcjaPrzejscia ex) {
+						} catch (Exception ex) {
 								var t = new InfoBox("Warning", ex.Message);
 								t.ShowDialog();
 								return;
@@ -128,7 +131,7 @@ namespace fsm {
 								funkcjaPrzejscia.DodajStan(name, false);
 								funkcjaPrzejscia.UsunStan(oldName);
 								int index = stany.IndexOf(oldName);
-								stany.Remove(oldName);
+								if (index < 0) throw new Exception("Nie ma takiego stanu");
 								stany.Insert(index, name);
 								var cell = fPTable.Columns["StateNameColumn"].Index; 
 								string rowName;
@@ -138,7 +141,15 @@ namespace fsm {
 										row.Cells[cell].Value = name;
 								}
 								fPTable.Update();
-						} catch (ExceptionInFunkcjaPrzejscia ex) {
+								foreach (DataGridViewRow row in fPTable.Rows) {
+										foreach (DataGridViewCell col in row.Cells) {
+												if (col is DataGridViewComboBoxCell && ((string)col.Value)==oldName) col.Value = name;
+										}
+								}
+								stany.Remove(oldName);
+								MessageBox.Show("ahsdkjas");
+								fPTable.Update();
+						} catch (Exception ex) {
 								var t = new InfoBox("Warning", ex.Message);
 								t.ShowDialog();
 								return;
@@ -148,12 +159,11 @@ namespace fsm {
 				private void DoneButton_Click(object sender, EventArgs e) {
 						var accColInd = fPTable.Columns["Accepting"].Index;
 						int koncowych = 0;
+						bool koncowy;
 						foreach(DataGridViewRow row in fPTable.Rows){
 								var o = ((DataGridViewCheckBoxCell)row.Cells[accColInd]).Value;
-								if (o!=null && (bool)o) {
-										funkcjaPrzejscia.UstawKoncowy((string)row.Cells["StateNameColumn"].Value, true);
-										++koncowych;
-								}
+								if (o!=null && (bool)o) {koncowy= true; koncowych++;}else koncowy= false;
+								funkcjaPrzejscia.UstawKoncowy((string)row.Cells["StateNameColumn"].Value, koncowy);
 						}
 						if (koncowych == 0) {
 								var ib = new InfoBox("Warning", "Brak stanow koncowych");
@@ -168,8 +178,8 @@ namespace fsm {
 										if (stanDocelowy != "") {
 												try {
 														funkcjaPrzejscia.DodajPrzejscie(rowName, s[0], stanDocelowy);
-														row.Cells[s] = new DataGridViewTextBoxCell();
-														row.Cells[s].Value = rowName + " " + s + " -> " + stanDocelowy;
+														//row.Cells[s] = new DataGridViewTextBoxCell();
+														//row.Cells[s].Value = rowName + " " + s + " -> " + stanDocelowy;
 												} catch (ExceptionInFunkcjaPrzejscia ex) {
 														var ib = new InfoBox("Warning", ex.Message);
 														ib.ShowDialog();
@@ -177,6 +187,18 @@ namespace fsm {
 												}
 										}
 								}
+						}
+						SaveMachineDialog sm = new SaveMachineDialog(funkcjaPrzejscia);
+						sm.ShowDialog();
+						switch(sm.DialogResult){
+								case DialogResult.Cancel:
+										funkcjaPrzejscia.UsunWszystkiePrzejscia();
+								break;
+								case DialogResult.OK:
+										parent.Inicjalizacja(funkcjaPrzejscia);
+										SetVisibleCore(false);
+								break;
+
 						}
 				}
 

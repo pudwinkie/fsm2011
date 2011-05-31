@@ -137,6 +137,12 @@ public class FunkcjaPrzejscia
             DodajPrzejscie("S1", 'c', "S3");
       
         }
-      
+
+
+		internal void UsunWszystkiePrzejscia() {
+				foreach (Stan s in Stany) {
+						s.mapa.Clear();
+				}
+		}
 }
 

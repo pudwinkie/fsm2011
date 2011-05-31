@@ -12,6 +12,7 @@ namespace fsm {
 						staraNazwaLabel.Text = labelTitle;
 						Text = title;
 						listaStarychNazw.DataSource = lista;
+						listaStarychNazw.MaxLength = length;
 						nowaNazwa.MaxLength = length;
 				}
 
