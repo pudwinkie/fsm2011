@@ -3,6 +3,9 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
+public class ExceptionInFunkcjaPrzejscia : Exception{
+		public ExceptionInFunkcjaPrzejscia(string s): base(s) {}
+}
 public class Stan
 {
     public Stan(string nazwa, bool koncowy)
@@ -20,7 +23,7 @@ public class Stan
         {
             ret = mapa[litera];
         }
-        catch (Exception) { };
+        catch (ExceptionInFunkcjaPrzejscia) { };
         return ret;
     }
 }
@@ -51,7 +54,7 @@ public class FunkcjaPrzejscia
         
         bool lit = false;
         foreach (char i in alfabet) if (i == litera) lit = true;
-        if (lit) throw new Exception("Ta litera jest już w alfabecie");
+        if (lit) throw new ExceptionInFunkcjaPrzejscia("Ta litera jest już w alfabecie");
         alfabet += litera;
     }
 
@@ -72,7 +75,7 @@ public class FunkcjaPrzejscia
     public void DodajStan(string nazwa, bool koncowy)
     {
         foreach (Stan e in Stany) if (e.nazwa == nazwa)
-                throw new Exception("Stan o podanej nazwie już istnieje");
+                throw new ExceptionInFunkcjaPrzejscia("Stan o podanej nazwie już istnieje");
         Stan nowy = new Stan(nazwa, koncowy);
         Stany.Add(nowy);
         if (obecny == null) obecny = nowy;
@@ -84,17 +87,17 @@ public class FunkcjaPrzejscia
     {
         Stan start = null;
         foreach (Stan i in Stany) if (i.nazwa == nazwaStanu) start = i;
-        if (start == null) throw new Exception("Stan początkowy nie istnieje: "+ nazwaStanu);
+        if (start == null) throw new ExceptionInFunkcjaPrzejscia("Stan początkowy nie istnieje: "+ nazwaStanu);
         Stan koniec = null;
         foreach (Stan i in Stany) if (i.nazwa == stanDocelowy) koniec = i;
-        if (koniec == null) throw new Exception("Stan docelowy nie istnieje: "+ stanDocelowy);
+        if (koniec == null) throw new ExceptionInFunkcjaPrzejscia("Stan docelowy nie istnieje: "+ stanDocelowy);
         bool lit = true;
         foreach (char i in alfabet) if (i == litera) lit = false;
-        if (lit) throw new Exception("Podana litra nie istnieje w alfabecie: "+litera);
+        if (lit) throw new ExceptionInFunkcjaPrzejscia("Podana litra nie istnieje w alfabecie: "+litera);
         char[] c = start.mapa.Keys.ToArray();
         lit = false;
         foreach (char i in c) if (i == litera) lit = true;
-        if (lit) throw new Exception("Takie przejście jest już zdefiniowane");
+        if (lit) throw new ExceptionInFunkcjaPrzejscia("Takie przejście jest już zdefiniowane");
         start.mapa.Add(litera, koniec);
     }
 
@@ -102,7 +105,7 @@ public class FunkcjaPrzejscia
     {
         Stan s = obecny.Przejscie(litera);
         if (s != null) obecny = s;
-        else throw new Exception("Wyraz nieakceptowalny");
+        else throw new ExceptionInFunkcjaPrzejscia("Wyraz nieakceptowalny");
 
     }
 

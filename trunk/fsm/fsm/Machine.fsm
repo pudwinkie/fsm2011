@@ -14,6 +14,5 @@ A a -> B  komentarz
 A b -> C
 B c -> A
 C b -> D
-D a -> E
-
+D a -> F
 wszystko niżej jest opisem maszyny

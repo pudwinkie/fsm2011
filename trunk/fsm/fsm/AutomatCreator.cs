@@ -27,10 +27,10 @@ namespace fsm {
 						eNF.ShowDialog();
 						if (eNF.DialogResult != DialogResult.OK) return;
 						try {
-								if (name.Length == 0) throw new Exception("Nie podałeś litery");
+								if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia("Nie podałeś litery");
 								funkcjaPrzejscia.DodajLitere(name[0]);
 								alfabet.Add(name);
-						} catch (Exception ex) {
+						} catch (ExceptionInFunkcjaPrzejscia ex) {
 								var t = new InfoBox("Warning", ex.Message);
 								t.ShowDialog();
 								return;
@@ -47,9 +47,9 @@ namespace fsm {
 						eNF.ShowDialog();
 						if (eNF.DialogResult != DialogResult.OK) return;
 						try {
-								if (name.Length == 0) throw new Exception("Stan nie może mieć pustej nazwy");
+								if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia("Stan nie może mieć pustej nazwy");
 								funkcjaPrzejscia.DodajStan(name, false);
-						} catch (Exception ex) {
+						} catch (ExceptionInFunkcjaPrzejscia ex) {
 								var t = new InfoBox("Warning", ex.Message);
 								t.ShowDialog();
 								return;
@@ -103,7 +103,7 @@ namespace fsm {
 						cn.ShowDialog();
 						if (cn.DialogResult != DialogResult.OK) return;
 						try {
-								if (name.Length != 1) throw new Exception("Nie podałeś litery");
+								if (name.Length != 1) throw new ExceptionInFunkcjaPrzejscia("Nie podałeś litery");
 								funkcjaPrzejscia.DodajLitere(name[0]);
 								funkcjaPrzejscia.UsunLitere(oldName[0]);
 								int index = alfabet.IndexOf(oldName);
@@ -112,7 +112,7 @@ namespace fsm {
 								fPTable.Columns[oldName].HeaderText = name;
 								fPTable.Columns[oldName].Name = name;
 								fPTable.Update();
-						} catch (Exception ex) {
+						} catch (ExceptionInFunkcjaPrzejscia ex) {
 								var t = new InfoBox("Warning", ex.Message);
 								t.ShowDialog();
 								return;
@@ -124,7 +124,7 @@ namespace fsm {
 						cn.ShowDialog();
 						if (cn.DialogResult != DialogResult.OK) return;
 						try {
-								if (name.Length == 0) throw new Exception("Nie podałeś litery");
+								if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia("Nie podałeś litery");
 								funkcjaPrzejscia.DodajStan(name, false);
 								funkcjaPrzejscia.UsunStan(oldName);
 								int index = stany.IndexOf(oldName);
@@ -138,7 +138,7 @@ namespace fsm {
 										row.Cells[cell].Value = name;
 								}
 								fPTable.Update();
-						} catch (Exception ex) {
+						} catch (ExceptionInFunkcjaPrzejscia ex) {
 								var t = new InfoBox("Warning", ex.Message);
 								t.ShowDialog();
 								return;
@@ -170,7 +170,7 @@ namespace fsm {
 														funkcjaPrzejscia.DodajPrzejscie(rowName, s[0], stanDocelowy);
 														row.Cells[s] = new DataGridViewTextBoxCell();
 														row.Cells[s].Value = rowName + " " + s + " -> " + stanDocelowy;
-												} catch (Exception ex) {
+												} catch (ExceptionInFunkcjaPrzejscia ex) {
 														var ib = new InfoBox("Warning", ex.Message);
 														ib.ShowDialog();
 														return;
