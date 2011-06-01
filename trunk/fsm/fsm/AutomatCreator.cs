@@ -20,8 +20,8 @@ namespace fsm {
 						stany.Add("");
 						stany.Add("Start");
 						alfabet.Add("a");
-						var col = ((DataGridViewComboBoxColumn)fPTable.Columns[2]);
-						col.DataSource = stany;
+						var col = ((DataGridViewTextBoxColumn)fPTable.Columns[2]);
+						fPTable.Update();
         }
 
 				private void AddLetterButton_Click(object sender, EventArgs e) {
@@ -37,11 +37,10 @@ namespace fsm {
 								t.ShowDialog();
 								return;
 						}
-						fPTable.Columns.Add( new DataGridViewComboBoxColumn());
-						var column = (DataGridViewComboBoxColumn)fPTable.Columns[fPTable.ColumnCount - 1];
+						fPTable.Columns.Add( new DataGridViewTextBoxColumn());
+						var column = (DataGridViewTextBoxColumn)fPTable.Columns[fPTable.ColumnCount - 1];
 						column.Name = name;
 						column.Width = 50;
-						column.DataSource = stany;
 				}
 
 				private void AddStateButton_Click(object sender, EventArgs e) {
@@ -123,8 +122,10 @@ namespace fsm {
 				}
 
 				private void ChangeStateNameButton_Click(object sender, EventArgs e) {
+						stany.Remove("");
 						var cn = new ChangeNameForm(stany, "Change state name", "Wybierz stan", FunkcjaPrzejscia.MAX_DLUGOSC_NAZWY_STANU, this);
 						cn.ShowDialog();
+						stany.Insert(0, "");
 						if (cn.DialogResult != DialogResult.OK) return;
 						try {
 								if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia("Nie podałeś litery");
@@ -132,7 +133,8 @@ namespace fsm {
 								funkcjaPrzejscia.UsunStan(oldName);
 								int index = stany.IndexOf(oldName);
 								if (index < 0) throw new Exception("Nie ma takiego stanu");
-								stany.Insert(index, name);
+								stany.Add(name);
+								stany.Remove(oldName);
 								var cell = fPTable.Columns["StateNameColumn"].Index;
 								string rowName;
 								foreach (DataGridViewRow row in fPTable.Rows) {
@@ -144,10 +146,13 @@ namespace fsm {
 								MessageBox.Show("2");
 								foreach (DataGridViewRow row in fPTable.Rows) {
 										foreach (DataGridViewCell col in row.Cells) {
-												if (col is DataGridViewComboBoxCell && ((string)col.Value)==oldName) col.Value = name; //tu sie cos psuje
+												if (col is DataGridViewComboBoxCell && ((string)col.Value) == oldName) {
+														//((DataGridViewComboBoxCell)col).ValueMember = "";
+														col.Value = name;
+														//fPTable.UpdateCellValue(col.ColumnIndex, col.RowIndex);
+														}//tu sie cos psuje
 										}
 								}
-								stany.Remove(oldName);
 								MessageBox.Show("1");
 								fPTable.Update();
 						} catch (Exception ex) {
@@ -169,6 +174,7 @@ namespace fsm {
 						if (koncowych == 0) {
 								var ib = new InfoBox("Warning", "Brak stanow koncowych");
 								ib.ShowDialog();
+								funkcjaPrzejscia.UsunWszystkiePrzejscia();
 								return;
 						}
 						string rowName;
@@ -176,14 +182,15 @@ namespace fsm {
 								rowName = (string)row.Cells["StateNameColumn"].Value;
 								foreach (string s in alfabet) {
 										string stanDocelowy = (string)row.Cells[s].Value;
-										if (stanDocelowy != "") {
+										if (stanDocelowy != "" && stanDocelowy!=null) {
 												try {
 														funkcjaPrzejscia.DodajPrzejscie(rowName, s[0], stanDocelowy);
 														//row.Cells[s] = new DataGridViewTextBoxCell();
 														//row.Cells[s].Value = rowName + " " + s + " -> " + stanDocelowy;
 												} catch (ExceptionInFunkcjaPrzejscia ex) {
-														var ib = new InfoBox("Warning", ex.Message);
+														var ib = new InfoBox("Warning", ex.Message+" "+rowName+" "+s[0]+" *"+stanDocelowy+"*");
 														ib.ShowDialog();
+														funkcjaPrzejscia.UsunWszystkiePrzejscia();
 														return;
 												}
 										}
@@ -211,6 +218,10 @@ namespace fsm {
 										row.Cells[s].Value = stany[r.Next(stany.Count)];
 								}
 						}
+				}
+
+				private void fPTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
+						new ChooseStateForm(stany, (DataGridViewTextBoxCell)sender).ShowDialog(); //tu sie psuje!!!!!!
 				}
     }
 }

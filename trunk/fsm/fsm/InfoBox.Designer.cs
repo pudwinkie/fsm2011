@@ -54,6 +54,7 @@
 						this.ClientSize = new System.Drawing.Size(266, 169);
 						this.Controls.Add(this.OKButton);
 						this.Controls.Add(this.textBox1);
+						this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 						this.Name = "InfoBox";
 						this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 						this.Text = "InfoBox";

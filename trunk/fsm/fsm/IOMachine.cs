@@ -86,11 +86,10 @@ namespace fsm {
 						fP.Stany.ForEach(o => { sb.Append(o.nazwa + " "); });
 						sb.AppendLine("Nazwy stanow");
 						sb.AppendLine(liczbaKoncowych + " Liczba stanow koncowych");
-						fP.Stany.ForEach(o => { if (o.koncowy)sb.Append(o + " "); });
-						sb.AppendLine(" Stany koncowe");
+						fP.Stany.ForEach(o => { if (o.koncowy)sb.Append(o.nazwa + " "); });
+						sb.AppendLine("Stany koncowe");
 						sb.AppendLine();
 						sb.AppendLine(fP.alfabet.Length + " Liczba liter alfabetu");
-						sb.AppendLine();
 						sb.AppendLine(fP.alfabet+ " Litery alfabetu");
 						sb.AppendLine();
 						sb.AppendLine(liczbaPrzejsc + " Liczba produkcji");
