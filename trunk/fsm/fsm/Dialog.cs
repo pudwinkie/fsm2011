@@ -13,8 +13,8 @@ namespace fsm
         {
             switch (i)
             {
-                case 0: new InfoBox("Błąd", "Brak załadowanej Funkcji Przejścia").ShowDialog(); break;
-                case 1: new InfoBox("Błąd", "Brak danych wejściowych").ShowDialog(); break;
+                case 0: new MessageBox("Błąd", "Brak załadowanej Funkcji Przejścia").ShowDialog(); break;
+                case 1: new MessageBox("Błąd", "Brak danych wejściowych").ShowDialog(); break;
             }
         }
 
@@ -49,7 +49,7 @@ namespace fsm
             s += Environment.NewLine;
             s += Wizualizacja.Okno.textBox2.Text;
             s += Environment.NewLine;
-            new InfoBox("Raport", s).ShowDialog();
+            new MessageBox("Raport", s).ShowDialog();
         }
     }
 

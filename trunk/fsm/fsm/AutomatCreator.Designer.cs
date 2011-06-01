@@ -202,7 +202,7 @@
 					this.Controls.Add(this.AddStateButton);
 					this.Controls.Add(this.AddLetterButton);
 					this.Controls.Add(this.fPTable);
-					this.MinimumSize = new System.Drawing.Size(360, 200);
+					this.MinimumSize = new System.Drawing.Size(370, 200);
 					this.Name = "AutomatCreator";
 					this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 					this.Text = "AutomatCreator";
