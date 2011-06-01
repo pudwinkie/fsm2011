@@ -1,14 +1,15 @@
 MM_TB_TCS
-TempName Nazwa maszyny
+automat3 Nazwa maszyny
 
 2 Liczba stanow
 Start koniec Nazwy stanow
 1 Liczba stanow koncowych
-Stan  Stany koncowe
+koniec Stany koncowe
 
-1 Litery alfabetu
+1 Liczba liter alfabetu
+a Litery alfabetu
 
 2 Liczba produkcji
-Start 1 -> koniec
-koniec 1 -> Start
-
+Start a -> koniec
+koniec a -> Start
+parzyste a^n
