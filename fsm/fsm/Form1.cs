@@ -111,7 +111,7 @@ namespace fsm
 
         private void button8_Click(object sender, EventArgs e)
         {
-            new InfoBox("Maszyna: "+Wizualizacja.f.nazwa, Wizualizacja.f.info).ShowDialog();
+            new MessageBox("Maszyna: "+Wizualizacja.f.nazwa, Wizualizacja.f.info).ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
