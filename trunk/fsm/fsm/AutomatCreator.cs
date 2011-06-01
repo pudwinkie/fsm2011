@@ -9,7 +9,7 @@ namespace fsm {
 		private List<string> stany = new List<string>();
 		private List<string> alfabet = new List<string>();
 		internal List<string> removeList = new List<string>();
-		internal FunkcjaPrzejscia funkcjaPrzejscia = new FunkcjaPrzejscia("TempName", "a");
+		internal FunkcjaPrzejscia funkcjaPrzejscia = new FunkcjaPrzejscia("Machine", "");
 		internal Form1 parent;
 		public AutomatCreator(Form1 p) {
 			parent = p;
@@ -19,8 +19,35 @@ namespace fsm {
 			funkcjaPrzejscia.DodajStan("Start", false);
 			stany.Add("");
 			stany.Add("Start");
+			funkcjaPrzejscia.DodajLitere('a');
 			alfabet.Add("a");
-			var col = ((DataGridViewTextBoxColumn)fPTable.Columns[2]);
+			//var col = ((DataGridViewTextBoxColumn)fPTable.Columns[2]);
+			dodajLitereDoTabeli('a');
+			fPTable.Update();
+		}
+
+		public AutomatCreator(FunkcjaPrzejscia fp, Form1 form1) {
+			funkcjaPrzejscia = fp;
+			parent = form1;
+			InitializeComponent();
+			stany.Add("");
+			foreach (Stan s in funkcjaPrzejscia.Stany) {
+				stany.Add(s.nazwa);
+				fPTable.RowCount++;
+			}
+			foreach(char c in funkcjaPrzejscia.alfabet){
+				alfabet.Add(c+"");
+				dodajLitereDoTabeli(c);
+			}
+			int i = 0;
+			foreach (Stan s in funkcjaPrzejscia.Stany) {
+				var row = fPTable.Rows[i++];
+				row.Cells[0].Value = s.koncowy;
+				row.Cells[1].Value = s.nazwa;
+				foreach (var pair in s.mapa) {
+					row.Cells[pair.Key+""].Value = pair.Value.nazwa;
+				}
+			}
 			fPTable.Update();
 		}
 
@@ -37,9 +64,13 @@ namespace fsm {
 				t.ShowDialog();
 				return;
 			}
+			dodajLitereDoTabeli(name[0]);
+		}
+
+		private void dodajLitereDoTabeli(char p) {
 			fPTable.Columns.Add(new DataGridViewTextBoxColumn());
 			var column = (DataGridViewTextBoxColumn)fPTable.Columns[fPTable.ColumnCount - 1];
-			column.Name = name;
+			column.Name = p+"";
 			column.Width = 50;
 		}
 
@@ -210,6 +241,10 @@ namespace fsm {
 			DataGridViewCell cell = ((DataGridView)sender).SelectedCells[0];
 			if (cell.ColumnIndex != fPTable.Columns["StateNameColumn"].Index && cell is DataGridViewTextBoxCell)
 				new ChooseStateForm(stany, (DataGridViewTextBoxCell)cell).ShowDialog();
+		}
+
+		private void infoButton_Click(object sender, EventArgs e) {
+			new InfoBox("Maszyna: " + funkcjaPrzejscia.nazwa, funkcjaPrzejscia.info).ShowDialog();
 		}
 	}
 }

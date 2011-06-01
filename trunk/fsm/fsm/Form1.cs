@@ -131,18 +131,23 @@ namespace fsm
             numerator.Value++;
             Wizualizacja.ObudzElementy();
         }
-        private void loadFSMToolStripMenuItem_Click(object sender, EventArgs e) {
-            if (openFileDialog.ShowDialog() == DialogResult.OK) {
-                try {
-                    TextReader mR;
-                    if ((mR = new StreamReader(openFileDialog.OpenFile())) != null)
-                        Inicjalizacja(IOMachine.LoadMachine(mR));
-                } catch (Exception ex) {
-                    MessageBox.Show(ex.Message);
-                }
-
-            }
-
-        }
-    }
+				private void loadFSMToolStripMenuItem_Click(object sender, EventArgs e) {
+					if (openFileDialog.ShowDialog() == DialogResult.OK) {
+						try {
+							TextReader mR;
+							if ((mR = new StreamReader(openFileDialog.OpenFile())) != null) {
+								FunkcjaPrzejscia fp = IOMachine.LoadMachine(mR);
+								YesNoDialog yn = new YesNoDialog(" ", "Czy chcesz edytować ten automat?");
+								yn.ShowDialog();
+								if(yn.DialogResult == DialogResult.No)
+									Inicjalizacja(fp);
+								if (yn.DialogResult == DialogResult.Yes)
+									new AutomatCreator(fp, this).ShowDialog();
+							}
+						} catch (Exception ex) {
+							MessageBox.Show(ex.Message);
+						}
+					}
+				}
+		}
 }
