@@ -217,12 +217,14 @@ namespace fsm
             {
                 string[] cell = new string[f.alfabet.Length + 2];
                 cell[0] = s.nazwa;
-                for (int i = 0; i <= rozalf; i++)
+                for (int i = 0; i < rozalf; i++)
                 {
                     string n = null;
                     try
                     {
-                        n = s.mapa[f.alfabet[i]].nazwa;
+											if (s.mapa.ContainsKey(f.alfabet[i]))
+												n = s.mapa[f.alfabet[i]].nazwa;
+											else n = null;
                     }
                     catch (Exception) { }
                     if (n == null) cell[i + 1] = "";
