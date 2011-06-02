@@ -1,12 +1,21 @@
 ﻿using System.Windows.Forms;
 
 namespace fsm {
-		//Tomasz Binczycki
 		public partial class InfoBox : Form {
-				public InfoBox(string title, string message) {
+				private InfoBox() {
 						InitializeComponent();
-						Text = title;
-						textBox1.Text = message;
+				}
+				static public void Show(string message, string title) {
+						InfoBox ib = new InfoBox();
+						ib.Text = title;
+						ib.textBox1.Text = message;
+						ib.ShowDialog();
+				}
+				static public void Show(string message) {
+						InfoBox ib = new InfoBox();
+						ib.Text = " ";
+						ib.textBox1.Text = message;
+						ib.ShowDialog();
 				}
 		}
 }

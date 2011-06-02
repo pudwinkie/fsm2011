@@ -34,7 +34,7 @@ namespace fsm {
 						}
 					}
 				} catch (Exception ex) {
-					MessageBox.Show(ex.Message);
+					InfoBox.Show(ex.Message);
 				}
 			}
 			DialogResult = DialogResult.OK;

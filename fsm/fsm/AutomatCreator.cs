@@ -60,7 +60,7 @@ namespace fsm {
 				funkcjaPrzejscia.DodajLitere(name[0]);
 				alfabet.Add(name);
 			} catch (ExceptionInFunkcjaPrzejscia ex) {
-					MessageBox.Show(ex.Message, "Warning");
+					InfoBox.Show(ex.Message, "Warning");
 				return;
 			}
 			dodajLitereDoTabeli(name[0]);
@@ -81,7 +81,7 @@ namespace fsm {
 				if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia("Stan nie może mieć pustej nazwy");
 				funkcjaPrzejscia.DodajStan(name, false);
 			} catch (ExceptionInFunkcjaPrzejscia ex) {
-				MessageBox.Show(ex.Message, "Warning");
+				InfoBox.Show(ex.Message, "Warning");
 				return;
 			}
 			stany.Add(name);
@@ -144,7 +144,7 @@ namespace fsm {
 				fPTable.Columns[oldName].Name = name;
 				fPTable.Update();
 			} catch (Exception ex) {
-				MessageBox.Show(ex.Message, "Warning");
+				InfoBox.Show(ex.Message, "Warning");
 				return;
 			}
 		}
@@ -172,7 +172,7 @@ namespace fsm {
 				}
 				fPTable.Update();
 			} catch (Exception ex) {
-				MessageBox.Show(ex.Message,"Warning");
+				InfoBox.Show(ex.Message,"Warning");
 				return;
 			}
 		}
@@ -188,7 +188,7 @@ namespace fsm {
 				funkcjaPrzejscia.UstawKoncowy((string)row.Cells["StateNameColumn"].Value, koncowy);
 			}
 			if (koncowych == 0) {
-				MessageBox.Show("Brak stanow koncowych", "Warning");
+				InfoBox.Show("Brak stanow koncowych", "Warning");
 				return;
 			}
 			string rowName;
@@ -200,7 +200,7 @@ namespace fsm {
 						try {
 							funkcjaPrzejscia.DodajPrzejscie(rowName, s[0], stanDocelowy);
 						} catch (ExceptionInFunkcjaPrzejscia ex) {
-							MessageBox.Show(ex.Message,"Warning");
+							InfoBox.Show(ex.Message,"Warning");
 							return;
 						}
 					}
@@ -236,7 +236,7 @@ namespace fsm {
 		}
 
 		private void infoButton_Click(object sender, EventArgs e) {
-			MessageBox.Show( funkcjaPrzejscia.info, "Maszyna: " + funkcjaPrzejscia.nazwa);
+			InfoBox.Show( funkcjaPrzejscia.info, "Maszyna: " + funkcjaPrzejscia.nazwa);
 		}
 	}
 }

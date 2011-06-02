@@ -35,26 +35,26 @@ namespace fsm {
 										s = reader.ReadLine(); ++line;
 										int liczbaStanow;
 										while (!Int32.TryParse(readToSpace(ref s), out liczbaStanow)) { s = reader.ReadLine(); ++line; }
-										//MessageBox.Show(liczbaStanow+"");
+										//InfoBox.Show(liczbaStanow+"");
 										s = reader.ReadLine(); ++line;
 										for (int i = 0; i < liczbaStanow; ++i) ret.DodajStan(readToSpace(ref s), false);
 										int liczbaKoncowych;
 										s = reader.ReadLine(); ++line;
 										while (!Int32.TryParse(readToSpace(ref s), out liczbaKoncowych)) { s = reader.ReadLine(); ++line; }
-										//MessageBox.Show(liczbaKoncowych + "");
+										//InfoBox.Show(liczbaKoncowych + "");
 										s = reader.ReadLine(); ++line;
 										for (int i = 0; i < liczbaKoncowych; ++i) ret.UstawKoncowy(readToSpace(ref s), true);
 										int liczbaLiter;
 										s = reader.ReadLine(); ++line;
 										while (!Int32.TryParse(readToSpace(ref s), out liczbaLiter)) { s = reader.ReadLine(); ++line; }
-										//MessageBox.Show(liczbaLiter + "");
+										//InfoBox.Show(liczbaLiter + "");
 										s = reader.ReadLine(); ++line;
 										for (int i = 0; i < liczbaLiter; ++i) ret.DodajLitere(s[i]);
 										//wczytywanie funkcji przejscia
 										int liczbaPrzejsc;
 										s = reader.ReadLine(); ++line;
 										while (!Int32.TryParse(readToSpace(ref s), out liczbaPrzejsc)) { s = reader.ReadLine(); ++line; }
-										//MessageBox.Show(liczbaPrzejsc + "");
+										//InfoBox.Show(liczbaPrzejsc + "");
 										string s1, s2, a;
 										for (int i = 0; i < liczbaPrzejsc; ++i) {
 												s = reader.ReadLine(); ++line;
