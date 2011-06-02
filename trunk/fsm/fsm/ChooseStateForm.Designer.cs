@@ -29,7 +29,6 @@
 						// 
 						// stateComboBox
 						// 
-						this.stateComboBox.FormattingEnabled = true;
 						this.stateComboBox.Location = new System.Drawing.Point(36, 41);
 						this.stateComboBox.Name = "stateComboBox";
 						this.stateComboBox.Size = new System.Drawing.Size(156, 21);
