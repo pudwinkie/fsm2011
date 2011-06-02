@@ -111,7 +111,7 @@ namespace fsm
 
         private void button8_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Wizualizacja.f.info, "Maszyna: "+Wizualizacja.f.nazwa);
+            InfoBox.Show(Wizualizacja.f.info, "Maszyna: "+Wizualizacja.f.nazwa);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace fsm
 									new AutomatCreator(fp, this).ShowDialog();
 							}
 						} catch (Exception ex) {
-							MessageBox.Show(ex.Message);
+							InfoBox.Show(ex.Message);
 						}
 					}
 				}

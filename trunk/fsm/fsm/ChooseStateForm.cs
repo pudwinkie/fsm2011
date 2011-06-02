@@ -17,11 +17,9 @@ namespace fsm {
 				}
 
 				private void comboBox1_SelectedValueChanged(object sender, EventArgs e) {
-						abc:
 						try {
 								cell.Value = stateComboBox.Text;
 						} catch (Exception) {
-								//goto abc;
 						}
 						SetVisibleCore(false);
 				}
