@@ -178,6 +178,7 @@ namespace fsm {
 		}
 
 		private void DoneButton_Click(object sender, EventArgs e) {
+				funkcjaPrzejscia.UsunWszystkiePrzejscia();
 			var accColInd = fPTable.Columns["Accepting"].Index;
 			int koncowych = 0;
 			bool koncowy;
@@ -188,7 +189,6 @@ namespace fsm {
 			}
 			if (koncowych == 0) {
 				MessageBox.Show("Brak stanow koncowych", "Warning");
-				funkcjaPrzejscia.UsunWszystkiePrzejscia();
 				return;
 			}
 			string rowName;
@@ -201,7 +201,6 @@ namespace fsm {
 							funkcjaPrzejscia.DodajPrzejscie(rowName, s[0], stanDocelowy);
 						} catch (ExceptionInFunkcjaPrzejscia ex) {
 							MessageBox.Show(ex.Message,"Warning");
-							funkcjaPrzejscia.UsunWszystkiePrzejscia();
 							return;
 						}
 					}
@@ -211,7 +210,6 @@ namespace fsm {
 			sm.ShowDialog();
 			switch (sm.DialogResult) {
 				case DialogResult.Cancel:
-					funkcjaPrzejscia.UsunWszystkiePrzejscia();
 					break;
 				case DialogResult.OK:
 					parent.Inicjalizacja(funkcjaPrzejscia);
