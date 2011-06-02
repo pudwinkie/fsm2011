@@ -80,13 +80,13 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FunkcjaPrzejscia.cs" />
-    <Compile Include="InfoBox.cs">
+    <Compile Include="IOMachine.cs" />
+    <Compile Include="MessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InfoBox.designer.cs">
-      <DependentUpon>InfoBox.cs</DependentUpon>
+    <Compile Include="MessageBox.Designer.cs">
+      <DependentUpon>MessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="IOMachine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AutomatCreator.resx">
@@ -109,8 +109,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="InfoBox.resx">
-      <DependentUpon>InfoBox.cs</DependentUpon>
+    <EmbeddedResource Include="MessageBox.resx">
+      <DependentUpon>MessageBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
