@@ -181,7 +181,7 @@ namespace fsm
             Okno.textBox2.Text = s;
             if (zly > 0) { zly--; return; }
             int c = historia.ToArray()[historia.ToArray().Length-1];
-            new MessageBox("", c.ToString()).ShowDialog();
+            MessageBox.Show(c.ToString(), " ");
             historia.Remove(c);
             PodWers(f.Stany.IndexOf(f.obecny),0);
             PodWers(c, 1);

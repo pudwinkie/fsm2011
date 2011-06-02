@@ -60,6 +60,12 @@
     <Compile Include="ChangeNameForm.designer.cs">
       <DependentUpon>ChangeNameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChooseStateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseStateForm.Designer.cs">
+      <DependentUpon>ChooseStateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog.cs" />
     <Compile Include="EnterNameForm.cs">
       <SubType>Form</SubType>
@@ -74,12 +80,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FunkcjaPrzejscia.cs" />
-    <Compile Include="InfoBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InfoBox.Designer.cs">
-      <DependentUpon>InfoBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="IOMachine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,16 +91,16 @@
       <DependentUpon>ChangeNameForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChooseStateForm.resx">
+      <DependentUpon>ChooseStateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="EnterNameForm.resx">
       <DependentUpon>EnterNameForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InfoBox.resx">
-      <DependentUpon>InfoBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -114,6 +114,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SaveMachineDialog.resx">
       <DependentUpon>SaveMachineDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YesNoDialog.resx">
+      <DependentUpon>YesNoDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -142,10 +146,17 @@
       <DependentUpon>SaveMachineDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Wizualizacja.cs" />
+    <Compile Include="YesNoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YesNoDialog.Designer.cs">
+      <DependentUpon>YesNoDialog.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Machine.fsm" />
     <None Include="Machine2.fsm" />
+    <None Include="Machine3.fsm" />
     <Content Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
