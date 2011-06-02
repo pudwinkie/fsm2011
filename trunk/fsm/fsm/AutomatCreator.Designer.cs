@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
 					this.fPTable = new System.Windows.Forms.DataGridView();
+					this.Accepting = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+					this.StateNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 					this.AddLetterButton = new System.Windows.Forms.Button();
 					this.AddStateButton = new System.Windows.Forms.Button();
 					this.RemoveStateButton = new System.Windows.Forms.Button();
@@ -38,8 +40,6 @@
 					this.changeLetterButton = new System.Windows.Forms.Button();
 					this.ChangeStateNameButton = new System.Windows.Forms.Button();
 					this.randomButton = new System.Windows.Forms.Button();
-					this.Accepting = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-					this.StateNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 					this.infoButton = new System.Windows.Forms.Button();
 					((System.ComponentModel.ISupportInitialize)(this.fPTable)).BeginInit();
 					this.SuspendLayout();
@@ -62,6 +62,20 @@
 					this.fPTable.Size = new System.Drawing.Size(557, 235);
 					this.fPTable.TabIndex = 0;
 					this.fPTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.fPTable_CellMouseClick);
+					// 
+					// Accepting
+					// 
+					this.Accepting.HeaderText = "Accepting";
+					this.Accepting.Name = "Accepting";
+					this.Accepting.Width = 60;
+					// 
+					// StateNameColumn
+					// 
+					this.StateNameColumn.HeaderText = "State name";
+					this.StateNameColumn.Name = "StateNameColumn";
+					this.StateNameColumn.ReadOnly = true;
+					this.StateNameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+					this.StateNameColumn.Width = 95;
 					// 
 					// AddLetterButton
 					// 
@@ -159,20 +173,6 @@
 					this.randomButton.Text = "Random";
 					this.randomButton.UseVisualStyleBackColor = true;
 					this.randomButton.Click += new System.EventHandler(this.randomButton_Click);
-					// 
-					// Accepting
-					// 
-					this.Accepting.HeaderText = "Accepting";
-					this.Accepting.Name = "Accepting";
-					this.Accepting.Width = 60;
-					// 
-					// StateNameColumn
-					// 
-					this.StateNameColumn.HeaderText = "State name";
-					this.StateNameColumn.Name = "StateNameColumn";
-					this.StateNameColumn.ReadOnly = true;
-					this.StateNameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-					this.StateNameColumn.Width = 95;
 					// 
 					// infoButton
 					// 
