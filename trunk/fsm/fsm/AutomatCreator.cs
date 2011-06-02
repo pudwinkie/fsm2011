@@ -60,8 +60,7 @@ namespace fsm {
 				funkcjaPrzejscia.DodajLitere(name[0]);
 				alfabet.Add(name);
 			} catch (ExceptionInFunkcjaPrzejscia ex) {
-				var t = new MessageBox("Warning", ex.Message);
-				t.ShowDialog();
+					MessageBox.Show(ex.Message, "Warning");
 				return;
 			}
 			dodajLitereDoTabeli(name[0]);
@@ -82,8 +81,7 @@ namespace fsm {
 				if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia("Stan nie może mieć pustej nazwy");
 				funkcjaPrzejscia.DodajStan(name, false);
 			} catch (ExceptionInFunkcjaPrzejscia ex) {
-				var t = new MessageBox("Warning", ex.Message);
-				t.ShowDialog();
+				MessageBox.Show(ex.Message, "Warning");
 				return;
 			}
 			stany.Add(name);
@@ -146,8 +144,7 @@ namespace fsm {
 				fPTable.Columns[oldName].Name = name;
 				fPTable.Update();
 			} catch (Exception ex) {
-				var t = new MessageBox("Warning", ex.Message);
-				t.ShowDialog();
+				MessageBox.Show(ex.Message, "Warning");
 				return;
 			}
 		}
@@ -175,8 +172,7 @@ namespace fsm {
 				}
 				fPTable.Update();
 			} catch (Exception ex) {
-				var t = new MessageBox("Warning", ex.Message);
-				t.ShowDialog();
+				MessageBox.Show(ex.Message,"Warning");
 				return;
 			}
 		}
@@ -191,8 +187,7 @@ namespace fsm {
 				funkcjaPrzejscia.UstawKoncowy((string)row.Cells["StateNameColumn"].Value, koncowy);
 			}
 			if (koncowych == 0) {
-				var ib = new MessageBox("Warning", "Brak stanow koncowych");
-				ib.ShowDialog();
+				MessageBox.Show("Brak stanow koncowych", "Warning");
 				funkcjaPrzejscia.UsunWszystkiePrzejscia();
 				return;
 			}
@@ -205,8 +200,7 @@ namespace fsm {
 						try {
 							funkcjaPrzejscia.DodajPrzejscie(rowName, s[0], stanDocelowy);
 						} catch (ExceptionInFunkcjaPrzejscia ex) {
-							var ib = new MessageBox("Warning", ex.Message);
-							ib.ShowDialog();
+							MessageBox.Show(ex.Message,"Warning");
 							funkcjaPrzejscia.UsunWszystkiePrzejscia();
 							return;
 						}
@@ -244,7 +238,7 @@ namespace fsm {
 		}
 
 		private void infoButton_Click(object sender, EventArgs e) {
-			new MessageBox("Maszyna: " + funkcjaPrzejscia.nazwa, funkcjaPrzejscia.info).ShowDialog();
+			MessageBox.Show( funkcjaPrzejscia.info, "Maszyna: " + funkcjaPrzejscia.nazwa);
 		}
 	}
 }

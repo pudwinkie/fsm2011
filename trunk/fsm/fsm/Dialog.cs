@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace fsm
 {
@@ -13,8 +14,8 @@ namespace fsm
         {
             switch (i)
             {
-                case 0: new MessageBox("Błąd", "Brak załadowanej Funkcji Przejścia").ShowDialog(); break;
-                case 1: new MessageBox("Błąd", "Brak danych wejściowych").ShowDialog(); break;
+                case 0: MessageBox.Show("Brak załadowanej Funkcji Przejścia","Błąd"); break;
+								case 1: MessageBox.Show("Brak danych wejściowych", "Błąd"); break;
             }
         }
 
@@ -49,7 +50,7 @@ namespace fsm
             s += Environment.NewLine;
             s += Wizualizacja.Okno.textBox2.Text;
             s += Environment.NewLine;
-            new MessageBox("Raport", s).ShowDialog();
+            MessageBox.Show(s,"Raport");
         }
     }
 
