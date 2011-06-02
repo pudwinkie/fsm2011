@@ -1,5 +1,5 @@
 ﻿namespace fsm {
-		partial class MessageBox {
+		partial class InfoBox {
 				/// <summary>
 				/// Required designer variable.
 				/// </summary>

@@ -2,11 +2,20 @@
 
 namespace fsm {
 		//Tomasz Binczycki
-		public partial class MessageBox : Form {
-				public MessageBox(string title, string message) {
+		public partial class InfoBox : Form {
+				InfoBox() {
 						InitializeComponent();
-						Text = title;
-						textBox1.Text = message;
+				}
+				public static void Show(string message, string title) {
+						InfoBox ib = new InfoBox();
+						ib.Text = title;
+						ib.textBox1.Text = message;
+						ib.ShowDialog();
+				}
+				public static void Show(string message) {
+						InfoBox ib = new InfoBox();
+						ib.textBox1.Text = message;
+						ib.ShowDialog();
 				}
 		}
 }
