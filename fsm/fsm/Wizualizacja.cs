@@ -207,7 +207,7 @@ namespace fsm
 
         public static void RysujF()
         {
-            if (f == null) InfoBox.Show("Nie wybrano funkcji przejścia","");
+						if (f == null) { InfoBox.Show("Nie wybrano funkcji przejścia", ""); return; }
             ObudzElementy();
             f.Reset();
             while (Okno.dataGridView1.Columns.Count > 0) Okno.dataGridView1.Columns.Remove(Okno.dataGridView1.Columns[0]);
