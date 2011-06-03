@@ -111,7 +111,7 @@ namespace fsm
 
         private void button8_Click(object sender, EventArgs e)
         {
-            InfoBox.Show(Wizualizacja.f.info, "Maszyna: "+Wizualizacja.f.nazwa);
+            InfoBox.Show(Wizualizacja.f.info, Language.lang[0]+": "+Wizualizacja.f.nazwa);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace fsm
 							TextReader mR;
 							if ((mR = new StreamReader(openFileDialog.OpenFile())) != null) {
 								FunkcjaPrzejscia fp = IOMachine.LoadMachine(mR);
-								YesNoDialog yn = new YesNoDialog(" ", "Czy chcesz edytować ten automat?");
+								YesNoDialog yn = new YesNoDialog(" ", Language.lang[51]);
 								yn.ShowDialog();
 								if(yn.DialogResult == DialogResult.No)
 									Inicjalizacja(fp);
