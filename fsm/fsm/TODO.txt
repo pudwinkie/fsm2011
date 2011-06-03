@@ -2,4 +2,4 @@
 
 - "Nie pokazuj kroków" nie jest jeszcze podpiête
 - w momencie kiedy chcê wykonaæ 100 kroków a na wejœciu mam tylko 2 litery pokazuje mi siê 98 okien: brak danych wejœciowych
-
+- raport jest nieaktualny po restarcie i zmianie s³owa wejœciowego
