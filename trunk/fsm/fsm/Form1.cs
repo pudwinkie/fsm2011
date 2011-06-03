@@ -21,7 +21,7 @@ namespace fsm
 						Elementy.Add(button4);
 						Elementy.Add(button6);
 						Elementy.Add(button7);
-						Elementy.Add(button8);
+						
 				}
         internal void Inicjalizacja(FunkcjaPrzejscia fp)
         {
@@ -139,10 +139,15 @@ namespace fsm
 								FunkcjaPrzejscia fp = IOMachine.LoadMachine(mR);
 								YesNoDialog yn = new YesNoDialog(" ", Language.lang[51]);
 								yn.ShowDialog();
-								if(yn.DialogResult == DialogResult.No)
-									Inicjalizacja(fp);
+                                if (yn.DialogResult == DialogResult.No)
+                                {
+                                    Inicjalizacja(fp);
+                                    Wizualizacja.RysujF();
+                                }
 								if (yn.DialogResult == DialogResult.Yes)
 									new AutomatCreator(fp, this).ShowDialog();
+                                    Inicjalizacja(fp);
+                                    Wizualizacja.RysujF();
 							}
 						} catch (Exception ex) {
 							InfoBox.Show(ex.Message);
