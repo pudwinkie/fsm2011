@@ -29,6 +29,7 @@
 						// 
 						// stateComboBox
 						// 
+						this.stateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 						this.stateComboBox.Location = new System.Drawing.Point(36, 41);
 						this.stateComboBox.Name = "stateComboBox";
 						this.stateComboBox.Size = new System.Drawing.Size(156, 21);
