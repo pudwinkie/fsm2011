@@ -1,5 +1,7 @@
-- po wykonaniu maszyny powinno daæ siê ca³y czas zobaczyæ jej opis (Mateusz)
+- wydaje mi siê ¿e raport powinien wyœwietlaæ w ka¿dym momencie to, co wyœwietli³byt, gdybym zakoñczy³ w danym momencie s³owo.
 
-- "Nie pokazuj kroków" nie jest jeszcze podpiête
-- w momencie kiedy chcê wykonaæ 100 kroków a na wejœciu mam tylko 2 litery pokazuje mi siê 98 okien: brak danych wejœciowych
-- raport jest nieaktualny po restarcie i zmianie s³owa wejœciowego
+- u mnie defaultowy kolor tego panelu ponat tablic¹ jest inny ni¿ na win XP - mo¿e trzebaby by³o zapamiêtaæ w jakiejœ zmiennej defaulowy kolor?
+
+- stan który wraca do siebie siê nie podœwietla
+
+- nie do koñca wiadomo co siê dzieje po klikniêciu start. niby przeskakujemy do stanu startowego, ale z drugiej strony ca³y czas poprzednie wejœcie jest aktywne i maszyna dochodzi do jakichœ b³êdnych wniosków...
