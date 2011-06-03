@@ -13,6 +13,7 @@ namespace fsm
         [STAThread]
         static void Main()
         {
+						Language.SetPolish();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
