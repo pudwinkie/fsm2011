@@ -52,6 +52,15 @@ namespace fsm {
 					"Save machine", //41
 					"WORD ACCEPTED", //42
 					"WORD DENIED", //43
+//Funkcja przejscia//
+					"This letter is already in alphabet", //44
+					"That state name already exist", //45
+					"State doesnt exist: ", //46
+					"State doesnt exist: ", //47
+					"That letter is not in defined alphabet: ", //48
+					"Function for that arguments is already defined", //49
+					"Unacceptable word", //50
+					"Do you want to edit that machine?", //51
 					};
 				private static readonly string[]
 				Polish = { 
@@ -104,6 +113,15 @@ namespace fsm {
 					"Zapisz automat", //41
 					"SŁOWO ZAAKCEPTOWANE", //42
 					"SŁOWO ODRZUCONE", //43
+//Funkcja przejscia//
+					"Ta litera jest już w alfabecie", //44
+					"Stan o podanej nazwie już istnieje", //45
+					"Stan początkowy nie istnieje: ", //46
+					"Stan docelowy nie istnieje: ", //47
+					"Podana litra nie istnieje w alfabecie: ", //48
+					"Takie przejście jest już zdefiniowane", //49
+					"Wyraz nieakceptowalny", //50
+					"Czy chcesz edytować ten automat?", //51
 								 };
 				public static void SetEnglish() {
 						lang = English;

@@ -58,7 +58,6 @@
 						this.okButton.Name = "okButton";
 						this.okButton.Size = new System.Drawing.Size(75, 23);
 						this.okButton.TabIndex = 2;
-						this.okButton.Text = Language.lang[29];
 						this.okButton.UseVisualStyleBackColor = true;
 						this.okButton.Click += new System.EventHandler(this.okButton_Click);
 						// 
@@ -72,7 +71,7 @@
 						this.Controls.Add(this.englishButton);
 						this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 						this.Name = "LanguageDialog";
-						this.Text = Language.lang[34];
+						this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 						this.ResumeLayout(false);
 						this.PerformLayout();
 
