@@ -32,6 +32,8 @@
 						this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.createMachineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.loadFSMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+						this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+						this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 						this.numerator = new System.Windows.Forms.NumericUpDown();
 						this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -51,8 +53,6 @@
 						this.label5 = new System.Windows.Forms.Label();
 						this.button7 = new System.Windows.Forms.Button();
 						this.button8 = new System.Windows.Forms.Button();
-						this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-						this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.menuStrip1.SuspendLayout();
 						((System.ComponentModel.ISupportInitialize)(this.numerator)).BeginInit();
 						((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,28 +75,43 @@
             this.createMachineToolStripMenuItem,
             this.loadFSMToolStripMenuItem});
 						this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-						this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
-						this.fileToolStripMenuItem.Text = "File";
+						this.fileToolStripMenuItem.Size = new System.Drawing.Size(34, 20);
+						this.fileToolStripMenuItem.Text = "Plik";
 						// 
 						// createMachineToolStripMenuItem
 						// 
 						this.createMachineToolStripMenuItem.Name = "createMachineToolStripMenuItem";
-						this.createMachineToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-						this.createMachineToolStripMenuItem.Text = "Create Machine";
+						this.createMachineToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+						this.createMachineToolStripMenuItem.Text = "Utwórz automat";
 						this.createMachineToolStripMenuItem.Click += new System.EventHandler(this.createMachineToolStripMenuItem_Click);
 						// 
 						// loadFSMToolStripMenuItem
 						// 
 						this.loadFSMToolStripMenuItem.Name = "loadFSMToolStripMenuItem";
-						this.loadFSMToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-						this.loadFSMToolStripMenuItem.Text = "Load FSM";
+						this.loadFSMToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+						this.loadFSMToolStripMenuItem.Text = "Załaduj Automat";
 						this.loadFSMToolStripMenuItem.Click += new System.EventHandler(this.loadFSMToolStripMenuItem_Click);
+						// 
+						// toolsToolStripMenuItem
+						// 
+						this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.languageToolStripMenuItem});
+						this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+						this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+						this.toolsToolStripMenuItem.Text = "Opcje";
+						// 
+						// languageToolStripMenuItem
+						// 
+						this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+						this.languageToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+						this.languageToolStripMenuItem.Text = "Język";
+						this.languageToolStripMenuItem.Click += new System.EventHandler(this.languageToolStripMenuItem_Click);
 						// 
 						// openFileDialog
 						// 
 						this.openFileDialog.DefaultExt = "fsm";
 						this.openFileDialog.FileName = "Machine.fsm";
-						this.openFileDialog.Title = "Open Finite State Machine";
+						this.openFileDialog.Title = "Wybierz plik z automatem";
 						// 
 						// numerator
 						// 
@@ -246,7 +261,7 @@
 						this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 						this.label4.Location = new System.Drawing.Point(528, 174);
 						this.label4.Name = "label4";
-						this.label4.Size = new System.Drawing.Size(80, 13);
+						this.label4.Size = new System.Drawing.Size(120, 13);
 						this.label4.TabIndex = 13;
 						this.label4.Text = "Ilość Kroków";
 						// 
@@ -302,21 +317,6 @@
 						this.button8.UseVisualStyleBackColor = true;
 						this.button8.Click += new System.EventHandler(this.button8_Click);
 						// 
-						// toolsToolStripMenuItem
-						// 
-						this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.languageToolStripMenuItem});
-						this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-						this.toolsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-						this.toolsToolStripMenuItem.Text = "Tools";
-						// 
-						// languageToolStripMenuItem
-						// 
-						this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-						this.languageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-						this.languageToolStripMenuItem.Text = "Language";
-						this.languageToolStripMenuItem.Click += new System.EventHandler(this.languageToolStripMenuItem_Click);
-						// 
 						// Form1
 						// 
 						this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,7 +344,7 @@
 						this.MainMenuStrip = this.menuStrip1;
 						this.MinimumSize = new System.Drawing.Size(670, 380);
 						this.Name = "Form1";
-						this.Text = "Finite State Machine Symulator";
+						this.Text = "Symulator Automatu Skończonego";
 						this.Load += new System.EventHandler(this.Form1_Load);
 						this.menuStrip1.ResumeLayout(false);
 						this.menuStrip1.PerformLayout();

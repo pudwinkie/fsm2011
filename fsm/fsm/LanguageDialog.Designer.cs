@@ -56,6 +56,7 @@
 						// 
 						this.okButton.Location = new System.Drawing.Point(133, 68);
 						this.okButton.Name = "okButton";
+						this.okButton.Text = Language.lang[29];
 						this.okButton.Size = new System.Drawing.Size(75, 23);
 						this.okButton.TabIndex = 2;
 						this.okButton.UseVisualStyleBackColor = true;
