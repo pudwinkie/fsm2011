@@ -133,7 +133,10 @@ namespace fsm
         static int stareid, noweid, x;
         public static void Krok()
         {
-            
+            int hist = f.Stany.IndexOf(f.obecny);
+            bool obrazz = Okno.checkBox1.Checked==true ? true : false;
+            historia.Add(hist);
+           // InfoBox.Show(hist.ToString(), " ");
             // sprawdzenie czy tekst istnieje
             string s = null;
             stareid = noweid;
@@ -142,21 +145,22 @@ namespace fsm
             //podświetlanie aktualnej literki
             char literka = s[0];
             MrugajLit();
-            if (zly > 0) { goto aaa; } //jestesmy w nieistniejącym stanie
+            if (zly > 0) { zly++; goto aaa; } //jestesmy w nieistniejącym stanie
             x = f.AlfabetIndex(literka);
             if (x == -1) {zly++; goto aaa; } /////////==============nie ma takiej literki w alfabecie
             //podświetla tabelke
             PodKol(x + 1, 1);
             Okno.dataGridView1.Update();
             Mrugaj(f.Stany.IndexOf(f.obecny), x + 1, 1);
-            historia.Add(f.Stany.IndexOf(f.obecny));
+           
             stareid = f.Stany.IndexOf(f.obecny);
             noweid = f.Stany.IndexOf(f.obecny);
+            
             try { f.Przejscie(literka); }
             catch (Exception) {zly++; goto aaa; } //////======== niezaakceptowany stan
             Mrugaj(f.Stany.IndexOf(f.obecny), 0);
             noweid = f.Stany.IndexOf(f.obecny);
-           
+            
             //powrót do normalnego wyglądu
         aaa:
             PodKol(x + 1, 0);
@@ -172,6 +176,7 @@ namespace fsm
 
         public static void Cofnij() {
             if (historia.ToArray().Length == 0 && zly==0) return;
+            //InfoBox.Show(zly.ToString(), " ");
             string s="";
             string h=Okno.textBox2.Text;
             int roz=h.Length;
@@ -179,10 +184,10 @@ namespace fsm
                 s += h[i];
             Okno.textBox1.Text = h[roz - 1] + Okno.textBox1.Text;
             Okno.textBox2.Text = s;
-            if (zly > 0) { zly--; return; }
-            int c = historia.ToArray()[historia.ToArray().Length-1];
-            InfoBox.Show(c.ToString(), " ");
-            historia.Remove(c);
+            int c = historia.ToArray()[historia.Count - 1];
+            //InfoBox.Show(c.ToString(), " ");
+            historia.RemoveAt(historia.Count - 1);
+            if (zly > 0) { zly--; if (zly!=0) return; }
             PodWers(f.Stany.IndexOf(f.obecny),0);
             PodWers(c, 1);
             f.obecny = f.Stany[c];
@@ -196,11 +201,13 @@ namespace fsm
             for (int i = 0; i < f.Stany.ToArray().Length; i++)
                 PodWers(i, 0);
             PodWers(0, 1);
+            historia.Clear();
             f.Reset();
         }
 
         public static void RysujF()
         {
+            if (f == null) InfoBox.Show("Nie wybrano funkcji przejścia","");
             ObudzElementy();
             f.Reset();
             while (Okno.dataGridView1.Columns.Count > 0) Okno.dataGridView1.Columns.Remove(Okno.dataGridView1.Columns[0]);
@@ -245,8 +252,8 @@ namespace fsm
         public static void Test(FunkcjaPrzejscia fp)
         {
 						f = fp;
-						if(f==null)
-								f = new FunkcjaPrzejscia(true);
+                       
+							//	f = new FunkcjaPrzejscia(true);
         }
 
         public static void Wynik() {
