@@ -21,6 +21,7 @@ namespace fsm
 						Elementy.Add(button4);
 						Elementy.Add(button6);
 						Elementy.Add(button7);
+                        Elementy.Add(checkBox1);
 						
 				}
         internal void Inicjalizacja(FunkcjaPrzejscia fp)
@@ -159,5 +160,10 @@ namespace fsm
 						if(new LanguageDialog(this).ShowDialog()!=DialogResult.Abort)
 								Dispose(true);
 				}
+
+                private void machineSpeedToolStripMenuItem_Click(object sender, EventArgs e)
+                {
+                    new speed().ShowDialog();
+                }
 		}
 }

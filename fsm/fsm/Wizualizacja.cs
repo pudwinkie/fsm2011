@@ -20,7 +20,7 @@ namespace fsm
         public static int zly = 0;
         public static List<int> historia = new List<int>(); 
         //====================================
-        static int czasCzekania = 100;
+        public static int czasCzekania = 200;
         static int ileMrugniec = 4;
         static Color PodBack = Color.Blue;
         static Color PodText = Color.Red;
@@ -141,7 +141,7 @@ namespace fsm
             string s = null;
             stareid = noweid;
             s = Okno.textBox1.Text;
-            if (s == null || s == "") { Dialog.Error(1); return; } //co zrobić gdy nie ma tekstu
+            if (s == null || s == "") {return; } //co zrobić gdy nie ma tekstu
             //podświetlanie aktualnej literki
             char literka = s[0];
            if (obraz) MrugajLit();

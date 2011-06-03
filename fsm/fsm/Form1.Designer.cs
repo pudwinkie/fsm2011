@@ -54,6 +54,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.machineSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numerator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -96,7 +97,8 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.languageToolStripMenuItem});
+            this.languageToolStripMenuItem,
+            this.machineSpeedToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -104,7 +106,7 @@
             // languageToolStripMenuItem
             // 
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.languageToolStripMenuItem.Text = "Language";
             this.languageToolStripMenuItem.Click += new System.EventHandler(this.languageToolStripMenuItem_Click);
             // 
@@ -320,6 +322,7 @@
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(520, 235);
             this.checkBox1.Name = "checkBox1";
@@ -327,6 +330,13 @@
             this.checkBox1.TabIndex = 19;
             this.checkBox1.Text = "Nie pokazuj kroków";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // machineSpeedToolStripMenuItem
+            // 
+            this.machineSpeedToolStripMenuItem.Name = "machineSpeedToolStripMenuItem";
+            this.machineSpeedToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.machineSpeedToolStripMenuItem.Text = "Machine Speed";
+            this.machineSpeedToolStripMenuItem.Click += new System.EventHandler(this.machineSpeedToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -395,6 +405,7 @@
 				private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
 				private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
                public System.Windows.Forms.CheckBox checkBox1;
+               private System.Windows.Forms.ToolStripMenuItem machineSpeedToolStripMenuItem;
     }
 }
 
