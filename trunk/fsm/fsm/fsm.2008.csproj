@@ -137,6 +137,10 @@
       <DependentUpon>SaveMachineDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="speed.resx">
+      <DependentUpon>speed.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="YesNoDialog.resx">
       <DependentUpon>YesNoDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -165,6 +169,12 @@
     </Compile>
     <Compile Include="SaveMachineDialog.Designer.cs">
       <DependentUpon>SaveMachineDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="speed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="speed.Designer.cs">
+      <DependentUpon>speed.cs</DependentUpon>
     </Compile>
     <Compile Include="Wizualizacja.cs" />
     <Compile Include="YesNoDialog.cs">
