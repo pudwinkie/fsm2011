@@ -209,7 +209,7 @@ namespace fsm
             rozalf = f.alfabet.Length;
             for (int i = 0; i <= rozalf; i++)
                 Okno.dataGridView1.Columns.Add(new DataGridViewColumn(new DataGridViewTextBoxCell()));
-            Okno.dataGridView1.Columns[0].HeaderText = "Nazwa Stanu";
+            Okno.dataGridView1.Columns[0].HeaderText = Language.lang[5];
             for (int i = 0; i < rozalf; i++)
                 Okno.dataGridView1.Columns[1 + i].HeaderText = " " + f.alfabet[i] + " ";
 
@@ -253,12 +253,12 @@ namespace fsm
             if (f.obecny.koncowy && zly == 0)
             {
                 Okno.label5.ForeColor = Color.Green;
-                Okno.label5.Text = "SŁOWO ZAAKCEPTOWANE";
+                Okno.label5.Text = Language.lang[42];
                 ok = true;
             }
             else {
                 Okno.label5.ForeColor = Color.Red;
-                Okno.label5.Text = "SŁOWO ODRZUCONE";
+								Okno.label5.Text = Language.lang[43];
             }
         }
 

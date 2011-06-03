@@ -41,7 +41,7 @@
 						this.questionLabel.Name = "questionLabel";
 						this.questionLabel.Size = new System.Drawing.Size(147, 13);
 						this.questionLabel.TabIndex = 0;
-						this.questionLabel.Text = "Czy chcesz zapisac automat?";
+						this.questionLabel.Text = Language.lang[36];
 						// 
 						// nieButton
 						// 
@@ -49,7 +49,7 @@
 						this.nieButton.Name = "nieButton";
 						this.nieButton.Size = new System.Drawing.Size(75, 23);
 						this.nieButton.TabIndex = 1;
-						this.nieButton.Text = "Nie";
+						this.nieButton.Text = Language.lang[37];
 						this.nieButton.UseVisualStyleBackColor = true;
 						this.nieButton.Click += new System.EventHandler(this.nieButton_Click);
 						// 
@@ -59,7 +59,7 @@
 						this.yesButton.Name = "yesButton";
 						this.yesButton.Size = new System.Drawing.Size(75, 23);
 						this.yesButton.TabIndex = 2;
-						this.yesButton.Text = "Tak";
+						this.yesButton.Text = Language.lang[38];
 						this.yesButton.UseVisualStyleBackColor = true;
 						this.yesButton.Click += new System.EventHandler(this.yesButton_Click);
 						// 
@@ -70,12 +70,12 @@
 						this.anulujButton.Name = "anulujButton";
 						this.anulujButton.Size = new System.Drawing.Size(75, 23);
 						this.anulujButton.TabIndex = 3;
-						this.anulujButton.Text = "Anuluj";
+						this.anulujButton.Text = Language.lang[23];
 						this.anulujButton.UseVisualStyleBackColor = true;
 						// 
 						// saveFileDialog
 						// 
-						this.saveFileDialog.DefaultExt = "fsm";
+						this.saveFileDialog.DefaultExt = ".fsm";
 						this.saveFileDialog.FileName = "Machine";
 						// 
 						// nazwaTextBox
@@ -101,7 +101,7 @@
 						this.label1.Name = "label1";
 						this.label1.Size = new System.Drawing.Size(87, 13);
 						this.label1.TabIndex = 6;
-						this.label1.Text = "Nazwa automatu";
+						this.label1.Text = Language.lang[39];
 						// 
 						// label2
 						// 
@@ -110,7 +110,7 @@
 						this.label2.Name = "label2";
 						this.label2.Size = new System.Drawing.Size(75, 13);
 						this.label2.TabIndex = 7;
-						this.label2.Text = "Opis automatu";
+						this.label2.Text = Language.lang[40];
 						// 
 						// SaveMachineDialog
 						// 
@@ -128,7 +128,7 @@
 						this.Controls.Add(this.nieButton);
 						this.Controls.Add(this.questionLabel);
 						this.Name = "SaveMachineDialog";
-						this.Text = "SaveMachine";
+						this.Text = Language.lang[41];
 						this.ResumeLayout(false);
 						this.PerformLayout();
 

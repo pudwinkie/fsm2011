@@ -45,12 +45,12 @@ namespace fsm
         {
             string s = "";
             FunkcjaPrzejscia f = Wizualizacja.f;
-            s += "Maszyna: " + f.nazwa + Environment.NewLine;
-            if (Wizualizacja.ok) s += "zaakceptowała słowo: "; else s+="odrzuciła słowo: ";
+            s += Language.lang[0] + f.nazwa + Environment.NewLine;
+						if (Wizualizacja.ok) s += Language.lang[30]; else s += Language.lang[31];
             s += Environment.NewLine;
             s += Wizualizacja.Okno.textBox2.Text;
             s += Environment.NewLine;
-            InfoBox.Show(s,"Raport");
+            InfoBox.Show(s,Language.lang[32]);
         }
     }
 

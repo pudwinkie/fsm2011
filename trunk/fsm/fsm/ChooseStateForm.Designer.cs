@@ -43,7 +43,7 @@
 						this.label1.Name = "label1";
 						this.label1.Size = new System.Drawing.Size(68, 13);
 						this.label1.TabIndex = 1;
-						this.label1.Text = "Wybierz stan";
+						this.label1.Text = Language.lang[15];
 						// 
 						// ChooseStateForm
 						// 
@@ -55,7 +55,7 @@
 						this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 						this.Name = "ChooseStateForm";
 						this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-						this.Text = "Choose State";
+						this.Text = Language.lang[15];
 						this.ResumeLayout(false);
 						this.PerformLayout();
 

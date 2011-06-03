@@ -36,7 +36,7 @@
 						this.EnterNameLabel.Name = "EnterNameLabel";
 						this.EnterNameLabel.Size = new System.Drawing.Size(61, 13);
 						this.EnterNameLabel.TabIndex = 0;
-						this.EnterNameLabel.Text = "Enter name";
+						this.EnterNameLabel.Text = Language.lang[33];
 						// 
 						// nameTextBox
 						// 
@@ -53,7 +53,7 @@
 						this.OKbutton.Name = "OKbutton";
 						this.OKbutton.Size = new System.Drawing.Size(75, 23);
 						this.OKbutton.TabIndex = 2;
-						this.OKbutton.Text = "OK";
+						this.OKbutton.Text = Language.lang[29];
 						this.OKbutton.UseVisualStyleBackColor = true;
 						this.OKbutton.Click += new System.EventHandler(this.OKbutton_Click);
 						// 
@@ -64,7 +64,7 @@
 						this.MyCancelButton.Name = "MyCancelButton";
 						this.MyCancelButton.Size = new System.Drawing.Size(75, 23);
 						this.MyCancelButton.TabIndex = 3;
-						this.MyCancelButton.Text = "Cancel";
+						this.MyCancelButton.Text = Language.lang[23];
 						this.MyCancelButton.UseVisualStyleBackColor = true;
 						// 
 						// EnterNameForm
