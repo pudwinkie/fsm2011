@@ -151,7 +151,8 @@ namespace fsm
 				}
 
 				private void languageToolStripMenuItem_Click(object sender, EventArgs e) {
-						new LanguageDialog().ShowDialog();
+						if(new LanguageDialog(this).ShowDialog()!=DialogResult.Abort)
+								Dispose(true);
 				}
 		}
 }
