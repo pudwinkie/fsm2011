@@ -43,7 +43,7 @@
 						this.OKButton.Name = "OKButton";
 						this.OKButton.Size = new System.Drawing.Size(81, 28);
 						this.OKButton.TabIndex = 1;
-						this.OKButton.Text = "OK";
+						this.OKButton.Text = Language.lang[29];
 						this.OKButton.UseVisualStyleBackColor = true;
 						// 
 						// InfoBox
@@ -57,7 +57,7 @@
 						this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 						this.Name = "InfoBox";
 						this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-						this.Text = "InfoBox";
+						this.Text = "";
 						this.ResumeLayout(false);
 						this.PerformLayout();
 

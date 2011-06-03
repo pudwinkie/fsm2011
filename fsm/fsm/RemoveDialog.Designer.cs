@@ -53,7 +53,7 @@
 						this.removeButton.Name = "removeButton";
 						this.removeButton.Size = new System.Drawing.Size(75, 23);
 						this.removeButton.TabIndex = 2;
-						this.removeButton.Text = "Remove";
+						this.removeButton.Text = Language.lang[35];
 						this.removeButton.UseVisualStyleBackColor = true;
 						this.removeButton.Click += new System.EventHandler(this.button1_Click);
 						// 
@@ -64,7 +64,7 @@
 						this.MyCancelButton.Name = "MyCancelButton";
 						this.MyCancelButton.Size = new System.Drawing.Size(75, 23);
 						this.MyCancelButton.TabIndex = 3;
-						this.MyCancelButton.Text = "Cancel";
+						this.MyCancelButton.Text = Language.lang[23];
 						this.MyCancelButton.UseVisualStyleBackColor = true;
 						// 
 						// RemoveDialog

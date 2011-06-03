@@ -47,7 +47,7 @@
 						this.staraNazwaLabel.Name = "staraNazwaLabel";
 						this.staraNazwaLabel.Size = new System.Drawing.Size(69, 13);
 						this.staraNazwaLabel.TabIndex = 1;
-						this.staraNazwaLabel.Text = "Stara nazwa:";
+						this.staraNazwaLabel.Text = Language.lang[27];
 						// 
 						// nowaNazwa
 						// 
@@ -63,7 +63,7 @@
 						this.nowaNazwaLabel.Name = "nowaNazwaLabel";
 						this.nowaNazwaLabel.Size = new System.Drawing.Size(72, 13);
 						this.nowaNazwaLabel.TabIndex = 3;
-						this.nowaNazwaLabel.Text = "Nowa nazwa:";
+						this.nowaNazwaLabel.Text = Language.lang[28];
 						// 
 						// okButton
 						// 
@@ -71,7 +71,7 @@
 						this.okButton.Name = "okButton";
 						this.okButton.Size = new System.Drawing.Size(75, 23);
 						this.okButton.TabIndex = 4;
-						this.okButton.Text = "OK";
+						this.okButton.Text = Language.lang[29];
 						this.okButton.UseVisualStyleBackColor = false;
 						this.okButton.Click += new System.EventHandler(this.okButton_Click);
 						// 
@@ -82,7 +82,7 @@
 						this.myCancelButton.Name = "myCancelButton";
 						this.myCancelButton.Size = new System.Drawing.Size(75, 23);
 						this.myCancelButton.TabIndex = 5;
-						this.myCancelButton.Text = "Cancel";
+						this.myCancelButton.Text = Language.lang[23];
 						this.myCancelButton.UseVisualStyleBackColor = true;
 						// 
 						// ChangeNameForm
