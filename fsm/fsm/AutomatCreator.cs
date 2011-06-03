@@ -9,19 +9,18 @@ namespace fsm {
 		private List<string> stany = new List<string>();
 		private List<string> alfabet = new List<string>();
 		internal List<string> removeList = new List<string>();
-		internal FunkcjaPrzejscia funkcjaPrzejscia = new FunkcjaPrzejscia("Machine", "");
+		internal FunkcjaPrzejscia funkcjaPrzejscia = new FunkcjaPrzejscia(Language.lang[0], "");
 		internal Form1 parent;
 		public AutomatCreator(Form1 p) {
 			parent = p;
 			InitializeComponent();
 			fPTable.RowCount++;
-			fPTable.Rows[0].Cells[1].Value = "Start";
-			funkcjaPrzejscia.DodajStan("Start", false);
+			fPTable.Rows[0].Cells[1].Value = Language.lang[1];
+			funkcjaPrzejscia.DodajStan(Language.lang[1], false);
 			stany.Add("");
-			stany.Add("Start");
+			stany.Add(Language.lang[1]);
 			funkcjaPrzejscia.DodajLitere('a');
 			alfabet.Add("a");
-			//var col = ((DataGridViewTextBoxColumn)fPTable.Columns[2]);
 			dodajLitereDoTabeli('a');
 			fPTable.Update();
 		}
@@ -52,15 +51,15 @@ namespace fsm {
 		}
 
 		private void AddLetterButton_Click(object sender, EventArgs e) {
-			var eNF = new EnterNameForm("Letter: ", this, 1);
+			var eNF = new EnterNameForm(Language.lang[2], this, 1);
 			eNF.ShowDialog();
 			if (eNF.DialogResult != DialogResult.OK) return;
 			try {
-				if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia("Nie podałeś litery");
+				if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia(Language.lang[3]);
 				funkcjaPrzejscia.DodajLitere(name[0]);
 				alfabet.Add(name);
 			} catch (ExceptionInFunkcjaPrzejscia ex) {
-					InfoBox.Show(ex.Message, "Warning");
+					InfoBox.Show(ex.Message, Language.lang[4]);
 				return;
 			}
 			dodajLitereDoTabeli(name[0]);
@@ -74,14 +73,14 @@ namespace fsm {
 		}
 
 		private void AddStateButton_Click(object sender, EventArgs e) {
-			var eNF = new EnterNameForm("State name: ", this, FunkcjaPrzejscia.MAX_DLUGOSC_NAZWY_STANU);
+			var eNF = new EnterNameForm(Language.lang[5], this, FunkcjaPrzejscia.MAX_DLUGOSC_NAZWY_STANU);
 			eNF.ShowDialog();
 			if (eNF.DialogResult != DialogResult.OK) return;
 			try {
-				if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia("Stan nie może mieć pustej nazwy");
+				if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia(Language.lang[6]);
 				funkcjaPrzejscia.DodajStan(name, false);
 			} catch (ExceptionInFunkcjaPrzejscia ex) {
-				InfoBox.Show(ex.Message, "Warning");
+					InfoBox.Show(ex.Message, Language.lang[4]);
 				return;
 			}
 			stany.Add(name);
@@ -90,7 +89,7 @@ namespace fsm {
 		}
 
 		private void RemoveLetterButton_Click(object sender, EventArgs e) {
-			var rl = new RemoveDialog(alfabet, "Choose letters to remove:", "Remove letters", this);
+			var rl = new RemoveDialog(alfabet, Language.lang[7], Language.lang[8], this);
 			rl.ShowDialog();
 			if (rl.DialogResult != DialogResult.OK) return;
 			foreach (string s in removeList) {
@@ -105,7 +104,7 @@ namespace fsm {
 		private void RemoveStateButton_Click(object sender, EventArgs e) {
 			stany.Remove("");
 			stany.Remove((string)fPTable.Rows[0].Cells["StateNameColumn"].Value);
-			var rl = new RemoveDialog(stany, "Choose states names to remove:", "Remove states", this);
+			var rl = new RemoveDialog(stany, Language.lang[9], Language.lang[10], this);
 			stany.Insert(0, (string)fPTable.Rows[0].Cells["StateNameColumn"].Value);
 			stany.Insert(0, "");
 			rl.ShowDialog();
@@ -129,38 +128,38 @@ namespace fsm {
 		}
 
 		private void changeLetterButton_Click(object sender, EventArgs e) {
-			var cn = new ChangeNameForm(alfabet, "Change letter", "Wybierz literę", 1, this);
+			var cn = new ChangeNameForm(alfabet, Language.lang[11], Language.lang[12], 1, this);
 			cn.ShowDialog();
 			if (cn.DialogResult != DialogResult.OK) return;
 			try {
-				if (name.Length != 1) throw new ExceptionInFunkcjaPrzejscia("Nie podałeś litery");
+				if (name.Length != 1) throw new ExceptionInFunkcjaPrzejscia(Language.lang[3]);
 				funkcjaPrzejscia.DodajLitere(name[0]);
 				funkcjaPrzejscia.UsunLitere(oldName[0]);
 				int index = alfabet.IndexOf(oldName);
-				if (index < 0) throw new Exception("Nie ma takiej litery w alfabecie");
+				//if (index < 0) throw new Exception("Nie ma takiej litery w alfabecie automatu");
 				alfabet.Insert(index, name);
 				alfabet.Remove(oldName);
 				fPTable.Columns[oldName].HeaderText = name;
 				fPTable.Columns[oldName].Name = name;
 				fPTable.Update();
 			} catch (Exception ex) {
-				InfoBox.Show(ex.Message, "Warning");
+					InfoBox.Show(ex.Message, Language.lang[4]);
 				return;
 			}
 		}
 
 		private void ChangeStateNameButton_Click(object sender, EventArgs e) {
 			stany.Remove("");
-			var cn = new ChangeNameForm(stany, "Change state name", "Wybierz stan", FunkcjaPrzejscia.MAX_DLUGOSC_NAZWY_STANU, this);
+			var cn = new ChangeNameForm(stany, Language.lang[14], Language.lang[15], FunkcjaPrzejscia.MAX_DLUGOSC_NAZWY_STANU, this);
 			cn.ShowDialog();
 			stany.Insert(0, "");
 			if (cn.DialogResult != DialogResult.OK) return;
 			try {
-				if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia("Nie podałeś litery");
+				if (name.Length == 0) throw new ExceptionInFunkcjaPrzejscia(Language.lang[3]);
 				funkcjaPrzejscia.DodajStan(name, false);
 				funkcjaPrzejscia.UsunStan(oldName);
 				int index = stany.IndexOf(oldName);
-				if (index < 0) throw new Exception("Nie ma takiego stanu");
+				//if (index < 0) throw new Exception("Nie ma takiego stanu");
 				stany.Insert(index, name);
 				stany.Remove(oldName);
 				index = fPTable.Columns["StateNameColumn"].Index;
@@ -172,7 +171,7 @@ namespace fsm {
 				}
 				fPTable.Update();
 			} catch (Exception ex) {
-				InfoBox.Show(ex.Message,"Warning");
+					InfoBox.Show(ex.Message, Language.lang[4]);
 				return;
 			}
 		}
@@ -188,7 +187,7 @@ namespace fsm {
 				funkcjaPrzejscia.UstawKoncowy((string)row.Cells["StateNameColumn"].Value, koncowy);
 			}
 			if (koncowych == 0) {
-				InfoBox.Show("Brak stanow koncowych", "Warning");
+				InfoBox.Show(Language.lang[16], Language.lang[4]);
 				return;
 			}
 			string rowName;
@@ -200,7 +199,7 @@ namespace fsm {
 						try {
 							funkcjaPrzejscia.DodajPrzejscie(rowName, s[0], stanDocelowy);
 						} catch (ExceptionInFunkcjaPrzejscia ex) {
-							InfoBox.Show(ex.Message,"Warning");
+								InfoBox.Show(ex.Message, Language.lang[4]);
 							return;
 						}
 					}
@@ -236,7 +235,7 @@ namespace fsm {
 		}
 
 		private void infoButton_Click(object sender, EventArgs e) {
-			InfoBox.Show( funkcjaPrzejscia.info, "Maszyna: " + funkcjaPrzejscia.nazwa);
+			InfoBox.Show( funkcjaPrzejscia.info, Language.lang[0]+": " + funkcjaPrzejscia.nazwa);
 		}
 	}
 }

@@ -65,13 +65,13 @@
 					// 
 					// Accepting
 					// 
-					this.Accepting.HeaderText = "Accepting";
+					this.Accepting.HeaderText = Language.lang[17];
 					this.Accepting.Name = "Accepting";
 					this.Accepting.Width = 60;
 					// 
 					// StateNameColumn
 					// 
-					this.StateNameColumn.HeaderText = "State name";
+					this.StateNameColumn.HeaderText = Language.lang[5];
 					this.StateNameColumn.Name = "StateNameColumn";
 					this.StateNameColumn.ReadOnly = true;
 					this.StateNameColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -83,7 +83,7 @@
 					this.AddLetterButton.Name = "AddLetterButton";
 					this.AddLetterButton.Size = new System.Drawing.Size(75, 23);
 					this.AddLetterButton.TabIndex = 1;
-					this.AddLetterButton.Text = "Add Letter";
+					this.AddLetterButton.Text = Language.lang[18];
 					this.AddLetterButton.UseVisualStyleBackColor = true;
 					this.AddLetterButton.Click += new System.EventHandler(this.AddLetterButton_Click);
 					// 
@@ -93,7 +93,7 @@
 					this.AddStateButton.Name = "AddStateButton";
 					this.AddStateButton.Size = new System.Drawing.Size(75, 23);
 					this.AddStateButton.TabIndex = 2;
-					this.AddStateButton.Text = "Add State";
+					this.AddStateButton.Text = Language.lang[19];
 					this.AddStateButton.UseVisualStyleBackColor = true;
 					this.AddStateButton.Click += new System.EventHandler(this.AddStateButton_Click);
 					// 
@@ -104,7 +104,7 @@
 					this.RemoveStateButton.Name = "RemoveStateButton";
 					this.RemoveStateButton.Size = new System.Drawing.Size(86, 23);
 					this.RemoveStateButton.TabIndex = 3;
-					this.RemoveStateButton.Text = "Remove State";
+					this.RemoveStateButton.Text = Language.lang[20];
 					this.RemoveStateButton.UseVisualStyleBackColor = true;
 					this.RemoveStateButton.Click += new System.EventHandler(this.RemoveStateButton_Click);
 					// 
@@ -115,7 +115,7 @@
 					this.RemoveLetterButton.Name = "RemoveLetterButton";
 					this.RemoveLetterButton.Size = new System.Drawing.Size(86, 23);
 					this.RemoveLetterButton.TabIndex = 4;
-					this.RemoveLetterButton.Text = "Remove Letter";
+					this.RemoveLetterButton.Text = Language.lang[21];
 					this.RemoveLetterButton.UseVisualStyleBackColor = true;
 					this.RemoveLetterButton.Click += new System.EventHandler(this.RemoveLetterButton_Click);
 					// 
@@ -126,7 +126,7 @@
 					this.DoneButton.Name = "DoneButton";
 					this.DoneButton.Size = new System.Drawing.Size(86, 23);
 					this.DoneButton.TabIndex = 5;
-					this.DoneButton.Text = "Done";
+					this.DoneButton.Text = Language.lang[22];
 					this.DoneButton.UseVisualStyleBackColor = true;
 					this.DoneButton.Click += new System.EventHandler(this.DoneButton_Click);
 					// 
@@ -138,7 +138,7 @@
 					this.MyCancelButton.Name = "MyCancelButton";
 					this.MyCancelButton.Size = new System.Drawing.Size(75, 23);
 					this.MyCancelButton.TabIndex = 6;
-					this.MyCancelButton.Text = "Cancel";
+					this.MyCancelButton.Text = Language.lang[23];
 					this.MyCancelButton.UseVisualStyleBackColor = true;
 					// 
 					// changeLetterButton
@@ -148,7 +148,7 @@
 					this.changeLetterButton.Name = "changeLetterButton";
 					this.changeLetterButton.Size = new System.Drawing.Size(108, 23);
 					this.changeLetterButton.TabIndex = 7;
-					this.changeLetterButton.Text = "Change letter";
+					this.changeLetterButton.Text = Language.lang[11];
 					this.changeLetterButton.UseVisualStyleBackColor = true;
 					this.changeLetterButton.Click += new System.EventHandler(this.changeLetterButton_Click);
 					// 
@@ -159,7 +159,7 @@
 					this.ChangeStateNameButton.Name = "ChangeStateNameButton";
 					this.ChangeStateNameButton.Size = new System.Drawing.Size(108, 23);
 					this.ChangeStateNameButton.TabIndex = 8;
-					this.ChangeStateNameButton.Text = "Change state name";
+					this.ChangeStateNameButton.Text = Language.lang[14];
 					this.ChangeStateNameButton.UseVisualStyleBackColor = true;
 					this.ChangeStateNameButton.Click += new System.EventHandler(this.ChangeStateNameButton_Click);
 					// 
@@ -170,7 +170,7 @@
 					this.randomButton.Name = "randomButton";
 					this.randomButton.Size = new System.Drawing.Size(75, 23);
 					this.randomButton.TabIndex = 9;
-					this.randomButton.Text = "Random";
+					this.randomButton.Text = Language.lang[24];
 					this.randomButton.UseVisualStyleBackColor = true;
 					this.randomButton.Click += new System.EventHandler(this.randomButton_Click);
 					// 
@@ -181,7 +181,7 @@
 					this.infoButton.Name = "infoButton";
 					this.infoButton.Size = new System.Drawing.Size(75, 23);
 					this.infoButton.TabIndex = 10;
-					this.infoButton.Text = "Info";
+					this.infoButton.Text = Language.lang[25];
 					this.infoButton.UseVisualStyleBackColor = true;
 					this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
 					// 
@@ -205,7 +205,7 @@
 					this.MinimumSize = new System.Drawing.Size(370, 200);
 					this.Name = "AutomatCreator";
 					this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-					this.Text = "AutomatCreator";
+					this.Text = Language.lang[26];
 					((System.ComponentModel.ISupportInitialize)(this.fPTable)).EndInit();
 					this.ResumeLayout(false);
 
