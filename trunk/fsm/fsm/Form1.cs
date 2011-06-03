@@ -112,7 +112,9 @@ namespace fsm
 
         private void button8_Click(object sender, EventArgs e)
         {
-            InfoBox.Show(Wizualizacja.f.info, Language.lang[0]+": "+Wizualizacja.f.nazwa);
+					if (Wizualizacja.f == null) InfoBox.Show("Nie wybrano funkcji przejścia", "Error");
+					else
+					InfoBox.Show(Wizualizacja.f.info, Language.lang[0]+": "+Wizualizacja.f.nazwa);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -163,7 +165,7 @@ namespace fsm
 
                 private void machineSpeedToolStripMenuItem_Click(object sender, EventArgs e)
                 {
-                    new speed().ShowDialog();
+                    //new speed().ShowDialog();
                 }
 		}
 }

@@ -35,7 +35,7 @@
 			this.noButton.Name = "noButton";
 			this.noButton.Size = new System.Drawing.Size(75, 23);
 			this.noButton.TabIndex = 0;
-			this.noButton.Text = Language.lang[37];
+			this.noButton.Text = "Nie";
 			this.noButton.UseVisualStyleBackColor = true;
 			this.noButton.Click += new System.EventHandler(this.noButton_Click);
 			// 
@@ -46,7 +46,7 @@
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(75, 23);
 			this.cancelButton.TabIndex = 1;
-			this.cancelButton.Text = Language.lang[23];
+			this.cancelButton.Text = "Anuluj";
 			this.cancelButton.UseVisualStyleBackColor = true;
 			// 
 			// textBox
@@ -65,7 +65,7 @@
 			this.yesButton.Name = "yesButton";
 			this.yesButton.Size = new System.Drawing.Size(75, 23);
 			this.yesButton.TabIndex = 3;
-			this.yesButton.Text = Language.lang[38];
+			this.yesButton.Text = "Tak";
 			this.yesButton.UseVisualStyleBackColor = true;
 			this.yesButton.Click += new System.EventHandler(this.yesButton_Click);
 			// 
@@ -80,7 +80,7 @@
 			this.Controls.Add(this.textBox);
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.noButton);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "YesNoDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "YesNoDialog";

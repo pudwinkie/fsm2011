@@ -23,43 +23,42 @@
 				/// the contents of this method with the code editor.
 				/// </summary>
 				private void InitializeComponent() {
-						this.textBox1 = new System.Windows.Forms.TextBox();
-						this.OKButton = new System.Windows.Forms.Button();
-						this.SuspendLayout();
-						// 
-						// textBox1
-						// 
-						this.textBox1.Location = new System.Drawing.Point(12, 12);
-						this.textBox1.Multiline = true;
-						this.textBox1.Name = "textBox1";
-						this.textBox1.ReadOnly = true;
-						this.textBox1.Size = new System.Drawing.Size(242, 111);
-						this.textBox1.TabIndex = 0;
-						// 
-						// OKButton
-						// 
-						this.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-						this.OKButton.Location = new System.Drawing.Point(92, 129);
-						this.OKButton.Name = "OKButton";
-						this.OKButton.Size = new System.Drawing.Size(81, 28);
-						this.OKButton.TabIndex = 1;
-						this.OKButton.Text = Language.lang[29];
-						this.OKButton.UseVisualStyleBackColor = true;
-						// 
-						// InfoBox
-						// 
-						this.AcceptButton = this.OKButton;
-						this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-						this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-						this.ClientSize = new System.Drawing.Size(266, 169);
-						this.Controls.Add(this.OKButton);
-						this.Controls.Add(this.textBox1);
-						this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-						this.Name = "InfoBox";
-						this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-						this.Text = "";
-						this.ResumeLayout(false);
-						this.PerformLayout();
+					this.textBox1 = new System.Windows.Forms.TextBox();
+					this.OKButton = new System.Windows.Forms.Button();
+					this.SuspendLayout();
+					// 
+					// textBox1
+					// 
+					this.textBox1.Location = new System.Drawing.Point(12, 12);
+					this.textBox1.Multiline = true;
+					this.textBox1.Name = "textBox1";
+					this.textBox1.ReadOnly = true;
+					this.textBox1.Size = new System.Drawing.Size(242, 111);
+					this.textBox1.TabIndex = 0;
+					// 
+					// OKButton
+					// 
+					this.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+					this.OKButton.Location = new System.Drawing.Point(92, 129);
+					this.OKButton.Name = "OKButton";
+					this.OKButton.Size = new System.Drawing.Size(81, 28);
+					this.OKButton.TabIndex = 1;
+					this.OKButton.Text = "OK";
+					this.OKButton.UseVisualStyleBackColor = true;
+					// 
+					// InfoBox
+					// 
+					this.AcceptButton = this.OKButton;
+					this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+					this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+					this.ClientSize = new System.Drawing.Size(266, 169);
+					this.Controls.Add(this.OKButton);
+					this.Controls.Add(this.textBox1);
+					this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+					this.Name = "InfoBox";
+					this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+					this.ResumeLayout(false);
+					this.PerformLayout();
 
 				}
 
