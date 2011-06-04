@@ -5,3 +5,5 @@
 - stan który wraca do siebie siê nie podœwietla
 
 - nie do koñca wiadomo co siê dzieje po klikniêciu start. niby przeskakujemy do stanu startowego, ale z drugiej strony ca³y czas poprzednie wejœcie jest aktywne i maszyna dochodzi do jakichœ b³êdnych wniosków...
+
+- opisz funkcjê przejœcia - taka trochê dokumentacja co robi która funkcja. rozmawia³em z kozikiem na temat dokumentacji i ¿yczy³ sobie w³aœnie ¿eby t¹ abstrakcyjn¹ czêœæ projektu opisaæ.
