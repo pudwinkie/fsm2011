@@ -43,6 +43,9 @@ namespace fsm
 
         public static void Raport()
         {
+            if (Wizualizacja.f.obecny.koncowy && Wizualizacja.zly == 0)
+            Wizualizacja.ok = true;
+            
             if (Wizualizacja.f == null) { InfoBox.Show(Language.lang[70]); return; }
             string s = "";
             FunkcjaPrzejscia f = Wizualizacja.f;

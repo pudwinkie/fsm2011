@@ -161,7 +161,9 @@ namespace fsm {
                     "Unknown State", //68
                     "History", //69
 //Dialog
-                    "Automat not found" //70
+                    "Automat not found", //70
+//FunkcjaPrzejscia
+                    "Illegal letter" //71
 					};
 				internal static readonly string[]
 				Polish = { 
@@ -244,7 +246,9 @@ namespace fsm {
                     "Nieznany Stan", //68
                     "Historia: ", //69
 //Dialog
-                    "Nie znaleziono automatu" //70
+                    "Nie znaleziono automatu", //70
+//FunkcjaPrzejscia
+                    "Niedozwolony znak" //71
 								 };
 				public static void SetEnglish() {
 						lang = English;
