@@ -163,7 +163,8 @@ namespace fsm {
 //Dialog
                     "Automat not found", //70
 //FunkcjaPrzejscia
-                    "Illegal letter" //71
+                    "Illegal letter", //71
+                    "Save"
 					};
 				internal static readonly string[]
 				Polish = { 
@@ -248,7 +249,8 @@ namespace fsm {
 //Dialog
                     "Nie znaleziono automatu", //70
 //FunkcjaPrzejscia
-                    "Niedozwolony znak" //71
+                    "Niedozwolony znak", //71
+                    "Zapisz"
 								 };
 				public static void SetEnglish() {
 						lang = English;
@@ -256,5 +258,11 @@ namespace fsm {
 				public static void SetPolish() {
 						lang = Polish;
 				}
+
+                public static void Update() {
+                    Main main = Wizualizacja.Okno;
+                    main.fileToolStripMenuItem.Text = lang[52];
+
+                }
 		}
 }

@@ -417,18 +417,18 @@
         public System.Windows.Forms.Button button5;
         public System.Windows.Forms.Button button6;
         public System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ToolStripMenuItem loadFSMToolStripMenuItem;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
-				private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-				private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
-               public System.Windows.Forms.CheckBox checkBox1;
-               private System.Windows.Forms.ToolStripMenuItem machineSpeedToolStripMenuItem;
-							 private System.Windows.Forms.ToolStripMenuItem saveFSMToolStripMenuItem;
-							 private System.Windows.Forms.SaveFileDialog saveFileDialog;
-							 private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-							 private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        public System.Windows.Forms.Button button7;
+        public System.Windows.Forms.Button button8;
+        public System.Windows.Forms.ToolStripMenuItem loadFSMToolStripMenuItem;
+        public System.Windows.Forms.OpenFileDialog openFileDialog;
+        public System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        public System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.ToolStripMenuItem machineSpeedToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem saveFSMToolStripMenuItem;
+        public System.Windows.Forms.SaveFileDialog saveFileDialog;
+        public System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

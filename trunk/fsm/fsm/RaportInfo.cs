@@ -15,12 +15,14 @@ namespace fsm
         public RaportInfo()
         {
             InitializeComponent();
+            button1.Text = Language.lang[72];
         }
 
 
         public RaportInfo(string s)
         {
-           InitializeComponent();
+            InitializeComponent();
+            button2.Text = Language.lang[72];
            if (s!=null) textBox1.Text = s;
             InitializeComponent();
         }
