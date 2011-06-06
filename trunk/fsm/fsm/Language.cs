@@ -79,23 +79,26 @@ namespace fsm {
 					"Language", //66
 					"Finite State Machine Symulator", //67
 //Wizualizacja
-                    "Unknown State", //68
-                    "History", //69
+            "Unknown State", //68
+            "History", //69
 //Dialog
-                    "Machine not found", //70
+            "Machine not found", //70
 //FunkcjaPrzejscia
-                    "Illegal letter", //71
-                    "Save", //72
+            "Illegal letter", //71
+            "Save", //72
 //Form1
-                    "Machine Speed", //73
-                    "Do not show the steps", //74
-                    "Not selected machine",//75
-										
-										"Coders:", //76
-										"Jagiellonian University in Krakow", //77
-										"Mathematics and Computer Science Department", //78
-										"Finite state machine symulator", //79
-										"FSM files (*.fsm)|*.fsm|Text files(*.txt)|*.txt|All files|*.*", //80
+            "Machine Speed", //73
+            "Do not show the steps", //74
+            "Not selected machine",//75
+						
+						"Coders:", //76
+						"Jagiellonian University in Krakow", //77
+						"Mathematics and Computer Science Department", //78
+						"Finite state machine symulator", //79
+						"FSM files (*.fsm)|*.fsm|Text files(*.txt)|*.txt|All files|*.*", //80
+						"Error", //81
+						"Error at line {0}:", //82
+						"Automat file has to start with word MM_TB_TCS", //83
 					};
 				internal static readonly string[]
 				Polish = { 
@@ -175,37 +178,34 @@ namespace fsm {
 					"Język", //66
 					"Symulator Automatu Skończonego", //67
 //Wizualizacja
-                    "Nieznany Stan", //68
-                    "Historia: ", //69
+            "Nieznany Stan", //68
+            "Historia: ", //69
 //Dialog
-                    "Nie znaleziono automatu", //70
+            "Nie znaleziono automatu", //70
 //FunkcjaPrzejscia
-                    "Niedozwolony znak", //71
-                    "Zapisz", //72
+            "Niedozwolony znak", //71
+            "Zapisz", //72
 //Form1
-                    "Szybkość Automatu", //73
-                    "Nie pokazuj kroków", //74
-                    "Nie wybrano Automatu", //75
-										
-										"Autorzy:", //76
-										"Uniwersytet Jagielloński w Krakowie", //77
-										"Wydział Matematyki i Informatyki", //78
-										"Symulacja automatu skończonego", //79
-										"Plik automatu (*.fsm)|*.fsm|Plik tekstowy(*.txt)|*.txt|Wszystkie pliki|*.*", //80
+            "Szybkość Automatu", //73
+            "Nie pokazuj kroków", //74
+            "Nie wybrano Automatu", //75
+						
+						"Autorzy:", //76
+						"Uniwersytet Jagielloński w Krakowie", //77
+						"Wydział Matematyki i Informatyki", //78
+						"Symulacja automatu skończonego", //79
+						"Plik automatu (*.fsm)|*.fsm|Plik tekstowy(*.txt)|*.txt|Wszystkie pliki|*.*", //80
+						"Błąd", //81
+						"Błąd w linii {0}:", //82
+						"Opis Maszyny musi rozpoczynać się od napisu MM_TB_TCS", //83
 								 };
 				public static void SetEnglish() {
 						lang = English;
-                        if (x != 0) Wizualizacja.Okno.SetLanguage();
-                        x++;
+						Wizualizacja.Okno.SetLanguage();
 				}
 				public static void SetPolish() {
 						lang = Polish;
-                        if (x != 0) Wizualizacja.Okno.SetLanguage();
-                        x++;
+						Wizualizacja.Okno.SetLanguage();
 				}
-                static int x=0;
-                public static void Update() {
-                   
-                }
 		}
 }

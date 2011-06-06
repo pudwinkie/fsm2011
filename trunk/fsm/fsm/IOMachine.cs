@@ -5,7 +5,6 @@ using System.IO;
 namespace fsm {
 		//Tomasz Binczycki
 		static class IOMachine {
-				static string errorMessage = "Błąd w linii {0}:" + Environment.NewLine + "{1}";
 				internal static string stringToSpace(this string s) {
 						if (s.IndexOf(" ") != -1) return s.Substring(0, s.IndexOf(" "));
 						if (s.IndexOf(Environment.NewLine) != -1) return s.Substring(0, s.IndexOf(Environment.NewLine));
@@ -21,13 +20,14 @@ namespace fsm {
 						}
 				}
 				public static FunkcjaPrzejscia LoadMachine(TextReader reader) {
+						string errorMessage = Language.lang[82] + Environment.NewLine + "{1}";
 						FunkcjaPrzejscia ret = new FunkcjaPrzejscia("tempName", "");
 						string s;
 						int line = 0;
 						try {
 								using (reader) {
 										s = reader.ReadLine(); ++line;
-										if (s != "MM_TB_TCS") throw new Exception(string.Format(errorMessage, line, "Opis Maszyny musi rozpoczynać się od napisu MM_TB_TCS"));
+										if (s != "MM_TB_TCS") throw new Exception(string.Format(errorMessage, line, Language.lang[83]));
 										s = reader.ReadLine(); ++line;
 										ret.nazwa = s.stringToSpace();
 										s = reader.ReadLine(); ++line;
@@ -98,7 +98,6 @@ namespace fsm {
 						});
 						sb.Append(fP.info);
 						sb.AppendLine();
-						//		throw new ExceptionInFunkcjaPrzejscia("jeszcze nie dziala. trzeba zaklepac");
 						return sb.ToString();
 				}
 		}
