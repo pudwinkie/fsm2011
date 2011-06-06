@@ -189,6 +189,8 @@
     <None Include="Machine.fsm" />
     <None Include="Machine2.fsm" />
     <None Include="Machine3.fsm" />
+    <None Include="Machine4.fsm" />
+    <None Include="Machine5.fsm" />
     <Content Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

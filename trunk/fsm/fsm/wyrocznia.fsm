@@ -1,0 +1,32 @@
+MM_TB_TCS
+Wyrocznia Nazwa maszyny
+
+14 Liczba stanow
+Start R O G A M W N I P Z KONIEC _ 5 Nazwy stanow
+1 Liczba stanow koncowych
+KONIEC Stany koncowe
+
+12 Liczba liter alfabetu
+a5zprogmwni_ Litery alfabetu
+
+17 Liczba produkcji
+Start 5 -> 5
+R a -> A
+R o -> O
+O g -> G
+O w -> W
+G r -> R
+A m -> M
+A n -> N
+M o -> O
+W a -> A
+N i -> I
+I a -> KONIEC
+P r -> R
+Z _ -> _
+_ z -> Z
+_ p -> P
+5 _ -> _
+format wejscia: "%d z programowania"
+
+

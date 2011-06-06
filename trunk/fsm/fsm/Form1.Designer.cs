@@ -54,6 +54,8 @@
 						this.button7 = new System.Windows.Forms.Button();
 						this.button8 = new System.Windows.Forms.Button();
 						this.checkBox1 = new System.Windows.Forms.CheckBox();
+						this.saveFSMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+						this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 						this.menuStrip1.SuspendLayout();
 						((System.ComponentModel.ISupportInitialize)(this.numerator)).BeginInit();
 						((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -74,7 +76,8 @@
 						// 
 						this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createMachineToolStripMenuItem,
-            this.loadFSMToolStripMenuItem});
+            this.loadFSMToolStripMenuItem,
+            this.saveFSMToolStripMenuItem});
 						this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 						this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
 						this.fileToolStripMenuItem.Text = "File";
@@ -326,6 +329,18 @@
 						this.checkBox1.Text = "Nie pokazuj kroków";
 						this.checkBox1.UseVisualStyleBackColor = true;
 						// 
+						// saveFSMToolStripMenuItem
+						// 
+						this.saveFSMToolStripMenuItem.Name = "saveFSMToolStripMenuItem";
+						this.saveFSMToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+						this.saveFSMToolStripMenuItem.Text = "Save FSM";
+						this.saveFSMToolStripMenuItem.Click += new System.EventHandler(this.saveFSMToolStripMenuItem_Click);
+						// 
+						// saveFileDialog
+						// 
+						this.saveFileDialog.FileName = "Machine";
+						this.saveFileDialog.Filter = "Plik automatu (*.fsm)|*.fsm|Plik tekstowy(*.txt)|*.txt|All Files|*.*";
+						// 
 						// Form1
 						// 
 						this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,6 +407,8 @@
 				private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
                public System.Windows.Forms.CheckBox checkBox1;
                private System.Windows.Forms.ToolStripMenuItem machineSpeedToolStripMenuItem;
+							 private System.Windows.Forms.ToolStripMenuItem saveFSMToolStripMenuItem;
+							 private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 

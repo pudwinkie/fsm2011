@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Windows.Forms;
 using System.Text;
+using System.Windows.Forms;
 
 namespace fsm {
 	public partial class SaveMachineDialog : Form {
@@ -17,6 +17,9 @@ namespace fsm {
 			DialogResult = DialogResult.OK;
 		}
 
+		private void anulujButton_Click(object sender, EventArgs e) {
+				DialogResult = DialogResult.Cancel;
+		}
 		private void yesButton_Click(object sender, EventArgs e) {
 			if (nazwaTextBox.Text != null) fP.nazwa = nazwaTextBox.Text;
 			if (opisTextBox.Text != null) fP.info = opisTextBox.Text;
@@ -35,5 +38,6 @@ namespace fsm {
 			}
 			DialogResult = DialogResult.OK;
 		}
+
 	}
 }

@@ -168,5 +168,24 @@ namespace fsm
                 {
                     new speed().ShowDialog();
                 }
+
+								private void saveFSMToolStripMenuItem_Click(object sender, EventArgs e) {
+										if (Wizualizacja.f == null) { InfoBox.Show("Brak automatu do zapisania"); return; }
+
+										if (saveFileDialog.ShowDialog() == DialogResult.OK) {
+												try {
+														StreamWriter mR;
+														Encoding enc = Encoding.GetEncoding("Windows-1250");
+														if ((mR = new StreamWriter(saveFileDialog.OpenFile(), enc)) != null) {
+																using (mR) {
+																		mR.Write(IOMachine.SaveMachine(Wizualizacja.f));
+																}
+														}
+												} catch (Exception ex) {
+														InfoBox.Show(ex.Message);
+												}
+										}
+										DialogResult = DialogResult.OK;
+								}
 		}
 }
