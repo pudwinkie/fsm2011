@@ -32,6 +32,7 @@
 						this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.createMachineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.loadFSMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+						this.saveFSMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.machineSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +55,9 @@
 						this.button7 = new System.Windows.Forms.Button();
 						this.button8 = new System.Windows.Forms.Button();
 						this.checkBox1 = new System.Windows.Forms.CheckBox();
-						this.saveFSMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+						this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+						this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.menuStrip1.SuspendLayout();
 						((System.ComponentModel.ISupportInitialize)(this.numerator)).BeginInit();
 						((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,7 +67,8 @@
 						// 
 						this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.toolsToolStripMenuItem});
+            this.toolsToolStripMenuItem,
+            this.helpToolStripMenuItem});
 						this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 						this.menuStrip1.Name = "menuStrip1";
 						this.menuStrip1.Size = new System.Drawing.Size(662, 24);
@@ -95,6 +98,13 @@
 						this.loadFSMToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
 						this.loadFSMToolStripMenuItem.Text = "Load FSM";
 						this.loadFSMToolStripMenuItem.Click += new System.EventHandler(this.loadFSMToolStripMenuItem_Click);
+						// 
+						// saveFSMToolStripMenuItem
+						// 
+						this.saveFSMToolStripMenuItem.Name = "saveFSMToolStripMenuItem";
+						this.saveFSMToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+						this.saveFSMToolStripMenuItem.Text = "Save FSM";
+						this.saveFSMToolStripMenuItem.Click += new System.EventHandler(this.saveFSMToolStripMenuItem_Click);
 						// 
 						// toolsToolStripMenuItem
 						// 
@@ -329,17 +339,25 @@
 						this.checkBox1.Text = "Nie pokazuj kroków";
 						this.checkBox1.UseVisualStyleBackColor = true;
 						// 
-						// saveFSMToolStripMenuItem
-						// 
-						this.saveFSMToolStripMenuItem.Name = "saveFSMToolStripMenuItem";
-						this.saveFSMToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-						this.saveFSMToolStripMenuItem.Text = "Save FSM";
-						this.saveFSMToolStripMenuItem.Click += new System.EventHandler(this.saveFSMToolStripMenuItem_Click);
-						// 
 						// saveFileDialog
 						// 
 						this.saveFileDialog.FileName = "Machine";
 						this.saveFileDialog.Filter = "Plik automatu (*.fsm)|*.fsm|Plik tekstowy(*.txt)|*.txt|All Files|*.*";
+						// 
+						// helpToolStripMenuItem
+						// 
+						this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+						this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+						this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+						this.helpToolStripMenuItem.Text = "Help";
+						// 
+						// aboutToolStripMenuItem
+						// 
+						this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+						this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+						this.aboutToolStripMenuItem.Text = "About";
+						this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
 						// 
 						// Form1
 						// 
@@ -409,6 +427,8 @@
                private System.Windows.Forms.ToolStripMenuItem machineSpeedToolStripMenuItem;
 							 private System.Windows.Forms.ToolStripMenuItem saveFSMToolStripMenuItem;
 							 private System.Windows.Forms.SaveFileDialog saveFileDialog;
+							 private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+							 private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

@@ -187,5 +187,9 @@ namespace fsm
 										}
 										DialogResult = DialogResult.OK;
 								}
+
+								private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
+										new About().ShowDialog();
+								}
 		}
 }
