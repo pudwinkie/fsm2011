@@ -8,6 +8,7 @@ namespace fsm
 {
     static class Dialog
     {
+        //autor Musiał Mateusz
         public static string raportString;
 
         public static void Error(int i)
@@ -50,7 +51,7 @@ namespace fsm
             string s = "";
             FunkcjaPrzejscia f = Wizualizacja.f;
             s += Language.lang[0] +": " + f.nazwa + Environment.NewLine;
-						if (Wizualizacja.ok) s += Language.lang[30]; else s += Language.lang[31];
+						if (Wizualizacja.f.obecny.koncowy && Wizualizacja.zly==0) s += Language.lang[30]; else s += Language.lang[31];
             s += Environment.NewLine;
             s += Wizualizacja.Okno.textBox2.Text;
             s += Environment.NewLine;
@@ -58,8 +59,10 @@ namespace fsm
             s += Language.lang[69];
             s += Environment.NewLine;
             foreach (string q in Wizualizacja.raport) {
-                s += q;
-                s += Environment.NewLine;
+                if (q[q.Length-1] != '>')
+                {
+                    s += q;
+                s += Environment.NewLine;}
             }
             raportString = s;
             new RaportInfo(raportString).ShowDialog();

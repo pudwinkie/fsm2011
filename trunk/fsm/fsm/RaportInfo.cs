@@ -7,6 +7,7 @@ namespace fsm
 {
     public partial class RaportInfo : Form
     {
+        //autor Musiał Mateusz
         public RaportInfo()
         {
             InitializeComponent();

@@ -7,6 +7,7 @@ using System.IO;
 
 namespace fsm {
 		public partial class Main : Form {
+            //autor Musiał Mateusz & Tomasz Binczycki
 				public List<Control> Elementy = new List<Control>();
 				void zbierzElementy() {
 
@@ -178,7 +179,7 @@ namespace fsm {
 						main.loadFSMToolStripMenuItem.Text = lang[54];
 						main.saveFSMToolStripMenuItem.Text = lang[55];
 						main.Text = lang[79];
-						main.dataGridView1.Columns[0].HeaderText = lang[5];
+						//main.dataGridView1.Columns[0].HeaderText = lang[5];
 						main.label1.Text = lang[56];
 						main.label2.Text = lang[57];
 						main.label3.Text = lang[58];
