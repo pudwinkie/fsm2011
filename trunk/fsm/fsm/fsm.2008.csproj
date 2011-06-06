@@ -94,6 +94,7 @@
     <Compile Include="MessageBox.Designer.cs">
       <DependentUpon>MessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obraz.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AutomatCreator.resx">
@@ -176,7 +177,7 @@
     <Compile Include="speed.Designer.cs">
       <DependentUpon>speed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Wizualizacja.cs" />
+    <Compile Include="Wizualizacja_copy.cs" />
     <Compile Include="YesNoDialog.cs">
       <SubType>Form</SubType>
     </Compile>

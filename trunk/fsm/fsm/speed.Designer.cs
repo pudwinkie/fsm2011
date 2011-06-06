@@ -46,8 +46,9 @@
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(12, 12);
+            this.trackBar1.Maximum = 20;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(204, 45);
+            this.trackBar1.Size = new System.Drawing.Size(204, 42);
             this.trackBar1.TabIndex = 2;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
@@ -65,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 109);
+            this.ClientSize = new System.Drawing.Size(282, 113);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.label1);
@@ -73,6 +74,7 @@
             this.MinimumSize = new System.Drawing.Size(290, 140);
             this.Name = "speed";
             this.Text = "Machine Speed";
+            this.Load += new System.EventHandler(this.speed_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
