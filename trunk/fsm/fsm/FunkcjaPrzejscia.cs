@@ -47,6 +47,7 @@ namespace fsm {
 
 						bool lit = false;
 						foreach (char i in alfabet) if (i == litera) lit = true;
+                        if (litera.ToString().Trim() == "") throw new ExceptionInFunkcjaPrzejscia(Language.lang[71]);
 						if (lit) throw new ExceptionInFunkcjaPrzejscia(Language.lang[44]);
 						alfabet += litera;
 				}
