@@ -14,9 +14,15 @@ namespace fsm
     {
         int s;
 
+        public void SetLanguage() {
+            this.Text = Language.lang[73];
+        }
+
         public speed()
         {
+            
             InitializeComponent();
+            SetLanguage();
             s = 20 - (Wizualizacja.czasCzekania / 25);
             trackBar1.Value = s;
             label1.Text = s.ToString();
