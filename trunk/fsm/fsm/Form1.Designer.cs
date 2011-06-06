@@ -60,9 +60,8 @@
             this.SuspendLayout();
             // 
             // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-						this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            //           
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.toolsToolStripMenuItem});
 						this.menuStrip1.Location = new System.Drawing.Point(0, 0);

@@ -52,6 +52,8 @@ namespace fsm
             int hist = f.Stany.IndexOf(f.obecny);
             bool obraz = Okno.checkBox1.Checked == true ? false : true;
             historia.Add(hist);
+            raport.Add(f.obecny.nazwa.ToString()+" - "+Okno.textBox3.Text);
+
             // InfoBox.Show(hist.ToString(), " ");
             // sprawdzenie czy tekst istnieje
             string s = null;
