@@ -72,6 +72,7 @@
 						this.anulujButton.TabIndex = 3;
 						this.anulujButton.Text = "Anuluj";
 						this.anulujButton.UseVisualStyleBackColor = true;
+						this.anulujButton.Click += new System.EventHandler(this.anulujButton_Click);
 						// 
 						// saveFileDialog
 						// 

@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Text;
-using System.Windows.Forms;
 using System.IO;
 
 namespace fsm {
+		//Tomasz Binczycki
 		static class IOMachine {
 				static string errorMessage = "Błąd w linii {0}:" + Environment.NewLine + "{1}";
 				internal static string stringToSpace(this string s) {
@@ -31,7 +29,7 @@ namespace fsm {
 										s = reader.ReadLine(); ++line;
 										if (s != "MM_TB_TCS") throw new Exception(string.Format(errorMessage, line, "Opis Maszyny musi rozpoczynać się od napisu MM_TB_TCS"));
 										s = reader.ReadLine(); ++line;
-										ret.nazwa = s;
+										ret.nazwa = s.stringToSpace();
 										s = reader.ReadLine(); ++line;
 										int liczbaStanow;
 										while (!Int32.TryParse(readToSpace(ref s), out liczbaStanow)) { s = reader.ReadLine(); ++line; }
@@ -60,7 +58,7 @@ namespace fsm {
 												s = reader.ReadLine(); ++line;
 												s1 = readToSpace(ref s);
 												a = readToSpace(ref s);
-												if (readToSpace(ref s) != "->") throw new Exception(string.Format(errorMessage, line, "Bledny opis funkjci przejscia"));
+												if (readToSpace(ref s) != "->") throw new Exception(string.Format(errorMessage, line, "Bledny opis funkcji przejscia"));
 												s2 = readToSpace(ref s);
 												ret.DodajPrzejscie(s1, a[0], s2);
 										}

@@ -1,0 +1,17 @@
+MM_TB_TCS
+Automat2 Nazwa maszyny
+
+3 Liczba stanow
+Start B C Nazwy stanow
+1 Liczba stanow koncowych
+C Stany koncowe
+
+3 Liczba liter alfabetu
+abc Litery alfabetu
+
+4 Liczba produkcji
+Start a -> Start
+Start b -> B
+B c -> C
+C c -> C
+automat akceptuj¹cy s³owa postaci {a^n b c^k} nad alfabetem {abc}
