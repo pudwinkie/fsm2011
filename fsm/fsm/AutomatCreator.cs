@@ -212,6 +212,7 @@ namespace fsm {
 					break;
 				case DialogResult.OK:
 					parent.Inicjalizacja(funkcjaPrzejscia);
+					Wizualizacja.RysujF();
 					SetVisibleCore(false);
 					break;
 
