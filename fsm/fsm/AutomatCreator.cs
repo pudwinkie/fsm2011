@@ -14,6 +14,7 @@ namespace fsm {
 		public AutomatCreator(Main p) {
 			parent = p;
 			InitializeComponent();
+			setLanguage();
 			fPTable.RowCount++;
 			fPTable.Rows[0].Cells[1].Value = Language.lang[1];
 			funkcjaPrzejscia.DodajStan(Language.lang[1], false);
@@ -29,6 +30,7 @@ namespace fsm {
 			funkcjaPrzejscia = fp;
 			parent = form1;
 			InitializeComponent();
+			setLanguage();
 			stany.Add("");
 			foreach (Stan s in funkcjaPrzejscia.Stany) {
 				stany.Add(s.nazwa);
@@ -49,7 +51,22 @@ namespace fsm {
 			}
 			fPTable.Update();
 		}
-
+		private void setLanguage() {
+				this.Accepting.HeaderText = Language.lang[17];//"Akceptujacy";
+				this.StateNameColumn.HeaderText = Language.lang[5];//"Nazwa stanu";
+				this.AddLetterButton.Text = Language.lang[18];//"Dodaj literę";
+				this.AddStateButton.Text = Language.lang[19];//"Dodaj stan";
+				this.RemoveStateButton.Text = Language.lang[20];//"Usun stan";
+				this.RemoveLetterButton.Text = Language.lang[21];//"Usun literę";
+				this.DoneButton.Text = Language.lang[22];//"Zakończ";
+				this.MyCancelButton.Text = Language.lang[23];//"Anuluj";
+				this.changeLetterButton.Text = Language.lang[11];//"Zmień literę";
+				this.ChangeStateNameButton.Text = Language.lang[14];//"Zmień nazwę stanu";
+				this.randomButton.Text = Language.lang[24];//"Losowo";
+				this.infoButton.Text = Language.lang[25];//"Info";
+				this.Text = Language.lang[26];//"Utworz Automat";
+				
+		}
 		private void AddLetterButton_Click(object sender, EventArgs e) {
 			var eNF = new EnterNameForm(Language.lang[2], this, 1);
 			eNF.ShowDialog();

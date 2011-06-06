@@ -36,7 +36,7 @@
 					this.label1.Name = "label1";
 					this.label1.Size = new System.Drawing.Size(108, 13);
 					this.label1.TabIndex = 0;
-					this.label1.Text = "Wybierz do usuniecia";
+					this.label1.Text = "Wybierz do usuniecia"; //nie używane
 					// 
 					// listBox1
 					// 
@@ -53,7 +53,7 @@
 					this.removeButton.Name = "removeButton";
 					this.removeButton.Size = new System.Drawing.Size(75, 23);
 					this.removeButton.TabIndex = 2;
-					this.removeButton.Text = "Usun";
+					this.removeButton.Text =  "Usuń";
 					this.removeButton.UseVisualStyleBackColor = true;
 					this.removeButton.Click += new System.EventHandler(this.button1_Click);
 					// 

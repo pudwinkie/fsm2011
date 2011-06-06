@@ -9,10 +9,17 @@ namespace fsm {
 				public LanguageDialog(Main p) {
 						parent = p;
 						InitializeComponent();
+						setLanguage();
 						listaJezykow.Add(polishButton);
 						listaJezykow.Add(englishButton);
 				}
+				private void setLanguage() {
 
+						this.englishButton.Text = "English";
+						this.polishButton.Text = "Polski";
+						this.okButton.Text = Language.lang[29];// "OK";
+						this.Text = Language.lang[66];//"Language";
+				}
 				private void englishButton_CheckedChanged(object sender, EventArgs e) {
 						if(englishButton.Checked == false) return;
 						foreach (RadioButton r in listaJezykow) {
@@ -33,9 +40,11 @@ namespace fsm {
 						if (polishButton.Checked) Language.SetPolish();
 						if (s == Language.lang[0]) {
 								DialogResult = DialogResult.Abort;
+								Dispose();
 								return;
 						}
 						parent.Update();
+						Dispose();
 				}
 		}
 }

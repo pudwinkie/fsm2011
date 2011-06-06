@@ -9,10 +9,22 @@ namespace fsm {
 		public SaveMachineDialog(FunkcjaPrzejscia f) {
 			fP = f;
 			InitializeComponent();
+			setLanguage();
 			nazwaTextBox.Text = fP.nazwa;
 			opisTextBox.Text = fP.info;
 		}
+		private void setLanguage() {
 
+				this.questionLabel.Text = Language.lang[36]; //"Czy chcesz zapisac automat?";
+				this.nieButton.Text = Language.lang[37]; //"Nie";
+				this.yesButton.Text = Language.lang[38]; //"Tak";
+				this.anulujButton.Text = Language.lang[23]; //"Anuluj";
+				this.saveFileDialog.Filter = Language.lang[80]; //"Plik automatu (*.fsm)|*.fsm|Plik tekstowy(*.txt)|*.txt|All Files|*.*";
+				this.label1.Text = Language.lang[39]; //"Nazwa automatu";
+				this.label2.Text = Language.lang[40]; //"Opis automatu";
+				this.Text = Language.lang[41]; //"Zapisz automat";
+						
+		}
 		private void noButton_Click(object sender, EventArgs e) {
 			DialogResult = DialogResult.OK;
 		}
