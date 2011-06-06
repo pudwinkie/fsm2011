@@ -8,7 +8,7 @@ namespace fsm
 {
     class Dialog
     {
-
+        public static string raportString;
 
         public static void Error(int i)
         {
@@ -43,14 +43,23 @@ namespace fsm
 
         public static void Raport()
         {
+            if (Wizualizacja.f == null) { InfoBox.Show(Language.lang[70]); return; }
             string s = "";
             FunkcjaPrzejscia f = Wizualizacja.f;
-            s += Language.lang[0] + f.nazwa + Environment.NewLine;
+            s += Language.lang[0] +": " + f.nazwa + Environment.NewLine;
 						if (Wizualizacja.ok) s += Language.lang[30]; else s += Language.lang[31];
             s += Environment.NewLine;
             s += Wizualizacja.Okno.textBox2.Text;
             s += Environment.NewLine;
-            InfoBox.Show(s,Language.lang[32]);
+            s += Environment.NewLine;
+            s += Language.lang[69];
+            s += Environment.NewLine;
+            foreach (string q in Wizualizacja.raport) {
+                s += q;
+                s += Environment.NewLine;
+            }
+            raportString = s;
+            new RaportInfo(raportString).ShowDialog();
         }
     }
 

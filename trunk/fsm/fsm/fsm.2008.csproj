@@ -130,6 +130,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RaportInfo.resx">
+      <DependentUpon>RaportInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="RemoveDialog.resx">
       <DependentUpon>RemoveDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -158,6 +162,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RaportInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RaportInfo.Designer.cs">
+      <DependentUpon>RaportInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="RemoveDialog.cs">
       <SubType>Form</SubType>

@@ -26,7 +26,7 @@ namespace fsm
 				}
         internal void Inicjalizacja(FunkcjaPrzejscia fp)
         {
-            button5.Enabled = false;
+            
             textBox3.Font = new Font("Times New Roman", 30, FontStyle.Bold);
             Wizualizacja.Test(fp); // tworzy nową funkcje przejścia
             Wizualizacja.Okno = this;

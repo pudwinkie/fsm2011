@@ -77,6 +77,9 @@ namespace fsm {
 					"Opcje", //65
 					"Język", //66
 					"Symulator Automatu Skończonego", //67
+//Wizualizacja
+                    "Nieznany Stan" //68
+
 								 };
 				internal static readonly string[]
 				English = { 
@@ -154,6 +157,11 @@ namespace fsm {
 					"Options", //65
 					"Language", //66
 					"Finite State Machine Symulator", //67
+//Wizualizacja
+                    "Unknown State", //68
+                    "History", //69
+//Dialog
+                    "Automat not found" //70
 					};
 				internal static readonly string[]
 				Polish = { 
@@ -232,6 +240,11 @@ namespace fsm {
 					"Opcje", //65
 					"Język", //66
 					"Symulator Automatu Skończonego", //67
+//Wizualizacja
+                    "Nieznany Stan", //68
+                    "Historia: ", //69
+//Dialog
+                    "Nie znaleziono automatu" //70
 								 };
 				public static void SetEnglish() {
 						lang = English;
