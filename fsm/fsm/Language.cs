@@ -78,7 +78,12 @@ namespace fsm {
 					"Język", //66
 					"Symulator Automatu Skończonego", //67
 //Wizualizacja
-                    "Nieznany Stan" //68
+					"Nieznany Stan", //68
+					"Historia: ", //69
+//Dialog
+					"Nie znaleziono automatu", //70
+//FunkcjaPrzejscia
+					"Niedozwolony znak" //71
 
 								 };
 				internal static readonly string[]

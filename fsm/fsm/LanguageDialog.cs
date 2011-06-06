@@ -35,9 +35,7 @@ namespace fsm {
 								DialogResult = DialogResult.Abort;
 								return;
 						}
-						parent.Visible = false;
-						SetVisibleCore(false);
-						new Main().ShowDialog();
+						parent.Update();
 				}
 		}
 }
