@@ -1,0 +1,29 @@
+MM_TB_TCS
+Podci¹g_abc Nazwa maszyny
+
+4 Liczba stanow
+S1 S2 S3 S4 Nazwy stanow
+1 Liczba stanow koncowych
+S4 Stany koncowe
+
+4 Liczba liter alfabetu
+abcd Litery alfabetu
+
+16 Liczba produkcji
+S1 a -> S2
+S1 b -> S1
+S1 c -> S1
+S1 d -> S1
+S2 a -> S1
+S2 b -> S3
+S2 c -> S1
+S2 d -> S1
+S3 a -> S1
+S3 b -> S1
+S3 c -> S4
+S3 d -> S1
+S4 a -> S4
+S4 b -> S4
+S4 c -> S4
+S4 d -> S4
+Auomat pracuj¹cy na alfabecie {a,b,c} i akceptuj¹cy s³owa zaiweraj¹ce podci¹g "abc"

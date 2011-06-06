@@ -1,0 +1,18 @@
+﻿MM_TB_TCS
+NazwaMaszyny
+
+5 LiczbaStanow
+A B C D E  Stany
+3 LiczbaStanowKoncowych
+A B C StanyKoncowe
+
+3 LiczbaLiterwAlfabecie
+abc LiteryAlfabetu
+
+5 LiczbaProdukcjiFunkcjiPrzejscia
+A a -> B  komentarz
+A b -> C
+B c -> A
+C b -> D
+D a -> A
+wszystko niżej jest opisem maszyny
