@@ -191,5 +191,10 @@ namespace fsm
 								private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
 										new About().ShowDialog();
 								}
+
+                                private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+                                {
+
+                                }
 		}
 }

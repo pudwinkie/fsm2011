@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace fsm
 {
-    class Obraz
+    static class Obraz
     {
 
         public static void PodWers(int wers, int j)

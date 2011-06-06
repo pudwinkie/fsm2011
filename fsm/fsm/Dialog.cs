@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace fsm
 {
-    class Dialog
+    static class Dialog
     {
         public static string raportString;
 
@@ -43,10 +43,10 @@ namespace fsm
 
         public static void Raport()
         {
-            if (Wizualizacja.f.obecny.koncowy && Wizualizacja.zly == 0)
-            Wizualizacja.ok = true;
-            
+          
             if (Wizualizacja.f == null) { InfoBox.Show(Language.lang[70]); return; }
+            if (Wizualizacja.f.obecny.koncowy && Wizualizacja.zly == 0)
+                Wizualizacja.ok = true;
             string s = "";
             FunkcjaPrzejscia f = Wizualizacja.f;
             s += Language.lang[0] +": " + f.nazwa + Environment.NewLine;
