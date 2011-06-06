@@ -17,7 +17,7 @@ namespace fsm
         public speed()
         {
             InitializeComponent();
-            s = 10 - (Wizualizacja.czasCzekania / 50);
+            s = 20 - (Wizualizacja.czasCzekania / 25);
             trackBar1.Value = s;
             label1.Text = s.ToString();
             
@@ -31,8 +31,13 @@ namespace fsm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Wizualizacja.czasCzekania = (10 - s) * 50;
+            Wizualizacja.czasCzekania = (20 - s) * 25;
             SetVisibleCore(false);
+        }
+
+        private void speed_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

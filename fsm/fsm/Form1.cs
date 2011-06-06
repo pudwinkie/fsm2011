@@ -14,7 +14,7 @@ namespace fsm
     {
         public List<Control> Elementy = new List<Control>();
 				void zbierzElementy() {
-						Elementy.Add(button1);
+						
 						Elementy.Add(textBox2);
 						Elementy.Add(button2);
 						Elementy.Add(button3);
@@ -33,7 +33,7 @@ namespace fsm
             numerator.Value = 1;
             Dialog.Nowa();
             Wizualizacja.UspijElementy();
-            button1.Enabled = true;
+            
             label5.Font = new Font("Times New Roman", 10, FontStyle.Bold);
         }
 
