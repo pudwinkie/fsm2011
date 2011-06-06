@@ -43,7 +43,7 @@
 					this.OKButton.Name = "OKButton";
 					this.OKButton.Size = new System.Drawing.Size(81, 28);
 					this.OKButton.TabIndex = 1;
-					this.OKButton.Text = "OK";
+					this.OKButton.Text =  "OK";
 					this.OKButton.UseVisualStyleBackColor = true;
 					// 
 					// InfoBox

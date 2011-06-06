@@ -10,10 +10,15 @@ namespace fsm {
 						parent = p;
 						Text = title;
 						InitializeComponent();
+						setLanguage();
 						label1.Text = labelTitle;
 						listBox1.DataSource = lista;
 				}
+				private void setLanguage() {
 
+						this.removeButton.Text = Language.lang[35];// "Usuń";
+						this.MyCancelButton.Text = Language.lang[23];// "Anuluj";
+				}
 				private void button1_Click(object sender, EventArgs e) {
 						foreach (string o in listBox1.SelectedItems)
 								parent.removeList.Add(o);

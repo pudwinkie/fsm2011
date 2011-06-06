@@ -42,7 +42,7 @@ namespace fsm {
 				  "Wpisz nazwę", //33
 //LanguageDialog//
 				  "Wybór języka", //34
-					"Usun", //35
+					"Usuń", //35
 					"Czy chcesz zapisac automat?", //36
 					"Nie", //37
 					"Tak", //38
@@ -176,7 +176,13 @@ namespace fsm {
 //Form1
                     "Machine Speed", //73
                     "Do not show the steps", //74
-                    "Not selected machine"
+                    "Not selected machine",//75
+										
+										"Coders:", //76
+										"Jagiellonian University in Krakow", //77
+										"Mathematics and Computer Science Department", //78
+										"Finite state machine symulator", //79
+										"Plik automatu (*.fsm)|*.fsm|Plik tekstowy(*.txt)|*.txt|Wszystkie pliki|*.*", //80
 					};
 				internal static readonly string[]
 				Polish = { 
@@ -266,7 +272,13 @@ namespace fsm {
 //Form1
                     "Szybkość Automatu", //73
                     "Nie pokazuj kroków", //74
-                    "Nie wybrano Automatu"
+                    "Nie wybrano Automatu", //75
+										
+										"Autorzy:", //76
+										"Uniwersytet Jagielloński w Krakowie", //77
+										"Wydział Matematyki i Informatyki", //78
+										"Symulacja automatu skończonego", //79
+										"Plik automatu (*.fsm)|*.fsm|Plik tekstowy(*.txt)|*.txt|Wszystkie pliki|*.*", //80
 								 };
 				public static void SetEnglish() {
 						lang = English;

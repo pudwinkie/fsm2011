@@ -5,6 +5,7 @@ namespace fsm {
 		public partial class InfoBox : Form {
 				InfoBox() {
 						InitializeComponent();
+						setLanguage();
 				}
 				public static void Show(string message, string title) {
 						InfoBox ib = new InfoBox();
@@ -16,6 +17,11 @@ namespace fsm {
 						InfoBox ib = new InfoBox();
 						ib.textBox1.Text = message;
 						ib.ShowDialog();
+				}
+				private void
+						setLanguage() {
+						this.OKButton.Text = Language.lang[29];// "OK";
+						
 				}
 		}
 }

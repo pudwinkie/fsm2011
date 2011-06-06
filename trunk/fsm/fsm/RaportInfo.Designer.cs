@@ -42,7 +42,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 36);
             this.button1.TabIndex = 1;
-            this.button1.Text = "OK";
+						this.button1.Text = Language.lang[29];// "OK";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -52,7 +52,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 36);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Zapisz";
+						this.button2.Text = Language.lang[72];// "Zapisz";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -78,7 +78,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "RaportInfo";
-            this.Text = "Raport";
+						this.Text = Language.lang[32];// "Raport";
             this.ResumeLayout(false);
             this.PerformLayout();
 

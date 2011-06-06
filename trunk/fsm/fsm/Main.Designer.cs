@@ -36,6 +36,8 @@
 						this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.machineSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+						this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+						this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 						this.numerator = new System.Windows.Forms.NumericUpDown();
 						this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -56,8 +58,6 @@
 						this.button8 = new System.Windows.Forms.Button();
 						this.checkBox1 = new System.Windows.Forms.CheckBox();
 						this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-						this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-						this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 						this.menuStrip1.SuspendLayout();
 						((System.ComponentModel.ISupportInitialize)(this.numerator)).BeginInit();
 						((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -128,6 +128,21 @@
 						this.machineSpeedToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
 						this.machineSpeedToolStripMenuItem.Text = "Machine Speed";
 						this.machineSpeedToolStripMenuItem.Click += new System.EventHandler(this.machineSpeedToolStripMenuItem_Click);
+						// 
+						// helpToolStripMenuItem
+						// 
+						this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+						this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+						this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+						this.helpToolStripMenuItem.Text = "Help";
+						// 
+						// aboutToolStripMenuItem
+						// 
+						this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+						this.aboutToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+						this.aboutToolStripMenuItem.Text = "About";
+						this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
 						// 
 						// openFileDialog
 						// 
@@ -270,9 +285,9 @@
 						// label4
 						// 
 						this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-						this.label4.Location = new System.Drawing.Point(535, 149);
+						this.label4.Location = new System.Drawing.Point(520, 149);
 						this.label4.Name = "label4";
-						this.label4.Size = new System.Drawing.Size(80, 13);
+						this.label4.Size = new System.Drawing.Size(120, 13);
 						this.label4.TabIndex = 13;
 						this.label4.Text = "Ilość Kroków";
 						// 
@@ -344,22 +359,7 @@
 						this.saveFileDialog.FileName = "Machine";
 						this.saveFileDialog.Filter = "Plik automatu (*.fsm)|*.fsm|Plik tekstowy(*.txt)|*.txt|All Files|*.*";
 						// 
-						// helpToolStripMenuItem
-						// 
-						this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-						this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-						this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-						this.helpToolStripMenuItem.Text = "Help";
-						// 
-						// aboutToolStripMenuItem
-						// 
-						this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-						this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-						this.aboutToolStripMenuItem.Text = "About";
-						this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-						// 
-						// Form1
+						// Main
 						// 
 						this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 						this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -385,7 +385,7 @@
 						this.Controls.Add(this.menuStrip1);
 						this.MainMenuStrip = this.menuStrip1;
 						this.MinimumSize = new System.Drawing.Size(670, 380);
-						this.Name = "Form1";
+						this.Name = "Main";
 						this.Text = "Finite State Machine Symulator";
 						this.Load += new System.EventHandler(this.Form1_Load);
 						this.menuStrip1.ResumeLayout(false);
