@@ -133,6 +133,12 @@ namespace fsm
             Obraz.PodWers(0, 1);
             historia.Clear();
             raport.Clear();
+            for (int i = 0; i < f.Stany.ToArray().Length; i++)
+                if (f.Stany[i].koncowy)
+                {
+                    Okno.dataGridView1.Rows[i].Cells[0].Style.Font = new Font("Times New Roman", 9, FontStyle.Bold);
+                    Okno.dataGridView1.Rows[i].Cells[0].Style.ForeColor = Color.Green;
+                }
             f.Reset();
         }
 
@@ -174,8 +180,7 @@ namespace fsm
             }
             Okno.dataGridView1.Rows[0].Cells[0].Selected = false;
 
-            for (int i = 0; i < f.Stany.ToArray().Length; i++)
-                if (f.Stany[i].koncowy) Okno.dataGridView1.Rows[i].Cells[0].Style.Font = new Font("Times New Roman", 9, FontStyle.Bold);
+            
             Obraz.PodWers(f.Stany.IndexOf(f.obecny), 1);
             Okno.dataGridView1.Invalidate();
             Reset();

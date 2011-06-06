@@ -83,7 +83,10 @@ namespace fsm {
 //Dialog
 					"Nie znaleziono automatu", //70
 //FunkcjaPrzejscia
-					"Niedozwolony znak" //71
+					"Niedozwolony znak", //71
+//Form1
+                    "Szybkość Automatu", //73
+                    "Nie pokazuj kroków"
 
 								 };
 				internal static readonly string[]
@@ -149,7 +152,7 @@ namespace fsm {
 					"File", //52
 					"Create Machine", //53
 					"Load FSM", //54
-					"Open Finite State Machine", //55
+					"Save FSM", //55
 					"Input data", //56
 					"Data read", //57
 					"Current letter", //58
@@ -166,10 +169,14 @@ namespace fsm {
                     "Unknown State", //68
                     "History", //69
 //Dialog
-                    "Automat not found", //70
+                    "Machine not found", //70
 //FunkcjaPrzejscia
                     "Illegal letter", //71
-                    "Save"
+                    "Save", //72
+//Form1
+                    "Machine Speed", //73
+                    "Do not show the steps", //74
+                    "Not selected machine"
 					};
 				internal static readonly string[]
 				Polish = { 
@@ -235,7 +242,7 @@ namespace fsm {
 					"Plik", //52
 					"Utwórz automat", //53
 					"Załaduj Automat", //54
-					"Wybierz plik z automatem", //55
+					"Zapisz Automat", //55 ?
 					"Dane Wejściowe", //56
 					"Przetworzone Dane", //57
 					"Obecnie Rozpatrywana Litera", //58
@@ -255,19 +262,25 @@ namespace fsm {
                     "Nie znaleziono automatu", //70
 //FunkcjaPrzejscia
                     "Niedozwolony znak", //71
-                    "Zapisz"
+                    "Zapisz", //72
+//Form1
+                    "Szybkość Automatu", //73
+                    "Nie pokazuj kroków", //74
+                    "Nie wybrano Automatu"
 								 };
 				public static void SetEnglish() {
 						lang = English;
+                        if (x != 0) Wizualizacja.Okno.SetLanguage();
+                        x++;
 				}
 				public static void SetPolish() {
 						lang = Polish;
+                        if (x != 0) Wizualizacja.Okno.SetLanguage();
+                        x++;
 				}
-
+                static int x=0;
                 public static void Update() {
-                    Main main = Wizualizacja.Okno;
-                    main.fileToolStripMenuItem.Text = lang[52];
-
+                   
                 }
 		}
 }

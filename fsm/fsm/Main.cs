@@ -42,6 +42,7 @@ namespace fsm
             InitializeComponent();
 						zbierzElementy();
             Inicjalizacja(null);
+            Language.SetEnglish();
         }
 
         private void createMachineToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,7 +113,7 @@ namespace fsm
 
         private void button8_Click(object sender, EventArgs e)
         {
-					if (Wizualizacja.f == null) InfoBox.Show("Nie wybrano funkcji przejścia", "Error");
+					if (Wizualizacja.f == null) InfoBox.Show(Language.lang[75], "Error");
 					else
 					InfoBox.Show(Wizualizacja.f.info, Language.lang[0]+": "+Wizualizacja.f.nazwa);
         }
@@ -190,5 +191,29 @@ namespace fsm
 								private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
 										new About().ShowDialog();
 								}
+
+                                public void SetLanguage() {
+
+                                    Main main = Wizualizacja.Okno;
+                                    string []lang=Language.lang;
+                                    main.fileToolStripMenuItem.Text = lang[52];
+                                    main.createMachineToolStripMenuItem.Text = lang[53];
+                                    main.loadFSMToolStripMenuItem.Text = lang[54];
+                                    main.saveFSMToolStripMenuItem.Text = lang[55];
+                                    main.label1.Text = lang[56];
+                                    main.label2.Text = lang[57];
+                                    main.label3.Text = lang[58];
+                                    //main. = lang[];
+                                    main.button2.Text = lang[59];
+                                    main.button3.Text = lang[60];
+                                    main.button4.Text = lang[61];
+                                    main.label4.Text = lang[62];
+                                    main.button6.Text = lang[63];
+                                    main.button7.Text = lang[64];
+                                    main.toolsToolStripMenuItem.Text = lang[65];
+                                    main.languageToolStripMenuItem.Text = lang[66];
+                                    main.machineSpeedToolStripMenuItem.Text = lang[73];
+                                    main.checkBox1.Text = lang[74];
+                                }
 		}
 }

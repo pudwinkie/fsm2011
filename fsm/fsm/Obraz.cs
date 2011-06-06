@@ -23,6 +23,7 @@ namespace fsm
                 Wizualizacja.Okno.dataGridView1.Rows[wers].Cells[i].Style.BackColor = tab[1];
                 Wizualizacja.Okno.dataGridView1.Rows[wers].Cells[i].Style.ForeColor = tab[0];
             }
+            if (j == 0 && Wizualizacja.f.Stany[wers].koncowy) Wizualizacja.Okno.dataGridView1.Rows[wers].Cells[0].Style.ForeColor = Color.Green;
         }
 
         public static void PodKol(int y, int j)
