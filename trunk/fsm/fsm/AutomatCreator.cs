@@ -70,6 +70,7 @@ namespace fsm {
 			var column = (DataGridViewTextBoxColumn)fPTable.Columns[fPTable.ColumnCount - 1];
 			column.Name = p+"";
 			column.Width = 50;
+			column.ReadOnly = true;
 		}
 
 		private void AddStateButton_Click(object sender, EventArgs e) {
