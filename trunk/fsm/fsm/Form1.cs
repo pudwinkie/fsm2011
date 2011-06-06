@@ -137,8 +137,9 @@ namespace fsm
 				private void loadFSMToolStripMenuItem_Click(object sender, EventArgs e) {
 					if (openFileDialog.ShowDialog() == DialogResult.OK) {
 						try {
-							TextReader mR;
-							if ((mR = new StreamReader(openFileDialog.OpenFile())) != null) {
+								TextReader mR; 
+								Encoding enc = Encoding.GetEncoding("Windows-1250");
+							if ((mR = new StreamReader(openFileDialog.OpenFile(),enc)) != null) {
 								FunkcjaPrzejscia fp = IOMachine.LoadMachine(mR);
 								YesNoDialog yn = new YesNoDialog(" ", Language.lang[51]);
 								yn.ShowDialog();
@@ -165,7 +166,7 @@ namespace fsm
 
                 private void machineSpeedToolStripMenuItem_Click(object sender, EventArgs e)
                 {
-                    //new speed().ShowDialog();
+                    new speed().ShowDialog();
                 }
 		}
 }

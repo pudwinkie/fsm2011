@@ -1,20 +1,17 @@
 MM_TB_TCS
-Maszyna z Wikipedii
+Maszyna z Wikipedii Nazwa maszyny
 
-2
-S1 S2
+2 Liczba stanow
+S1 S2 Nazwy stanow
+1 Liczba stanow koncowych
+S1 Stany koncowe
 
-1
-S1
+2 Liczba liter alfabetu
+10 Litery alfabetu
 
-2
-10
-
-4
+4 Liczba produkcji
 S1 1 -> S1
 S1 0 -> S2
 S2 1 -> S2
 S2 0 -> S1
-
-
-mASZYNA Z WIKIPEDII AKCEPTUJ¥CA S£OWA Z PARZYST¥ LICZB¥ ZER
+Maszyna z wikipedii akceptuj¹ca s³owa z parzyst¹ liczb¹ zer nad alfabetem {0,1}
