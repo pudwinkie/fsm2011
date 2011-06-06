@@ -1,94 +1,7 @@
 ﻿
 namespace fsm {
 		static class Language {
-				public static string[] lang = { 
-//AutomatCreator//
-					"Automat", //0
-					"Start", //1
-					"Litera: ", //2
-					"Nie podałeś litery", //3
-					"Ostrzeżenie", //4
-					"Nazwa stanu", //5
-					"Stan nie może mieć pustej nazwy", //6
-					"Wybierz litery do usunięcia:", //7
-					"Usun litery", //8
-					"Wybierz stany do usunięcia:", //9
-					"Usun stany", //10			
-					"Zmień literę", //11	
-					"Wybierz literę", //12
-					"Nie ma takiej litery w alfabecie automatu", //13
-					"Zmień nazwę stanu", //14
-					"Wybierz stan", //15
-					"Brak stanow koncowych", //16
-					"Akceptujacy", //17
-					"Dodaj literę", //18
-					"Dodaj stan", //19
-					"Usun stan", //20
-					"Usun literę", //21
-					"Zakończ", //22
-					"Anuluj", //23
-					"Losowo", //24
-					"Info", //25
-					"Utworz Automat", //26
-//ChangeNameForm//
-					"Stara nazwa", //27
-					"Nowa nazwa", //28
-					"OK", //29
-//Dialog//
-				  "akceptuje słowo: ", //30
-					"nie akceptuje słowa: ", //31
-					"Raport", //32
-//EnterNameForm//
-				  "Wpisz nazwę", //33
-//LanguageDialog//
-				  "Wybór języka", //34
-					"Usuń", //35
-					"Czy chcesz zapisac automat?", //36
-					"Nie", //37
-					"Tak", //38
-					"Nazwa automatu", //39
-					"Opis automatu", //40
-					"Zapisz automat", //41
-					"SŁOWO ZAAKCEPTOWANE", //42
-					"SŁOWO ODRZUCONE", //43
-//Funkcja przejscia//
-					"Ta litera jest już w alfabecie", //44
-					"Stan o podanej nazwie już istnieje", //45
-					"Stan początkowy nie istnieje: ", //46
-					"Stan docelowy nie istnieje: ", //47
-					"Podana litra nie istnieje w alfabecie: ", //48
-					"Takie przejście jest już zdefiniowane", //49
-					"Wyraz nieakceptowalny", //50
-					"Czy chcesz edytować ten automat?", //51
-//Form1//
-					"Plik", //52
-					"Utwórz automat", //53
-					"Załaduj Automat", //54
-					"Wybierz plik z automatem", //55
-					"Dane Wejściowe", //56
-					"Przetworzone Dane", //57
-					"Obecnie Rozpatrywana Litera", //58
-					"Wykonaj", //59
-					"Wykonaj Całość", //60
-					"Reset", //61
-					"Ilość Kroków", //62
-					"Koniec", //63
-					"Cofnij", //64
-					"Opcje", //65
-					"Język", //66
-					"Symulator Automatu Skończonego", //67
-//Wizualizacja
-					"Nieznany Stan", //68
-					"Historia: ", //69
-//Dialog
-					"Nie znaleziono automatu", //70
-//FunkcjaPrzejscia
-					"Niedozwolony znak", //71
-//Form1
-                    "Szybkość Automatu", //73
-                    "Nie pokazuj kroków"
-
-								 };
+				public static string[] lang = English;
 				internal static readonly string[]
 				English = { 
 //AutomatCreator//
@@ -182,7 +95,7 @@ namespace fsm {
 										"Jagiellonian University in Krakow", //77
 										"Mathematics and Computer Science Department", //78
 										"Finite state machine symulator", //79
-										"Plik automatu (*.fsm)|*.fsm|Plik tekstowy(*.txt)|*.txt|Wszystkie pliki|*.*", //80
+										"FSM files (*.fsm)|*.fsm|Text files(*.txt)|*.txt|All files|*.*", //80
 					};
 				internal static readonly string[]
 				Polish = { 
