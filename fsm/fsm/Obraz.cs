@@ -68,7 +68,7 @@ namespace fsm
                     Wizualizacja.Okno.dataGridView1.Rows[p].Cells[i].Style.ForeColor = tab[(j + 1) % 2];
                 }
                 Wizualizacja.Okno.dataGridView1.Update();
-                System.Threading.Thread.Sleep(Wizualizacja.czasCzekania);
+                System.Threading.Thread.Sleep(Wizualizacja.czasCzekania/2);
             }
         }
 
@@ -94,7 +94,7 @@ namespace fsm
             Wizualizacja.Okno.dataGridView1.Rows[x].Cells[y].Style.ForeColor = tab[(j + 1) % 2];
 
             Wizualizacja.Okno.dataGridView1.Update();
-            System.Threading.Thread.Sleep(Wizualizacja.czasCzekania);
+           
 
         }
     }

@@ -21,7 +21,7 @@ namespace fsm
         public static List<int> historia = new List<int>();
         public static List<string> raport = new List<string>();
         //====================================
-        public static int czasCzekania = 200;
+        public static int czasCzekania = 125;
         public static int ileMrugniec = 4;
         public static Color PodBack = Color.Blue;
         public static Color PodText = Color.Red;
@@ -52,8 +52,8 @@ namespace fsm
             int hist = f.Stany.IndexOf(f.obecny);
             bool obraz = Okno.checkBox1.Checked == true ? false : true;
             historia.Add(hist);
-            raport.Add(f.obecny.nazwa.ToString()+" - "+Okno.textBox3.Text);
-
+            if (zly==0) raport.Add(f.obecny.nazwa.ToString()+" - "+Okno.textBox3.Text+" ->");
+            else raport.Add(" [" + Language.lang[68] + "]" + " - " + Okno.textBox3.Text + " ->");
             // InfoBox.Show(hist.ToString(), " ");
             // sprawdzenie czy tekst istnieje
             string s = null;
@@ -81,18 +81,24 @@ namespace fsm
             catch (Exception) { zly++; goto aaa; } //////======== niezaakceptowany stan
             if (obraz) Obraz.Mrugaj(f.Stany.IndexOf(f.obecny), 0);
             noweid = f.Stany.IndexOf(f.obecny);
-
+            raport[raport.Count - 1] += " "+f.obecny.nazwa.ToString();
             //powrót do normalnego wyglądu
         aaa:
+            if (zly != 0 || raport[raport.Count - 1][raport[raport.Count - 1].Length - 1] == '>') raport[raport.Count - 1] += " [" + Language.lang[68] + "]";
             Obraz.PodKol(x + 1, 0);
+            if (obraz) Obraz.PodWers(noweid, 1);
             Obraz.PodWers(stareid, 0);
-            if (obraz) Obraz.Mrugaj(stareid, x + 1, 0);
+            Obraz.Mrugaj(stareid, x + 1, 0);
+            if (zly == 0 && obraz) Obraz.PodWers(noweid, 1);
+            Okno.textBox1.Update();
             string s2 = "";
             for (int i = 1; i < s.Length; i++) s2 += s[i];
             Okno.textBox2.Text += Okno.textBox1.Text[0];
             Okno.textBox1.Text = s2;
-            if (zly == 0) Obraz.PodWers(noweid, 1);
-            Okno.textBox1.Update();
+            
+            
+            
+            Okno.dataGridView1.Update();
         }
 
         public static void Cofnij()
@@ -109,9 +115,11 @@ namespace fsm
             int c = historia.ToArray()[historia.Count - 1];
             //InfoBox.Show(c.ToString(), " ");
             historia.RemoveAt(historia.Count - 1);
+            raport.RemoveAt(raport.Count - 1);
             if (zly > 0) { zly--; if (zly != 0) return; }
             Obraz.PodWers(f.Stany.IndexOf(f.obecny), 0);
             Obraz.PodWers(c, 1);
+            
             f.obecny = f.Stany[c];
         }
 
@@ -124,6 +132,7 @@ namespace fsm
                 Obraz.PodWers(i, 0);
             Obraz.PodWers(0, 1);
             historia.Clear();
+            raport.Clear();
             f.Reset();
         }
 
@@ -169,6 +178,7 @@ namespace fsm
                 if (f.Stany[i].koncowy) Okno.dataGridView1.Rows[i].Cells[0].Style.Font = new Font("Times New Roman", 9, FontStyle.Bold);
             Obraz.PodWers(f.Stany.IndexOf(f.obecny), 1);
             Okno.dataGridView1.Invalidate();
+            Reset();
         }
 
         public static void Test(FunkcjaPrzejscia fp)
