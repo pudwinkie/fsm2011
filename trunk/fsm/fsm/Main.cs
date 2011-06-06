@@ -160,8 +160,7 @@ namespace fsm
 				}
 
 				private void languageToolStripMenuItem_Click(object sender, EventArgs e) {
-						if(new LanguageDialog(this).ShowDialog()!=DialogResult.Abort)
-								Dispose(true);
+						new LanguageDialog(this).ShowDialog();
 				}
 
                 private void machineSpeedToolStripMenuItem_Click(object sender, EventArgs e)
