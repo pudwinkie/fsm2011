@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Text;
 
 namespace fsm {
 	public partial class SaveMachineDialog : Form {
@@ -12,7 +13,7 @@ namespace fsm {
 			opisTextBox.Text = fP.info;
 		}
 
-		private void nieButton_Click(object sender, EventArgs e) {
+		private void noButton_Click(object sender, EventArgs e) {
 			DialogResult = DialogResult.OK;
 		}
 
@@ -21,8 +22,9 @@ namespace fsm {
 			if (opisTextBox.Text != null) fP.info = opisTextBox.Text;
 			if (saveFileDialog.ShowDialog() == DialogResult.OK) {
 				try {
-					StreamWriter mR;
-					if ((mR = new StreamWriter(saveFileDialog.OpenFile())) != null) {
+						StreamWriter mR; 
+						Encoding enc = Encoding.GetEncoding("Windows-1250");
+					if ((mR = new StreamWriter(saveFileDialog.OpenFile(),enc)) != null) {
 						using (mR) {
 							mR.Write(IOMachine.SaveMachine(fP));
 						}
