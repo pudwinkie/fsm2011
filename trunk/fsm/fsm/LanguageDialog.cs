@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace fsm {
 		public partial class LanguageDialog : Form {
-				Form1 parent;
+				Main parent;
 				List<RadioButton> listaJezykow = new List<RadioButton>();
-				public LanguageDialog(Form1 p) {
+				public LanguageDialog(Main p) {
 						parent = p;
 						InitializeComponent();
 						listaJezykow.Add(polishButton);
@@ -37,7 +37,7 @@ namespace fsm {
 						}
 						parent.Visible = false;
 						SetVisibleCore(false);
-						new Form1().ShowDialog();
+						new Main().ShowDialog();
 				}
 		}
 }
