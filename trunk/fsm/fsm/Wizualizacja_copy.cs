@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace fsm
 {
-    class Wizualizacja
+   static class Wizualizacja
     //autor Musiał Mateusz
     {
         public static Main Okno;
@@ -89,7 +89,7 @@ namespace fsm
             if (obraz) Obraz.PodWers(noweid, 1);
             Obraz.PodWers(stareid, 0);
             Obraz.Mrugaj(stareid, x + 1, 0);
-            if (zly == 0 && obraz) Obraz.PodWers(noweid, 1);
+            if (zly == 0 && Okno.numerator.Value<2) Obraz.PodWers(noweid, 1);
             Okno.textBox1.Update();
             string s2 = "";
             for (int i = 1; i < s.Length; i++) s2 += s[i];
