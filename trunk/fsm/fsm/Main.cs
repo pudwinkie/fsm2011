@@ -170,7 +170,7 @@ namespace fsm
                 }
 
 								private void saveFSMToolStripMenuItem_Click(object sender, EventArgs e) {
-										if (Wizualizacja.f == null) { InfoBox.Show("Brak automatu do zapisania"); return; }
+										if (Wizualizacja.f == null) { InfoBox.Show(Language.lang[75]); return; }
 
 										if (saveFileDialog.ShowDialog() == DialogResult.OK) {
 												try {
