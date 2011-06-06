@@ -13,7 +13,7 @@ namespace fsm
     class Wizualizacja
     //autor Musiał Mateusz
     {
-        public static Form1 Okno;
+        public static Main Okno;
         public static FunkcjaPrzejscia f;
         public static bool ok = false;
         public static int rozalf;

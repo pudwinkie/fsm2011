@@ -10,8 +10,8 @@ namespace fsm {
 		private List<string> alfabet = new List<string>();
 		internal List<string> removeList = new List<string>();
 		internal FunkcjaPrzejscia funkcjaPrzejscia = new FunkcjaPrzejscia(Language.lang[0], "");
-		internal Form1 parent;
-		public AutomatCreator(Form1 p) {
+		internal Main parent;
+		public AutomatCreator(Main p) {
 			parent = p;
 			InitializeComponent();
 			fPTable.RowCount++;
@@ -25,7 +25,7 @@ namespace fsm {
 			fPTable.Update();
 		}
 
-		public AutomatCreator(FunkcjaPrzejscia fp, Form1 form1) {
+		public AutomatCreator(FunkcjaPrzejscia fp, Main form1) {
 			funkcjaPrzejscia = fp;
 			parent = form1;
 			InitializeComponent();
